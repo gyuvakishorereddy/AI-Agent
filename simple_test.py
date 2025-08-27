@@ -1,100 +1,51 @@
+#!/usr/bin/env python3
 """
-Simple Test of the Trained College AI Agent
+Simple direct test of the improved model
 """
 
 import pickle
-from sentence_transformers import SentenceTransformer
-import faiss
-import numpy as np
+import os
 
-def test_ai_agent():
-    print("Loading Trained College AI Agent...")
+print("🔄 Testing Improved Model")
+print("=" * 40)
+
+# Load the improved model
+model_file = 'improved_college_ai_english.pkl'
+if os.path.exists(model_file):
+    print(f"📥 Loading {model_file}...")
+    with open(model_file, 'rb') as f:
+        agent = pickle.load(f)
     
-    # Load the trained model
-    with open('college_ai_agent.pkl', 'rb') as f:
-        model_data = pickle.load(f)
+    print(f"✅ Loaded successfully")
+    print(f"🏫 Colleges: {len(agent.college_data)}")
+    print(f"💬 Q&A Pairs: {len(agent.qa_pairs)}")
     
-    qa_pairs = model_data['qa_pairs']
-    embeddings = model_data['embeddings']
-    colleges_data = model_data['colleges_data']
+    # Test the specific query that was problematic
+    print("\n🧪 Testing: 'What is the fee structure for KL University?'")
+    results = agent.query("What is the fee structure for KL University?", top_k=1)
     
-    # Initialize sentence transformer
-    sentence_model = SentenceTransformer('all-MiniLM-L6-v2')
-    
-    # Create FAISS index
-    dimension = embeddings.shape[1]
-    index = faiss.IndexFlatIP(dimension)
-    faiss.normalize_L2(embeddings)
-    index.add(embeddings)
-    
-    print(f"Loaded {len(qa_pairs)} Q&A pairs from {len(colleges_data)} colleges")
-    print(f"Embedding dimension: {dimension}")
-    
-    def query(question, top_k=3):
-        """Query the AI agent"""
-        question_embedding = sentence_model.encode([question])
-        faiss.normalize_L2(question_embedding)
+    if results:
+        answer = results[0]['answer']
+        confidence = results[0]['confidence']
+        print(f"📊 Confidence: {confidence:.1f}%")
+        print(f"💬 Answer: {answer}")
         
-        scores, indices = index.search(question_embedding, top_k)
-        
-        results = []
-        for score, idx in zip(scores[0], indices[0]):
-            if idx < len(qa_pairs):
-                qa = qa_pairs[idx]
-                results.append({
-                    'college': qa['college'],
-                    'category': qa['category'],
-                    'question': qa['question'],
-                    'answer': qa['answer'],
-                    'confidence': float(score) * 100
-                })
-        
-        return results
-    
-    # Test queries
-    test_queries = [
-        "What is the fee at IIT Bombay?",
-        "Which companies visit NIT Trichy for placements?",
-        "What is the average package at private colleges?",
-        "How to apply for admission in 2025?",
-        "What are the facilities at IIIT Hyderabad?"
-    ]
-    
-    print("\nTesting AI Agent:")
-    print("=" * 50)
-    
-    for i, test_query in enumerate(test_queries, 1):
-        print(f"\nQuery {i}: {test_query}")
-        print("-" * 40)
-        
-        results = query(test_query)
-        
-        if results:
-            best = results[0]
-            print(f"Best Answer ({best['confidence']:.1f}% confidence):")
-            print(f"College: {best['college']}")
-            print(f"Answer: {best['answer'][:200]}...")
-            
-            if len(results) > 1:
-                print(f"\nOther relevant answers:")
-                for j, result in enumerate(results[1:], 2):
-                    print(f"  {j}. {result['college']} ({result['confidence']:.1f}%)")
+        if "₹430,000" in answer or "fees" in answer.lower():
+            print("✅ SUCCESS: Model now provides specific fee information!")
         else:
-            print("No relevant answers found")
+            print("⚠️  Still needs improvement")
+    else:
+        print("❌ No results")
+        
+    print("\n🧪 Testing: 'best private engineering colleges'")
+    results2 = agent.query("best private engineering colleges", top_k=1)
+    if results2:
+        answer2 = results2[0]['answer']
+        confidence2 = results2[0]['confidence']
+        print(f"📊 Confidence: {confidence2:.1f}%")
+        print(f"💬 Answer: {answer2[:150]}...")
     
-    print(f"\nTraining and testing completed successfully!")
-    print(f"Model Statistics:")
-    print(f"  - Total Colleges: {len(colleges_data)}")
-    print(f"  - Total Q&A Pairs: {len(qa_pairs)}")
-    print(f"  - Embedding Dimension: {dimension}")
-    print(f"  - Model File: college_ai_agent.pkl")
-    print(f"  - Deployment Package: college_ai_deployment/")
-    
-    return True
+else:
+    print(f"❌ Model file {model_file} not found!")
 
-if __name__ == "__main__":
-    try:
-        test_ai_agent()
-    except Exception as e:
-        print(f"Error: {e}")
-        print("Make sure the model file 'college_ai_agent.pkl' exists")
+print("\n✅ Testing completed!")

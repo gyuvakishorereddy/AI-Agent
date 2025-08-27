@@ -27,17 +27,17 @@ def query_agent():
         data = request.json
         question = data.get('question', '')
         top_k = data.get('top_k', 5)
-
+        
         if not question:
             return jsonify({'error': 'Question is required'}), 400
-
+        
         # Create embedding
         question_embedding = sentence_model.encode([question])
         faiss.normalize_L2(question_embedding)
-
+        
         # Search
         scores, indices = index.search(question_embedding, top_k)
-
+        
         results = []
         for score, idx in zip(scores[0], indices[0]):
             if idx < len(qa_pairs):
@@ -49,13 +49,13 @@ def query_agent():
                     'answer': qa['answer'],
                     'confidence': float(score) * 100
                 })
-
+        
         return jsonify({
             'query': question,
             'results': results,
             'total_results': len(results)
         })
-
+        
     except Exception as e:
         return jsonify({'error': str(e)}), 500
 
