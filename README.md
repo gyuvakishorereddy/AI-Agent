@@ -87,7 +87,6 @@ college-ai-agent/
     ├── COMPREHENSIVE_ANSWER_FIX_REPORT.md  # Answer improvement report
     ├── DATABASE_MAINTENANCE_SUMMARY.md     # Data quality report
     └── Multiple enhancement and audit reports
-```
 │   │   │   └── faq.json                  # College-specific FAQs
 │   │   └── ... (504 colleges total)
 │   └── training_data.json                 # Consolidated training dataset
