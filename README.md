@@ -18,7 +18,7 @@ This is an advanced AI-powered college information system that provides intellig
 
 ### **🏆 Latest Achievements (August 2025)**
 - **637 Engineering Colleges** with comprehensive database coverage
-- **21,028 Enhanced Q&A Pairs** with improved data extraction
+- **211,028 Enhanced Q&A Pairs** with improved data extraction
 - **Specific Data Retrieval** - Exact fees, placements, and rankings
 - **130-140% Confidence Scores** for specific queries
 - **Enhanced College Name Matching** with variations support
