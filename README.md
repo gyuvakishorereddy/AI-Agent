@@ -1,4 +1,4 @@
-# 🎓 Advanced College AI Agent System
+# 🎓 Advanced College AI Agent System built using RAG and Multi-Lingual Support
 ## Intelligent Engineering College Information & Guidance Platform
 
 > **A cutting-edge AI agent providing accurate, database-driven responses about 637 engineering colleges across India with enhanced data extraction and multilingual support**
