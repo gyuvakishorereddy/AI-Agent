@@ -197,9 +197,9 @@ python test_improvements.py
 ### **🎯 Validation Results**
 
 ```
-Test Query: "KL university fees"
+Test Query: "KLU university fees"
 ├── Confidence: 100.0%
-├── Match: "kl university fees" (exact)
+├── Match: "klU university fees" (exact)
 └── Answer: "₹430,000 annual fee, ₹460,000 total cost, ₹100,000 hostel"
 
 Test Query: "best private engineering colleges"
