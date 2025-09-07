@@ -180,7 +180,7 @@ python test_improvements.py
 
 **Key Improvements:**
 - **Specific Fee Extraction**: Exact amounts instead of generic responses
-- **College Name Variations**: "KL University", "Kalasalingam", "KLU" all work
+- **College Name Variations**: "KLU University", "Kalasalingam", "KLU" all work
 - **Enhanced Confidence**: 130-140% confidence scores for specific queries
 - **Better Placement Data**: Detailed company lists and package information
 
