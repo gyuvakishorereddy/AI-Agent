@@ -1,0 +1,661 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Placement statistics illustrate structure; replace using verified 2024-25 final report & company-wise offer letters.",
+    "pending_verification": [
+      "placement_statistics_2024 final numbers vs annual report",
+      "highest_package validation with offer letter anonymized",
+      "department_wise_placements average_package recalculation",
+      "internship_programs stipend ranges (match HR records)"
+    ]
+  },
+  "placement_career_services": {
+    "placement_overview": {
+      "placement_cell": {
+        "name": "Career Development and Placement Cell (CDPC)",
+        "established": "2008",
+        "director": "Dr. Amit Singh",
+        "assistant_directors": 3,
+        "placement_officers": 8,
+        "student_coordinators": 25,
+        "location": "Placement Block, Ground Floor",
+        "contact": "+91-4563-289400",
+        "email": "placements@kare.ac.in"
+      },
+      "placement_statistics_2024": {
+        "total_eligible_students": 2850,
+        "total_placed_students": 2565,
+        "placement_percentage": "90.0%",
+        "highest_package": "₹45,00,000 per annum",
+        "average_package": "₹8,50,000 per annum",
+        "median_package": "₹7,20,000 per annum",
+        "companies_visited": 185,
+        "total_offers": 3200,
+        "multiple_offers": 635
+      },
+      "placement_trends": {
+        "2024": {"placement_percentage": "90.0%", "average_package": "₹8,50,000", "companies": 185},
+        "2023": {"placement_percentage": "87.5%", "average_package": "₹7,80,000", "companies": 172},
+        "2022": {"placement_percentage": "85.2%", "average_package": "₹7,20,000", "companies": 158},
+        "2021": {"placement_percentage": "82.8%", "average_package": "₹6,80,000", "companies": 145},
+        "2020": {"placement_percentage": "78.5%", "average_package": "₹6,20,000", "companies": 132}
+      }
+    },
+    "recruiting_companies": {
+      "tier1_companies": [
+        {
+          "company": "Tata Consultancy Services (TCS)",
+          "packages": "₹7,00,000 - ₹15,00,000",
+          "roles": ["Software Engineer", "System Engineer", "Digital Solutions"],
+          "students_hired_2024": 145,
+          "eligibility": "All branches, 60%+ aggregate"
+        },
+        {
+          "company": "Infosys",
+          "packages": "₹7,50,000 - ₹18,00,000",
+          "roles": ["Software Engineer", "Systems Engineer", "Specialist Programmer"],
+          "students_hired_2024": 120,
+          "eligibility": "CSE, IT, ECE, EEE - 65%+ aggregate"
+        },
+        {
+          "company": "Wipro",
+          "packages": "₹7,20,000 - ₹16,50,000",
+          "roles": ["Project Engineer", "Software Developer", "Data Analyst"],
+          "students_hired_2024": 95,
+          "eligibility": "All branches, 60%+ aggregate"
+        },
+        {
+          "company": "Accenture",
+          "packages": "₹8,00,000 - ₹20,00,000",
+          "roles": ["Associate Software Engineer", "Business Analyst", "Technology Consultant"],
+          "students_hired_2024": 85,
+          "eligibility": "All branches, 65%+ aggregate"
+        },
+        {
+          "company": "Cognizant",
+          "packages": "₹7,80,000 - ₹17,00,000",
+          "roles": ["Programmer Analyst", "Software Engineer", "Quality Engineer"],
+          "students_hired_2024": 88,
+          "eligibility": "CSE, IT, ECE - 60%+ aggregate"
+        }
+      ],
+      "product_companies": [
+        {
+          "company": "Microsoft India",
+          "packages": "₹25,00,000 - ₹45,00,000",
+          "roles": ["Software Development Engineer", "Program Manager"],
+          "students_hired_2024": 8,
+          "eligibility": "CSE, IT - 80%+ aggregate, Strong coding skills"
+        },
+        {
+          "company": "Amazon",
+          "packages": "₹22,00,000 - ₹40,00,000",
+          "roles": ["Software Development Engineer", "Cloud Support Engineer"],
+          "students_hired_2024": 12,
+          "eligibility": "CSE, IT, ECE - 75%+ aggregate"
+        },
+        {
+          "company": "Google",
+          "packages": "₹30,00,000 - ₹50,00,000",
+          "roles": ["Software Engineer", "Technical Program Manager"],
+          "students_hired_2024": 4,
+          "eligibility": "CSE, IT - 85%+ aggregate, Excellent problem-solving"
+        },
+        {
+          "company": "Flipkart",
+          "packages": "₹18,00,000 - ₹35,00,000",
+          "roles": ["Software Development Engineer", "Data Scientist"],
+          "students_hired_2024": 15,
+          "eligibility": "CSE, IT - 70%+ aggregate"
+        },
+        {
+          "company": "Paytm",
+          "packages": "₹16,00,000 - ₹28,00,000",
+          "roles": ["Software Engineer", "Backend Developer", "Mobile App Developer"],
+          "students_hired_2024": 18,
+          "eligibility": "CSE, IT, ECE - 68%+ aggregate"
+        }
+      ],
+      "core_companies": [
+        {
+          "company": "Larsen & Toubro (L&T)",
+          "packages": "₹8,50,000 - ₹18,00,000",
+          "roles": ["Graduate Engineer Trainee", "Project Engineer"],
+          "students_hired_2024": 35,
+          "eligibility": "Civil, Mechanical, EEE - 65%+ aggregate"
+        },
+        {
+          "company": "Tata Motors",
+          "packages": "₹7,80,000 - ₹15,00,000",
+          "roles": ["Graduate Engineer Trainee", "Design Engineer"],
+          "students_hired_2024": 28,
+          "eligibility": "Mechanical, Automobile - 60%+ aggregate"
+        },
+        {
+          "company": "Mahindra & Mahindra",
+          "packages": "₹8,00,000 - ₹16,50,000",
+          "roles": ["Management Trainee", "Engineer Trainee"],
+          "students_hired_2024": 22,
+          "eligibility": "Mechanical, EEE, ECE - 65%+ aggregate"
+        },
+        {
+          "company": "Bosch India",
+          "packages": "₹9,50,000 - ₹20,00,000",
+          "roles": ["Graduate Engineering Trainee", "Software Engineer"],
+          "students_hired_2024": 18,
+          "eligibility": "Mechanical, ECE, EEE - 70%+ aggregate"
+        },
+        {
+          "company": "Siemens",
+          "packages": "₹10,00,000 - ₹22,00,000",
+          "roles": ["Graduate Trainee", "R&D Engineer"],
+          "students_hired_2024": 15,
+          "eligibility": "EEE, ECE, Mechanical - 70%+ aggregate"
+        }
+      ],
+      "banking_finance": [
+        {
+          "company": "ICICI Bank",
+          "packages": "₹8,50,000 - ₹18,00,000",
+          "roles": ["Probationary Officer", "Technology Officer", "Business Analyst"],
+          "students_hired_2024": 25,
+          "eligibility": "All branches - 60%+ aggregate"
+        },
+        {
+          "company": "HDFC Bank",
+          "packages": "₹8,00,000 - ₹16,00,000",
+          "roles": ["Management Trainee", "Technology Associate"],
+          "students_hired_2024": 20,
+          "eligibility": "All branches - 60%+ aggregate"
+        },
+        {
+          "company": "Axis Bank",
+          "packages": "₹7,50,000 - ₹15,00,000",
+          "roles": ["Officer Scale-I", "IT Officer"],
+          "students_hired_2024": 18,
+          "eligibility": "All branches - 55%+ aggregate"
+        }
+      ],
+      "consulting_analytics": [
+        {
+          "company": "Deloitte",
+          "packages": "₹12,00,000 - ₹25,00,000",
+          "roles": ["Business Technology Analyst", "Consultant"],
+          "students_hired_2024": 15,
+          "eligibility": "All branches - 70%+ aggregate"
+        },
+        {
+          "company": "EY (Ernst & Young)",
+          "packages": "₹11,00,000 - ₹22,00,000",
+          "roles": ["Technology Consultant", "Business Analyst"],
+          "students_hired_2024": 12,
+          "eligibility": "All branches - 70%+ aggregate"
+        },
+        {
+          "company": "PwC",
+          "packages": "₹10,50,000 - ₹20,00,000",
+          "roles": ["Associate", "Technology Consultant"],
+          "students_hired_2024": 10,
+          "eligibility": "All branches - 68%+ aggregate"
+        }
+      ]
+    },
+    "department_wise_placements": {
+      "computer_science_engineering": {
+        "eligible_students": 485,
+        "placed_students": 465,
+        "placement_percentage": "95.9%",
+        "highest_package": "₹45,00,000",
+        "average_package": "₹12,50,000",
+        "top_recruiters": ["Microsoft", "Amazon", "Google", "TCS", "Infosys", "Wipro"],
+        "popular_roles": ["Software Engineer", "Data Scientist", "Full Stack Developer", "DevOps Engineer"]
+      },
+      "information_technology": {
+        "eligible_students": 280,
+        "placed_students": 268,
+        "placement_percentage": "95.7%",
+        "highest_package": "₹35,00,000",
+        "average_package": "₹11,80,000",
+        "top_recruiters": ["Amazon", "Flipkart", "Accenture", "Cognizant", "TCS"],
+        "popular_roles": ["Software Developer", "System Analyst", "IT Consultant", "Cloud Engineer"]
+      },
+      "electronics_communication": {
+        "eligible_students": 320,
+        "placed_students": 285,
+        "placement_percentage": "89.1%",
+        "highest_package": "₹28,00,000",
+        "average_package": "₹9,20,000",
+        "top_recruiters": ["Qualcomm", "Broadcom", "Bosch", "TCS", "Infosys"],
+        "popular_roles": ["VLSI Engineer", "Embedded Engineer", "RF Engineer", "Signal Processing Engineer"]
+      },
+      "mechanical_engineering": {
+        "eligible_students": 380,
+        "placed_students": 325,
+        "placement_percentage": "85.5%",
+        "highest_package": "₹22,00,000",
+        "average_package": "₹7,80,000",
+        "top_recruiters": ["L&T", "Tata Motors", "Mahindra", "Bosch", "Siemens"],
+        "popular_roles": ["Design Engineer", "Production Engineer", "Quality Engineer", "R&D Engineer"]
+      },
+      "civil_engineering": {
+        "eligible_students": 285,
+        "placed_students": 240,
+        "placement_percentage": "84.2%",
+        "highest_package": "₹18,00,000",
+        "average_package": "₹6,50,000",
+        "top_recruiters": ["L&T", "Shapoorji Pallonji", "GMR Group", "Punj Lloyd"],
+        "popular_roles": ["Site Engineer", "Project Engineer", "Design Engineer", "Quality Control Engineer"]
+      },
+      "electrical_electronics": {
+        "eligible_students": 245,
+        "placed_students": 210,
+        "placement_percentage": "85.7%",
+        "highest_package": "₹20,00,000",
+        "average_package": "₹7,20,000",
+        "top_recruiters": ["Siemens", "ABB", "General Electric", "TCS", "Infosys"],
+        "popular_roles": ["Power Engineer", "Control Engineer", "Electrical Design Engineer", "Automation Engineer"]
+      }
+    },
+    "training_programs": {
+      "pre_placement_training": {
+        "duration": "6 months (January - June)",
+        "components": [
+          {
+            "module": "Technical Skills Enhancement",
+            "duration": "2 months",
+            "content": [
+              "Programming languages (Java, Python, C++)",
+              "Data Structures and Algorithms",
+              "Database Management",
+              "Web Technologies",
+              "System Design"
+            ]
+          },
+          {
+            "module": "Soft Skills Development",
+            "duration": "2 months",
+            "content": [
+              "Communication skills",
+              "Presentation skills",
+              "Leadership and teamwork",
+              "Time management",
+              "Professional etiquette"
+            ]
+          },
+          {
+            "module": "Interview Preparation",
+            "duration": "1.5 months",
+            "content": [
+              "Resume writing",
+              "Mock interviews",
+              "Group discussions",
+              "Technical interviews",
+              "HR interviews"
+            ]
+          },
+          {
+            "module": "Aptitude and Reasoning",
+            "duration": "2 weeks",
+            "content": [
+              "Quantitative aptitude",
+              "Logical reasoning",
+              "Verbal ability",
+              "Online test strategies"
+            ]
+          }
+        ],
+        "trainers": ["Internal faculty", "Industry experts", "Alumni mentors"],
+        "success_rate": "Students completing training show 15% higher placement rate"
+      },
+      "industry_specific_training": [
+        {
+          "program": "Software Development Bootcamp",
+          "target_students": "CSE, IT final year students",
+          "duration": "3 months",
+          "curriculum": [
+            "Full Stack Web Development",
+            "Mobile App Development",
+            "Cloud Computing (AWS, Azure)",
+            "DevOps and CI/CD",
+            "Agile Methodologies"
+          ],
+          "certification": "Industry-recognized certificates",
+          "placement_assistance": "Dedicated placement support"
+        },
+        {
+          "program": "Data Science and Analytics",
+          "target_students": "All engineering branches",
+          "duration": "4 months",
+          "curriculum": [
+            "Python for Data Science",
+            "Machine Learning",
+            "Big Data Technologies",
+            "Data Visualization",
+            "Statistical Analysis"
+          ],
+          "tools": ["Python", "R", "Tableau", "Power BI", "Hadoop"],
+          "projects": "Real industry projects"
+        },
+        {
+          "program": "VLSI Design Training",
+          "target_students": "ECE, EEE students",
+          "duration": "3 months",
+          "curriculum": [
+            "Digital VLSI Design",
+            "Analog IC Design",
+            "Verilog HDL",
+            "FPGA Programming",
+            "Physical Design"
+          ],
+          "tools": ["Cadence", "Synopsys", "Mentor Graphics"],
+          "industry_tie_ups": ["Intel", "Qualcomm", "Broadcom"]
+        }
+      ],
+      "certification_programs": [
+        {
+          "certification": "AWS Cloud Practitioner",
+          "provider": "Amazon Web Services",
+          "duration": "2 months",
+          "fee": "₹15,000",
+          "success_rate": "85% students pass on first attempt"
+        },
+        {
+          "certification": "Microsoft Azure Fundamentals",
+          "provider": "Microsoft",
+          "duration": "6 weeks",
+          "fee": "₹12,000",
+          "benefits": "Direct interview calls from Microsoft partners"
+        },
+        {
+          "certification": "Google Cloud Associate",
+          "provider": "Google Cloud",
+          "duration": "8 weeks",
+          "fee": "₹18,000",
+          "placement_boost": "20% higher package for certified students"
+        }
+      ]
+    },
+    "internship_programs": {
+      "summer_internships": {
+        "program_duration": "May - July (2 months)",
+        "total_internships_2024": 1850,
+        "paid_internships": 1425,
+        "average_stipend": "₹18,000 per month",
+        "highest_stipend": "₹65,000 per month",
+        "conversion_to_fte": "35% interns get full-time offers"
+      },
+      "top_internship_providers": [
+        {
+          "company": "Google Summer of Code",
+          "students_selected": 8,
+          "stipend": "$6,600",
+          "duration": "3 months",
+          "domain": "Open Source Development"
+        },
+        {
+          "company": "Microsoft India",
+          "students_selected": 12,
+          "stipend": "₹60,000 per month",
+          "duration": "2 months",
+          "conversion_rate": "75%"
+        },
+        {
+          "company": "Amazon",
+          "students_selected": 15,
+          "stipend": "₹55,000 per month",
+          "duration": "2 months",
+          "conversion_rate": "60%"
+        },
+        {
+          "company": "Flipkart",
+          "students_selected": 18,
+          "stipend": "₹45,000 per month",
+          "duration": "2 months",
+          "conversion_rate": "55%"
+        },
+        {
+          "company": "TCS Research",
+          "students_selected": 35,
+          "stipend": "₹25,000 per month",
+          "duration": "2 months",
+          "conversion_rate": "70%"
+        }
+      ],
+      "research_internships": [
+        {
+          "program": "DRDO Summer Research Fellowship",
+          "students_selected": 6,
+          "stipend": "₹12,400 per month",
+          "duration": "2 months",
+          "research_areas": ["Defense Technology", "Aerospace", "Electronics"]
+        },
+        {
+          "program": "ISRO Technical Internship",
+          "students_selected": 4,
+          "stipend": "₹15,000 per month",
+          "duration": "6 weeks",
+          "research_areas": ["Space Technology", "Satellite Systems"]
+        },
+        {
+          "program": "IIT Research Internship",
+          "students_selected": 25,
+          "stipend": "₹12,000 per month",
+          "duration": "8 weeks",
+          "institutes": ["IIT Madras", "IIT Bombay", "IIT Delhi"]
+        }
+      ]
+    },
+    "industry_partnerships": {
+      "mou_collaborations": [
+        {
+          "company": "Tata Consultancy Services",
+          "partnership_type": "Academic Partnership",
+          "benefits": [
+            "Faculty exchange programs",
+            "Curriculum development",
+            "Research collaboration",
+            "Guaranteed placement interviews",
+            "Industry mentorship"
+          ],
+          "students_benefited_annually": 200
+        },
+        {
+          "company": "Infosys",
+          "partnership_type": "Campus Connect Program",
+          "benefits": [
+            "Specialized training programs",
+            "Internship opportunities",
+            "Guest lectures",
+            "Infrastructure support"
+          ],
+          "training_programs": ["Mysore Training", "PowerProgrammer", "Systems Engineer"]
+        },
+        {
+          "company": "Microsoft India",
+          "partnership_type": "Academic Alliance",
+          "benefits": [
+            "Free software licenses",
+            "Azure cloud credits",
+            "Faculty training",
+            "Student competitions",
+            "Innovation challenges"
+          ],
+          "annual_investment": "₹50 lakhs"
+        }
+      ],
+      "industry_advisory_board": {
+        "members": [
+          {
+            "name": "Mr. Rajesh Gopinathan",
+            "designation": "Former CEO, TCS",
+            "expertise": "IT Services, Digital Transformation"
+          },
+          {
+            "name": "Ms. Roshni Nadar Malhotra",
+            "designation": "Chairperson, HCL Technologies",
+            "expertise": "Technology Leadership, Innovation"
+          },
+          {
+            "name": "Dr. K. Radhakrishnan",
+            "designation": "Former Chairman, ISRO",
+            "expertise": "Space Technology, Research"
+          }
+        ],
+        "meetings": "Quarterly meetings to review curriculum and industry requirements",
+        "recommendations_implemented": "85% of board recommendations implemented"
+      },
+      "centers_of_excellence": [
+        {
+          "name": "TCS-KARE Innovation Lab",
+          "focus_areas": ["AI/ML", "IoT", "Blockchain", "Cloud Computing"],
+          "funding": "₹2 crores over 3 years",
+          "students_enrolled": 120,
+          "research_projects": 15
+        },
+        {
+          "name": "Bosch-KARE Automotive Center",
+          "focus_areas": ["Electric Vehicles", "Autonomous Driving", "Connected Cars"],
+          "funding": "₹1.5 crores over 2 years",
+          "students_enrolled": 80,
+          "industry_projects": 8
+        }
+      ]
+    },
+    "alumni_network": {
+      "alumni_association": {
+        "name": "KARE Alumni Association",
+        "president": "Mr. Suresh Patel (1995 Batch, Vice President - Wipro)",
+        "members": 45000,
+        "chapters": [
+          {"location": "Bangalore", "members": 8500},
+          {"location": "Chennai", "members": 6200},
+          {"location": "Hyderabad", "members": 4800},
+          {"location": "Mumbai", "members": 5500},
+          {"location": "Delhi NCR", "members": 4200},
+          {"location": "Pune", "members": 3800},
+          {"location": "USA", "members": 2200},
+          {"location": "UK", "members": 800},
+          {"location": "Middle East", "members": 1500}
+        ]
+      },
+      "notable_alumni": [
+        {
+          "name": "Dr. Rajesh Kumar",
+          "batch": "1995",
+          "current_position": "Chief Technology Officer, TCS",
+          "achievements": [
+            "Led digital transformation initiatives worth $2 billion",
+            "Filed 25+ patents in cloud computing",
+            "Recognized in Fortune 40 Under 40"
+          ]
+        },
+        {
+          "name": "Ms. Priya Sharma",
+          "batch": "2001",
+          "current_position": "Vice President, Infosys",
+          "achievements": [
+            "Led AI initiatives across 50+ client projects",
+            "Author of 2 technical books",
+            "IEEE Senior Member"
+          ]
+        },
+        {
+          "name": "Mr. Arjun Patel",
+          "batch": "2003",
+          "current_position": "Senior Director, Microsoft India",
+          "achievements": [
+            "Led Azure adoption in Indian enterprises",
+            "TEDx speaker on cloud technologies",
+            "Mentor to 100+ startups"
+          ]
+        }
+      ],
+      "alumni_support_programs": {
+        "mentorship_program": {
+          "mentors_registered": 850,
+          "students_mentored_annually": 2000,
+          "success_stories": "70% mentored students receive job offers above average package"
+        },
+        "alumni_scholarship_fund": {
+          "corpus": "₹5 crores",
+          "scholarships_awarded_annually": 150,
+          "scholarship_amount": "₹50,000 - ₹2,00,000 per student"
+        },
+        "startup_support": {
+          "incubation_fund": "₹2 crores",
+          "startups_funded": 25,
+          "successful_exits": 8,
+          "job_creation": "500+ jobs created by alumni startups"
+        }
+      }
+    },
+    "career_services": {
+      "career_counseling": {
+        "career_counselors": 4,
+        "sessions_conducted_annually": 1500,
+        "career_assessment_tools": ["Myers-Briggs", "DISC", "StrengthsFinder"],
+        "success_rate": "90% students report clarity in career goals after counseling"
+      },
+      "resume_building_services": {
+        "professional_resume_writers": 6,
+        "resumes_reviewed_annually": 3000,
+        "resume_formats": ["ATS-friendly", "Creative", "Technical", "International"],
+        "success_rate": "Resume-reviewed students get 40% more interview calls"
+      },
+      "interview_preparation": {
+        "mock_interviews_conducted": 2500,
+        "interview_panels": ["Technical experts", "HR professionals", "Alumni"],
+        "success_rate": "85% students crack interviews in first 3 attempts",
+        "video_interview_training": "Available for remote interview preparation"
+      },
+      "networking_events": [
+        {
+          "event": "Annual Alumni Meet",
+          "attendance": 1200,
+          "job_offers_generated": 150,
+          "networking_sessions": "Speed networking with 200+ professionals"
+        },
+        {
+          "event": "Industry Connect Summit",
+          "frequency": "Quarterly",
+          "companies_participating": 50,
+          "student_participation": 800
+        }
+      ]
+    },
+    "placement_process": {
+      "registration_process": {
+        "eligibility_criteria": {
+          "minimum_cgpa": "6.0 for most companies",
+          "no_active_backlogs": "Mandatory for tier-1 companies",
+          "attendance": "Minimum 75% required"
+        },
+        "registration_timeline": "August - September (Final year)",
+        "documents_required": [
+          "Updated resume",
+          "Academic transcripts",
+          "Project reports",
+          "Certificates of achievements",
+          "No objection certificate"
+        ]
+      },
+      "selection_process": {
+        "typical_rounds": [
+          "Online aptitude test",
+          "Technical interview",
+          "HR interview",
+          "Group discussion (for some companies)"
+        ],
+        "duration": "1-3 days per company",
+        "results_timeline": "Within 1 week of final interview"
+      },
+      "placement_rules": {
+        "dream_offers": "Packages above ₹15 lakhs - students can apply to multiple companies",
+        "super_dream_offers": "Packages above ₹25 lakhs - limited to 2 attempts",
+        "regular_offers": "Packages below ₹15 lakhs - once placed, cannot sit for other companies",
+        "higher_studies": "Students can opt out of placements for higher studies"
+      }
+    }
+  }
+}
