@@ -1,0 +1,549 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Infrastructure metrics pending onsite verification & 2025 procurement logs.",
+    "pending_verification": [
+      "laboratory_facilities.computer_science_labs.hardware (refresh for 2025 refresh cycle)",
+      "it_infrastructure.bandwidth (confirm any upgrade to 2 Gbps)",
+      "sports_facilities swimming_pool schedule",
+      "utilities.solar_power capacity expansion plans"
+    ]
+  },
+  "infrastructure_details": {
+    "academic_buildings": {
+      "main_academic_complex": {
+        "name": "Dr. Kalasalingam Academic Block",
+        "floors": 5,
+        "total_area": "45,000 sq ft",
+        "lecture_halls": [
+          {
+            "hall_name": "Seminar Hall A",
+            "capacity": 200,
+            "facilities": ["Projector", "Audio System", "Air Conditioning", "WiFi"],
+            "floor": "Ground Floor",
+            "room_number": "G-101"
+          },
+          {
+            "hall_name": "Lecture Hall B",
+            "capacity": 120,
+            "facilities": ["Smart Board", "Audio System", "Air Conditioning", "WiFi"],
+            "floor": "First Floor",
+            "room_number": "F-201"
+          },
+          {
+            "hall_name": "Conference Room C",
+            "capacity": 80,
+            "facilities": ["Video Conferencing", "Projector", "Audio System", "WiFi"],
+            "floor": "Second Floor",
+            "room_number": "S-301"
+          }
+        ],
+        "classrooms": [
+          {
+            "room_number": "G-102 to G-115",
+            "capacity": 60,
+            "count": 14,
+            "floor": "Ground Floor"
+          },
+          {
+            "room_number": "F-202 to F-220",
+            "capacity": 60,
+            "count": 19,
+            "floor": "First Floor"
+          },
+          {
+            "room_number": "S-302 to S-325",
+            "capacity": 60,
+            "count": 24,
+            "floor": "Second Floor"
+          }
+        ]
+      },
+      "computing_block": {
+        "name": "School of Computing Building",
+        "floors": 4,
+        "total_area": "35,000 sq ft",
+        "computer_labs": 12,
+        "research_labs": 6,
+        "faculty_offices": 45,
+        "seminar_halls": 3
+      },
+      "engineering_block": {
+        "name": "Engineering Complex",
+        "floors": 6,
+        "total_area": "60,000 sq ft",
+        "workshops": 8,
+        "laboratories": 25,
+        "drawing_halls": 4,
+        "faculty_offices": 60
+      }
+    },
+    "laboratory_facilities": {
+      "computer_science_labs": [
+        {
+          "lab_name": "Programming Laboratory",
+          "room_number": "CB-201",
+          "capacity": 60,
+          "systems": 60,
+          "software": ["Visual Studio", "Eclipse", "NetBeans", "Python IDLE", "R Studio"],
+          "hardware": "Intel i5 8th Gen, 8GB RAM, 1TB HDD",
+          "operating_system": "Windows 10, Ubuntu 20.04"
+        },
+        {
+          "lab_name": "Data Structures Laboratory",
+          "room_number": "CB-202",
+          "capacity": 60,
+          "systems": 60,
+          "software": ["Code::Blocks", "Dev C++", "GCC Compiler", "Turbo C++"],
+          "hardware": "Intel i5 8th Gen, 8GB RAM, 1TB HDD"
+        },
+        {
+          "lab_name": "Database Management Laboratory",
+          "room_number": "CB-203",
+          "capacity": 40,
+          "systems": 40,
+          "software": ["MySQL", "Oracle 11g", "PostgreSQL", "MongoDB", "SQL Server"],
+          "hardware": "Intel i7 9th Gen, 16GB RAM, 1TB SSD"
+        },
+        {
+          "lab_name": "Network Laboratory",
+          "room_number": "CB-204",
+          "capacity": 30,
+          "systems": 30,
+          "equipment": ["Cisco Routers", "Cisco Switches", "Network Cables", "Crimping Tools"],
+          "software": ["Cisco Packet Tracer", "Wireshark", "NS2", "GNS3"]
+        },
+        {
+          "lab_name": "AI/ML Laboratory",
+          "room_number": "CB-301",
+          "capacity": 50,
+          "systems": 50,
+          "software": ["Python", "Jupyter Notebook", "TensorFlow", "Keras", "Scikit-learn", "OpenCV"],
+          "hardware": "Intel i7 10th Gen, 16GB RAM, 2TB SSD, NVIDIA GTX 1650"
+        },
+        {
+          "lab_name": "Mobile App Development Lab",
+          "room_number": "CB-302",
+          "capacity": 40,
+          "systems": 40,
+          "software": ["Android Studio", "Xcode", "Flutter", "React Native", "Xamarin"],
+          "hardware": "Intel i7 9th Gen, 16GB RAM, 1TB SSD"
+        }
+      ],
+      "electronics_labs": [
+        {
+          "lab_name": "Basic Electronics Laboratory",
+          "room_number": "EB-101",
+          "capacity": 30,
+          "equipment": ["Digital Multimeters", "Function Generators", "Oscilloscopes", "Power Supplies", "Breadboards"],
+          "components": ["Resistors", "Capacitors", "Inductors", "Diodes", "Transistors"]
+        },
+        {
+          "lab_name": "Digital Electronics Laboratory",
+          "room_number": "EB-102",
+          "capacity": 30,
+          "equipment": ["Logic Analyzers", "IC Testers", "FPGA Boards", "Microcontroller Kits"],
+          "software": ["Quartus Prime", "Vivado", "ModelSim", "Proteus"]
+        },
+        {
+          "lab_name": "Communication Systems Lab",
+          "room_number": "EB-201",
+          "capacity": 25,
+          "equipment": ["Spectrum Analyzers", "Signal Generators", "Antenna Analyzers", "Network Analyzers"],
+          "specialized_equipment": ["RF Test Bench", "Satellite Communication Trainer", "Optical Fiber Kit"]
+        },
+        {
+          "lab_name": "VLSI Design Laboratory",
+          "room_number": "EB-202",
+          "capacity": 40,
+          "systems": 40,
+          "software": ["Cadence", "Synopsis", "Mentor Graphics", "Magic", "Ngspice"],
+          "hardware": "Intel i7 10th Gen, 32GB RAM, 2TB SSD"
+        }
+      ],
+      "mechanical_labs": [
+        {
+          "lab_name": "Manufacturing Technology Lab",
+          "room_number": "MB-101",
+          "area": "2000 sq ft",
+          "equipment": ["Lathe Machines", "Milling Machines", "Drilling Machines", "Grinding Machines", "CNC Machines"],
+          "capacity": 25
+        },
+        {
+          "lab_name": "Fluid Mechanics Laboratory",
+          "room_number": "MB-102",
+          "area": "1500 sq ft",
+          "equipment": ["Flow Measurement Apparatus", "Pumps", "Turbines", "Pipe Flow Setup", "Orifice Meter"],
+          "capacity": 30
+        },
+        {
+          "lab_name": "Heat Transfer Laboratory",
+          "room_number": "MB-201",
+          "area": "1800 sq ft",
+          "equipment": ["Heat Exchangers", "Thermal Conductivity Apparatus", "Boiling Heat Transfer Setup", "Radiation Setup"],
+          "capacity": 25
+        },
+        {
+          "lab_name": "CAD/CAM Laboratory",
+          "room_number": "MB-202",
+          "capacity": 40,
+          "systems": 40,
+          "software": ["SolidWorks", "AutoCAD", "CATIA", "Ansys", "Pro/ENGINEER", "Mastercam"],
+          "hardware": "Intel i7 9th Gen, 16GB RAM, 1TB SSD, Quadro Graphics"
+        }
+      ],
+      "civil_labs": [
+        {
+          "lab_name": "Materials Testing Laboratory",
+          "room_number": "CL-101",
+          "area": "2500 sq ft",
+          "equipment": ["Universal Testing Machine", "Compression Testing Machine", "Impact Testing Machine", "Hardness Tester"],
+          "capacity": 20
+        },
+        {
+          "lab_name": "Concrete Technology Lab",
+          "room_number": "CL-102",
+          "area": "2000 sq ft",
+          "equipment": ["Concrete Mixer", "Vibrating Table", "Slump Test Apparatus", "Compaction Factor Apparatus"],
+          "capacity": 25
+        },
+        {
+          "lab_name": "Soil Mechanics Laboratory",
+          "room_number": "CL-201",
+          "area": "1800 sq ft",
+          "equipment": ["Triaxial Test Apparatus", "Direct Shear Test", "Consolidation Test", "Proctor Test"],
+          "capacity": 20
+        },
+        {
+          "lab_name": "Surveying Laboratory",
+          "room_number": "CL-202",
+          "equipment": ["Total Station", "Theodolite", "Level Instruments", "GPS Equipment", "Plane Table"],
+          "field_area": "5 acres",
+          "capacity": 30
+        }
+      ]
+    },
+    "library_facilities": {
+      "central_library": {
+        "name": "Dr. A. P. J. Abdul Kalam Central Library",
+        "floors": 4,
+        "total_area": "25,000 sq ft",
+        "seating_capacity": 800,
+        "collection_details": {
+          "total_books": 85000,
+          "reference_books": 12000,
+          "textbooks": 45000,
+          "journals": 350,
+          "magazines": 75,
+          "newspapers": 25,
+          "thesis_dissertations": 2500,
+          "cds_dvds": 1200
+        },
+        "digital_resources": {
+          "e_books": 15000,
+          "e_journals": 8500,
+          "databases": ["IEEE Xplore", "ACM Digital Library", "SpringerLink", "ScienceDirect", "Scopus"],
+          "digital_library_software": "DSpace"
+        },
+        "facilities": [
+          "Reading Halls",
+          "Reference Section",
+          "Periodical Section",
+          "Digital Library",
+          "Internet Browsing Center",
+          "Photocopying Facility",
+          "Book Bank Facility",
+          "Discussion Rooms",
+          "Audio-Visual Room"
+        ],
+        "timings": {
+          "weekdays": "8:00 AM - 10:00 PM",
+          "saturday": "9:00 AM - 7:00 PM",
+          "sunday": "10:00 AM - 6:00 PM"
+        },
+        "library_staff": {
+          "chief_librarian": "Dr. S. Ramanathan",
+          "assistant_librarians": 4,
+          "library_assistants": 8,
+          "supporting_staff": 6
+        }
+      },
+      "departmental_libraries": [
+        {
+          "department": "Computer Science",
+          "location": "CB-401",
+          "books": 2500,
+          "journals": 25,
+          "seating": 40
+        },
+        {
+          "department": "Electronics",
+          "location": "EB-401",
+          "books": 2200,
+          "journals": 20,
+          "seating": 35
+        },
+        {
+          "department": "Mechanical",
+          "location": "MB-401",
+          "books": 2800,
+          "journals": 30,
+          "seating": 45
+        }
+      ]
+    },
+    "it_infrastructure": {
+      "campus_network": {
+        "bandwidth": "1 Gbps",
+        "internet_provider": "Bharti Airtel, BSNL (Redundant)",
+        "wifi_coverage": "100% campus coverage",
+        "wifi_ssid": ["KARE_Students", "KARE_Faculty", "KARE_Guest"],
+        "network_points": 5000,
+        "servers": 15,
+        "ups_backup": "2 hours campus-wide"
+      },
+      "computer_centers": [
+        {
+          "name": "Central Computing Center",
+          "location": "Ground Floor, Library Building",
+          "systems": 100,
+          "operating_hours": "6:00 AM - 10:00 PM",
+          "software": ["Microsoft Office", "MATLAB", "R", "SPSS", "Adobe Creative Suite"]
+        },
+        {
+          "name": "24x7 Computing Lab",
+          "location": "CB-Ground Floor",
+          "systems": 50,
+          "operating_hours": "24x7",
+          "access": "Student ID card required"
+        }
+      ],
+      "online_platforms": {
+        "lms": "Moodle LMS",
+        "erp_system": "KARE ERP Portal",
+        "digital_library": "Remote Access Available",
+        "email_service": "Microsoft Office 365",
+        "video_conferencing": "Microsoft Teams, Zoom"
+      },
+      "technical_support": {
+        "help_desk": "IT Support Center - Ground Floor, Admin Block",
+        "support_hours": "9:00 AM - 6:00 PM (Weekdays)",
+        "emergency_support": "24x7 for critical issues",
+        "contact": "itsupport@kare.ac.in, +91-4563-289100"
+      }
+    },
+    "sports_facilities": {
+      "indoor_facilities": {
+        "main_gymnasium": {
+          "area": "8000 sq ft",
+          "facilities": ["Basketball Court", "Volleyball Court", "Badminton Courts (4)", "Table Tennis Tables (8)"],
+          "equipment_room": "Available with sports equipment",
+          "changing_rooms": "Separate for boys and girls",
+          "shower_facilities": "Available"
+        },
+        "fitness_center": {
+          "area": "3000 sq ft",
+          "equipment": ["Treadmills (10)", "Exercise Bikes (8)", "Weight Training Equipment", "Cross Trainers (6)"],
+          "timing": "6:00 AM - 9:00 PM",
+          "trainer": "Professional fitness trainer available"
+        },
+        "indoor_games_room": {
+          "area": "1500 sq ft",
+          "facilities": ["Chess", "Carrom", "Table Tennis", "Pool Table"],
+          "timing": "9:00 AM - 9:00 PM"
+        }
+      },
+      "outdoor_facilities": {
+        "cricket_ground": {
+          "type": "Full-size cricket ground",
+          "area": "2.5 acres",
+          "facilities": ["Pitch", "Pavilion", "Practice Nets (6)", "Flood Lights"]
+        },
+        "football_ground": {
+          "type": "FIFA standard football field",
+          "area": "1.8 acres",
+          "surface": "Natural grass",
+          "facilities": ["Goal Posts", "Spectator Stand", "Flood Lights"]
+        },
+        "tennis_courts": {
+          "count": 2,
+          "surface": "Synthetic hard court",
+          "facilities": ["Net", "Seating Area", "Lighting"]
+        },
+        "basketball_courts": {
+          "count": 3,
+          "surface": "Concrete with synthetic flooring",
+          "facilities": ["Professional hoops", "Spectator seating"]
+        },
+        "volleyball_courts": {
+          "count": 2,
+          "surface": "Sand court",
+          "facilities": ["Professional nets", "Boundary marking"]
+        },
+        "athletics_track": {
+          "type": "400m synthetic track",
+          "lanes": 8,
+          "field_events": ["Long Jump", "High Jump", "Shot Put", "Javelin Throw", "Discus Throw"]
+        },
+        "swimming_pool": {
+          "type": "Semi-Olympic size pool",
+          "dimensions": "25m x 15m",
+          "depth": "1.2m to 3m",
+          "facilities": ["Changing rooms", "Shower area", "Poolside seating"],
+          "timing": "6:00 AM - 8:00 AM, 4:00 PM - 7:00 PM",
+          "lifeguard": "Professional lifeguard on duty"
+        }
+      },
+      "sports_equipment": {
+        "available_sports": [
+          "Cricket", "Football", "Basketball", "Volleyball", "Tennis", "Badminton",
+          "Table Tennis", "Chess", "Carrom", "Swimming", "Athletics", "Weightlifting"
+        ],
+        "equipment_issue": {
+          "timing": "4:00 PM - 6:00 PM (Weekdays), 9:00 AM - 5:00 PM (Weekends)",
+          "location": "Sports Equipment Room, Main Gymnasium",
+          "requirement": "Student ID card mandatory"
+        }
+      }
+    },
+    "medical_facilities": {
+      "campus_health_center": {
+        "name": "KARE Health Center",
+        "location": "Near Main Gate",
+        "area": "3000 sq ft",
+        "facilities": [
+          "General Medicine",
+          "Emergency Care",
+          "First Aid",
+          "Basic Pathology Tests",
+          "Pharmacy",
+          "Dental Care",
+          "Eye Check-up"
+        ],
+        "staff": {
+          "medical_officer": "Dr. Ravi Kumar (MBBS, MD)",
+          "nurses": 3,
+          "pharmacist": 1,
+          "supporting_staff": 2
+        },
+        "timing": {
+          "weekdays": "8:00 AM - 8:00 PM",
+          "saturday": "9:00 AM - 2:00 PM",
+          "emergency": "24x7 on-call doctor available"
+        },
+        "ambulance_service": {
+          "availability": "24x7",
+          "vehicles": 2,
+          "emergency_contact": "+91-4563-289911"
+        }
+      },
+      "tie_ups": [
+        {
+          "hospital_name": "Apollo Hospital, Madurai",
+          "distance": "15 km",
+          "services": "Specialized treatments, Emergency care",
+          "transport": "Ambulance service available"
+        },
+        {
+          "hospital_name": "Government Hospital, Virudhunagar",
+          "distance": "8 km",
+          "services": "General healthcare, Emergency services"
+        }
+      ],
+      "health_insurance": {
+        "provider": "New India Assurance",
+        "coverage": "₹1 lakh per student per year",
+        "premium": "Included in fees",
+        "coverage_includes": ["Hospitalization", "Accident cover", "Emergency treatment"]
+      }
+    },
+    "transportation": {
+      "bus_service": {
+        "total_buses": 45,
+        "routes": 25,
+        "coverage_area": "100 km radius",
+        "major_routes": [
+          {
+            "route_number": "K1",
+            "route": "Virudhunagar - Sivakasi - KARE",
+            "distance": "25 km",
+            "timing": "6:30 AM, 7:00 AM, 7:30 AM (Morning), 5:00 PM, 6:00 PM, 7:00 PM (Evening)"
+          },
+          {
+            "route_number": "K2",
+            "route": "Madurai - Thirumangalam - KARE",
+            "distance": "45 km",
+            "timing": "6:00 AM, 7:00 AM (Morning), 5:30 PM, 6:30 PM (Evening)"
+          },
+          {
+            "route_number": "K3",
+            "route": "Rajapalayam - Srivilliputhur - KARE",
+            "distance": "35 km",
+            "timing": "6:15 AM, 7:15 AM (Morning), 5:15 PM, 6:15 PM (Evening)"
+          },
+          {
+            "route_number": "K4",
+            "route": "Tirunelveli - Sankarankovil - KARE",
+            "distance": "55 km",
+            "timing": "5:30 AM, 6:30 AM (Morning), 5:45 PM, 6:45 PM (Evening)"
+          }
+        ],
+        "bus_fees": {
+          "per_km_rate": "₹2.5 per km per month",
+          "minimum_charge": "₹1500 per month",
+          "maximum_charge": "₹4500 per month"
+        }
+      },
+      "parking_facilities": {
+        "two_wheeler_parking": {
+          "capacity": 3000,
+          "covered_parking": "50%",
+          "security": "CCTV surveillance, Security guards"
+        },
+        "four_wheeler_parking": {
+          "capacity": 500,
+          "faculty_parking": 200,
+          "visitor_parking": 100,
+          "student_parking": 200
+        },
+        "parking_fees": {
+          "two_wheeler": "₹500 per semester",
+          "four_wheeler": "₹1500 per semester",
+          "visitor_parking": "₹20 per day"
+        }
+      },
+      "nearby_transport": {
+        "railway_station": "Virudhunagar Junction - 12 km",
+        "airport": "Madurai Airport - 65 km",
+        "bus_stand": "Virudhunagar Bus Stand - 12 km",
+        "auto_rickshaw": "Available from Krishnankoil - 2 km"
+      }
+    },
+    "utilities": {
+      "power_supply": {
+        "main_connection": "TNEB - 11 KV connection",
+        "backup_generators": 4,
+        "total_backup_capacity": "2 MW",
+        "ups_systems": "Installed in all critical areas",
+        "solar_power": {
+          "capacity": "500 KW",
+          "panels": 2000,
+          "area_covered": "5 acres"
+        }
+      },
+      "water_supply": {
+        "sources": ["Borewells (8)", "Corporation water supply", "Rainwater harvesting"],
+        "storage_capacity": "10 lakh liters",
+        "treatment_plant": "RO water treatment plant - 50,000 liters/day",
+        "distribution": "Overhead tanks and underground sumps"
+      },
+      "waste_management": {
+        "segregation": "Wet and dry waste separation",
+        "composting": "Organic waste composting unit",
+        "recycling": "Paper and plastic recycling",
+        "biogas_plant": "Biogas generation from food waste"
+      }
+    }
+  }
+}
