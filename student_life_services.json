@@ -1,0 +1,746 @@
+{
+  "student_life_services": {
+    "student_clubs_societies": {
+      "technical_clubs": [
+        {
+          "club_name": "IEEE Student Branch",
+          "established": "2008",
+          "membership": 450,
+          "faculty_advisor": "Dr. Rajesh Khanna",
+          "student_coordinator": "Arjun Sharma (Final Year ECE)",
+          "activities": [
+            "Technical workshops",
+            "Paper presentations",
+            "Project competitions",
+            "Industry expert lectures",
+            "IEEE certification courses"
+          ],
+          "annual_events": ["TechFest", "IEEE Day Celebrations", "Hackathon"],
+          "membership_fee": "₹500 per year",
+          "meeting_schedule": "Every Saturday 4:00 PM",
+          "contact": "ieee@kare.ac.in"
+        },
+        {
+          "club_name": "Computer Society of India (CSI)",
+          "established": "2010",
+          "membership": 380,
+          "faculty_advisor": "Dr. Priya Malhotra",
+          "student_coordinator": "Sneha Patel (Final Year CSE)",
+          "activities": [
+            "Coding competitions",
+            "Web development workshops",
+            "AI/ML seminars",
+            "Open source contributions",
+            "Tech talks"
+          ],
+          "annual_events": ["CodeFest", "AI Summit", "Open Source Day"],
+          "membership_fee": "₹300 per year",
+          "meeting_schedule": "Bi-weekly Fridays 5:00 PM",
+          "contact": "csi@kare.ac.in"
+        },
+        {
+          "club_name": "Robotics Club",
+          "established": "2012",
+          "membership": 280,
+          "faculty_advisor": "Dr. Karthik Raj",
+          "student_coordinator": "Rahul Kumar (Third Year ECE)",
+          "activities": [
+            "Robot building workshops",
+            "Arduino programming",
+            "Drone development",
+            "Industrial automation projects",
+            "Competition participation"
+          ],
+          "annual_events": ["Robowar", "Line Following Robot Competition", "Drone Racing"],
+          "membership_fee": "₹800 per year",
+          "meeting_schedule": "Every Sunday 10:00 AM",
+          "lab_facility": "Robotics Lab - EB-305",
+          "contact": "robotics@kare.ac.in"
+        },
+        {
+          "club_name": "Mechanical Engineering Society",
+          "established": "2009",
+          "membership": 320,
+          "faculty_advisor": "Dr. Ganesh Iyer",
+          "activities": [
+            "CAD design competitions",
+            "Manufacturing workshops",
+            "Industrial visits",
+            "Project exhibitions",
+            "Guest lectures"
+          ],
+          "annual_events": ["MechFest", "Design Challenge", "Innovation Expo"],
+          "contact": "mes@kare.ac.in"
+        }
+      ],
+      "cultural_clubs": [
+        {
+          "club_name": "Fine Arts Club",
+          "established": "2007",
+          "membership": 520,
+          "faculty_advisor": "Prof. Meera Devi",
+          "student_coordinator": "Kavya Nair (Second Year MBA)",
+          "sections": [
+            "Painting and Sketching",
+            "Photography",
+            "Crafts and Design",
+            "Digital Art",
+            "Sculpture"
+          ],
+          "activities": [
+            "Art exhibitions",
+            "Photography contests",
+            "Craft workshops",
+            "Cultural decorations",
+            "Portrait sessions"
+          ],
+          "annual_events": ["Art Exhibition", "Photography Contest", "Craft Fair"],
+          "facilities": "Art Studio - Cultural Block",
+          "membership_fee": "₹400 per year",
+          "contact": "finearts@kare.ac.in"
+        },
+        {
+          "club_name": "Music Club",
+          "established": "2006",
+          "membership": 420,
+          "faculty_advisor": "Prof. Raghavan Pillai",
+          "student_coordinator": "Aditya Singh (Final Year IT)",
+          "sections": [
+            "Vocal (Classical and Western)",
+            "Instrumental (Indian and Western)",
+            "Band performances",
+            "DJ and Sound mixing"
+          ],
+          "activities": [
+            "Music competitions",
+            "Band performances",
+            "Music workshops",
+            "Recording sessions",
+            "Live concerts"
+          ],
+          "annual_events": ["Music Fest", "Battle of Bands", "Classical Night"],
+          "facilities": "Music Room with instruments",
+          "membership_fee": "₹600 per year",
+          "contact": "music@kare.ac.in"
+        },
+        {
+          "club_name": "Dance Club",
+          "established": "2008",
+          "membership": 380,
+          "faculty_advisor": "Dr. Shalini Devi",
+          "student_coordinator": "Priya Sharma (Third Year CSE)",
+          "dance_forms": [
+            "Classical Dance (Bharatanatyam, Kathak)",
+            "Folk Dance",
+            "Western Dance",
+            "Hip-Hop",
+            "Contemporary"
+          ],
+          "activities": [
+            "Dance competitions",
+            "Cultural performances",
+            "Dance workshops",
+            "Inter-college competitions",
+            "Flash mobs"
+          ],
+          "annual_events": ["Dance Fest", "Classical Dance Competition", "Street Dance Battle"],
+          "facilities": "Dance Hall with mirrors and sound system",
+          "membership_fee": "₹500 per year",
+          "contact": "dance@kare.ac.in"
+        },
+        {
+          "club_name": "Drama and Theatre Club",
+          "established": "2009",
+          "membership": 250,
+          "faculty_advisor": "Prof. Krishna Murthy",
+          "activities": [
+            "Stage plays",
+            "Street plays",
+            "Mime performances",
+            "Script writing",
+            "Acting workshops"
+          ],
+          "annual_events": ["Annual Play", "Street Play Competition", "Drama Festival"],
+          "facilities": "Auditorium access for rehearsals",
+          "contact": "drama@kare.ac.in"
+        }
+      ],
+      "sports_clubs": [
+        {
+          "club_name": "Cricket Club",
+          "membership": 180,
+          "coach": "Mr. Ravi Chandran (Former Ranji Player)",
+          "achievements": [
+            "Inter-University Champions 2023",
+            "State Level Tournament Runners-up 2024"
+          ],
+          "facilities": "Cricket ground, practice nets, equipment room",
+          "practice_schedule": "5:30 AM - 7:00 AM, 5:00 PM - 7:00 PM",
+          "team_selection": "Annual trials in July",
+          "contact": "cricket@kare.ac.in"
+        },
+        {
+          "club_name": "Football Club",
+          "membership": 150,
+          "coach": "Mr. Suresh Kumar (UEFA C License)",
+          "achievements": [
+            "Inter-College Champions 2024",
+            "University Level Semi-finalists 2023"
+          ],
+          "facilities": "Full-size football ground with flood lights",
+          "practice_schedule": "6:00 AM - 7:30 AM, 4:30 PM - 6:00 PM",
+          "contact": "football@kare.ac.in"
+        },
+        {
+          "club_name": "Basketball Club",
+          "membership": 120,
+          "coach": "Ms. Lakshmi Priya",
+          "achievements": [
+            "State Championships Participants 2024",
+            "Inter-University Third Place 2023"
+          ],
+          "facilities": "Indoor and outdoor basketball courts",
+          "practice_schedule": "6:00 AM - 8:00 AM, 5:00 PM - 7:00 PM",
+          "contact": "basketball@kare.ac.in"
+        },
+        {
+          "club_name": "Swimming Club",
+          "membership": 200,
+          "coach": "Mr. Arun Kumar (Swimming Instructor)",
+          "facilities": "Semi-Olympic swimming pool",
+          "practice_schedule": "6:00 AM - 8:00 AM, 4:00 PM - 6:00 PM",
+          "membership_fee": "₹1000 per semester",
+          "contact": "swimming@kare.ac.in"
+        }
+      ],
+      "social_service_clubs": [
+        {
+          "club_name": "National Service Scheme (NSS)",
+          "established": "2005",
+          "membership": 600,
+          "program_officer": "Dr. Venkat Rao",
+          "student_coordinator": "Deepika Rao (Final Year Civil)",
+          "activities": [
+            "Rural development programs",
+            "Blood donation camps",
+            "Tree plantation drives",
+            "Cleanliness campaigns",
+            "Adult literacy programs",
+            "Disaster relief activities"
+          ],
+          "annual_events": ["NSS Day", "Special Camp (7 days)", "Community Service Week"],
+          "certificate": "NSS certificate awarded after 240 hours of service",
+          "benefits": "Extra credits, certificate, priority in placements",
+          "contact": "nss@kare.ac.in"
+        },
+        {
+          "club_name": "Red Cross Society",
+          "membership": 180,
+          "faculty_advisor": "Dr. Madhavi Latha",
+          "activities": [
+            "First aid training",
+            "Blood donation campaigns",
+            "Health awareness programs",
+            "Emergency response training",
+            "Community health services"
+          ],
+          "certification": "First aid certification provided",
+          "contact": "redcross@kare.ac.in"
+        },
+        {
+          "club_name": "Eco Club",
+          "membership": 220,
+          "faculty_advisor": "Dr. Preethi Nair",
+          "activities": [
+            "Environmental awareness campaigns",
+            "Waste management initiatives",
+            "Green campus projects",
+            "Renewable energy promotions",
+            "Nature photography"
+          ],
+          "projects": ["Solar panel installation", "Rainwater harvesting", "Organic farming"],
+          "contact": "ecoclub@kare.ac.in"
+        }
+      ]
+    },
+    "annual_events_festivals": {
+      "cultural_fest": {
+        "name": "KALASALINGAM CULTURAL FEST (KCF)",
+        "duration": "3 days",
+        "month": "February",
+        "expected_participation": "5000+ students from 50+ colleges",
+        "events": [
+          {
+            "category": "Music",
+            "events": ["Solo singing", "Group singing", "Battle of Bands", "Classical music", "DJ Night"],
+            "prize_money": "₹1,50,000"
+          },
+          {
+            "category": "Dance",
+            "events": ["Solo dance", "Group dance", "Folk dance", "Western dance", "Dance drama"],
+            "prize_money": "₹1,20,000"
+          },
+          {
+            "category": "Drama",
+            "events": ["Stage play", "Street play", "Mono acting", "Mime", "Stand-up comedy"],
+            "prize_money": "₹80,000"
+          },
+          {
+            "category": "Fine Arts",
+            "events": ["Painting", "Photography", "Craft making", "Face painting", "Rangoli"],
+            "prize_money": "₹60,000"
+          },
+          {
+            "category": "Literary",
+            "events": ["Debate", "Essay writing", "Poetry", "Quiz", "Storytelling"],
+            "prize_money": "₹40,000"
+          }
+        ],
+        "celebrity_guests": "Film industry celebrities, music directors, renowned artists",
+        "registration_fee": "₹500 per person",
+        "accommodation": "Provided for outstation participants",
+        "coordinator": "Dr. Krishna Murthy",
+        "contact": "kcf@kare.ac.in"
+      },
+      "technical_fest": {
+        "name": "TECHNOVATION",
+        "duration": "2 days",
+        "month": "September",
+        "expected_participation": "3000+ students from 40+ colleges",
+        "events": [
+          {
+            "category": "Coding",
+            "events": ["Competitive programming", "Hackathon", "Web development", "App development", "AI/ML competition"],
+            "prize_money": "₹2,00,000"
+          },
+          {
+            "category": "Robotics",
+            "events": ["Robowar", "Line following", "Obstacle race", "Drone racing", "Robot soccer"],
+            "prize_money": "₹1,50,000"
+          },
+          {
+            "category": "Engineering Design",
+            "events": ["CAD design", "Bridge building", "Paper presentation", "Poster presentation", "Innovation showcase"],
+            "prize_money": "₹1,00,000"
+          },
+          {
+            "category": "General",
+            "events": ["Technical quiz", "Debugging", "Gaming", "Photography", "Technical writing"],
+            "prize_money": "₹80,000"
+          }
+        ],
+        "industry_participation": "Tech companies showcase and recruitment",
+        "workshops": "Industry expert workshops on latest technologies",
+        "coordinator": "Dr. Deepak Kumar",
+        "contact": "technovation@kare.ac.in"
+      },
+      "sports_fest": {
+        "name": "SPORTOMANIA",
+        "duration": "5 days",
+        "month": "January",
+        "events": [
+          {
+            "category": "Outdoor Sports",
+            "events": ["Cricket", "Football", "Basketball", "Volleyball", "Tennis", "Athletics"],
+            "participation": "Inter-college and intra-college"
+          },
+          {
+            "category": "Indoor Sports",
+            "events": ["Table Tennis", "Badminton", "Chess", "Carrom", "Swimming"],
+            "facilities": "Full indoor sports complex"
+          },
+          {
+            "category": "Adventure Sports",
+            "events": ["Rock climbing", "Trekking", "Cycling", "Marathon"],
+            "special_arrangements": "Professional safety equipment"
+          }
+        ],
+        "prizes": "Trophies, medals, and cash prizes worth ₹5,00,000",
+        "coordinator": "Physical Education Department",
+        "contact": "sports@kare.ac.in"
+      },
+      "other_annual_events": [
+        {
+          "event": "Freshers' Day",
+          "month": "August",
+          "description": "Welcome party for new students",
+          "activities": ["Cultural performances", "Ice-breaking games", "Talent show", "Dinner"]
+        },
+        {
+          "event": "Farewell Day",
+          "month": "April",
+          "description": "Send-off for graduating students",
+          "activities": ["Award ceremony", "Cultural programs", "Memory sharing", "Formal dinner"]
+        },
+        {
+          "event": "Teachers' Day",
+          "month": "September",
+          "description": "Celebration honoring faculty",
+          "activities": ["Student performances", "Awards for faculty", "Cultural programs"]
+        },
+        {
+          "event": "Annual Day",
+          "month": "March",
+          "description": "College's annual celebration",
+          "activities": ["Award ceremony", "Cultural performances", "Academic achievements presentation"]
+        }
+      ]
+    },
+    "student_support_services": {
+      "counseling_services": {
+        "counseling_center": {
+          "location": "Student Welfare Building, Ground Floor",
+          "staff": [
+            {
+              "name": "Dr. Sunita Rao",
+              "qualification": "Ph.D. in Psychology",
+              "specialization": "Student counseling, Career guidance"
+            },
+            {
+              "name": "Ms. Priya Nair",
+              "qualification": "M.A. in Psychology",
+              "specialization": "Personal counseling, Stress management"
+            }
+          ],
+          "services": [
+            "Personal counseling",
+            "Academic stress management",
+            "Career guidance",
+            "Relationship counseling",
+            "Anxiety and depression support",
+            "Study skills development"
+          ],
+          "timing": "9:00 AM - 5:00 PM (Weekdays)",
+          "appointment": "Walk-in or appointment through student portal",
+          "emergency_contact": "+91-4563-289500",
+          "confidentiality": "All sessions are strictly confidential"
+        }
+      },
+      "career_guidance": {
+        "career_counseling_cell": {
+          "services": [
+            "Career assessment tests",
+            "Industry trend analysis",
+            "Resume building workshops",
+            "Interview preparation",
+            "Higher studies guidance",
+            "Entrepreneurship support"
+          ],
+          "career_counselor": "Mr. Rajesh Gupta (10 years corporate experience)",
+          "timing": "10:00 AM - 4:00 PM (Weekdays)",
+          "workshops": "Weekly career development workshops",
+          "contact": "careers@kare.ac.in"
+        }
+      },
+      "academic_support": {
+        "learning_support_center": {
+          "services": [
+            "Tutoring services",
+            "Study groups coordination",
+            "Learning disability support",
+            "Time management training",
+            "Exam preparation strategies",
+            "Academic writing support"
+          ],
+          "peer_tutoring": "Senior students provide tutoring in various subjects",
+          "remedial_classes": "Additional classes for struggling students",
+          "study_materials": "Past question papers, reference materials, online resources",
+          "contact": "academics@kare.ac.in"
+        }
+      },
+      "financial_support": {
+        "financial_aid_office": {
+          "services": [
+            "Scholarship application assistance",
+            "Education loan guidance",
+            "Emergency financial assistance",
+            "Fee payment plans",
+            "Work-study programs"
+          ],
+          "emergency_fund": "₹5 lakhs corpus for student emergencies",
+          "work_opportunities": "Campus jobs for financially needy students",
+          "loan_assistance": "Tie-ups with banks for education loans",
+          "contact": "financialaid@kare.ac.in"
+        }
+      },
+      "international_student_services": {
+        "international_office": {
+          "services": [
+            "Visa guidance",
+            "Airport pickup arrangements",
+            "Cultural orientation programs",
+            "Local area familiarization",
+            "Banking and documentation help",
+            "Emergency assistance"
+          ],
+          "buddy_program": "Local students assigned as buddies to international students",
+          "cultural_events": "Special events to promote cultural exchange",
+          "contact": "international@kare.ac.in"
+        }
+      }
+    },
+    "campus_safety_security": {
+      "security_measures": {
+        "security_personnel": {
+          "total_guards": 45,
+          "deployment": [
+            "Main gate: 6 guards (24x7)",
+            "Hostel blocks: 14 guards (night duty)",
+            "Academic blocks: 8 guards",
+            "Perimeter patrol: 6 guards",
+            "Emergency response team: 4 guards",
+            "Control room: 3 guards (24x7)"
+          ]
+        },
+        "surveillance_system": {
+          "cctv_cameras": 350,
+          "coverage_areas": [
+            "All entry and exit points",
+            "Hostel common areas",
+            "Academic building corridors",
+            "Parking areas",
+            "Library and laboratories",
+            "Sports facilities"
+          ],
+          "monitoring": "24x7 monitoring from central control room",
+          "recording": "30-day recording backup"
+        },
+        "access_control": {
+          "id_card_system": "RFID enabled student/faculty ID cards",
+          "entry_points": "Controlled access to hostels and labs",
+          "visitor_management": "Digital visitor registration system",
+          "vehicle_registration": "All vehicles must be registered"
+        }
+      },
+      "emergency_services": {
+        "emergency_contacts": [
+          {
+            "service": "Campus Security",
+            "number": "+91-4563-289911",
+            "availability": "24x7"
+          },
+          {
+            "service": "Medical Emergency",
+            "number": "+91-4563-289922",
+            "availability": "24x7"
+          },
+          {
+            "service": "Fire Emergency",
+            "number": "+91-4563-289933",
+            "availability": "24x7"
+          },
+          {
+            "service": "Student Helpline",
+            "number": "+91-4563-289944",
+            "availability": "24x7"
+          }
+        ],
+        "emergency_procedures": {
+          "fire_safety": [
+            "Fire alarms in all buildings",
+            "Fire extinguishers on every floor",
+            "Emergency evacuation routes marked",
+            "Regular fire safety drills",
+            "Trained fire safety team"
+          ],
+          "medical_emergency": [
+            "First aid stations in hostels and academic blocks",
+            "Ambulance on campus 24x7",
+            "Tie-up with nearby hospitals",
+            "Trained medical staff"
+          ],
+          "natural_disasters": [
+            "Earthquake emergency procedures",
+            "Flood evacuation plans",
+            "Emergency shelter arrangements",
+            "Communication systems backup"
+          ]
+        }
+      },
+      "women_safety": {
+        "initiatives": [
+          "Women's cell for grievance redressal",
+          "Self-defense classes",
+          "Women's safety app",
+          "Pink patrol (women security guards)",
+          "Well-lit pathways",
+          "Emergency alarm systems"
+        ],
+        "women_cell": {
+          "chairperson": "Dr. Meera Krishnan",
+          "members": ["Faculty representatives", "Student representatives", "External expert"],
+          "services": [
+            "Harassment complaint handling",
+            "Counseling services",
+            "Legal guidance",
+            "Awareness programs"
+          ],
+          "contact": "womenscell@kare.ac.in",
+          "helpline": "+91-4563-289955"
+        }
+      },
+      "anti_ragging_measures": {
+        "anti_ragging_committee": {
+          "chairman": "Dr. S. Ramasamy (Vice Chancellor)",
+          "members": ["Senior faculty", "Student representatives", "Local police representative", "NGO representative"],
+          "complaint_process": "Online complaint portal, anonymous reporting allowed",
+          "investigation": "Within 24 hours of complaint",
+          "punishment": "Suspension to expulsion based on severity"
+        },
+        "awareness_programs": [
+          "Orientation for new students",
+          "Anti-ragging pledge",
+          "Regular awareness campaigns",
+          "Peer counseling programs"
+        ],
+        "helpline": "+91-4563-289966",
+        "email": "antiragging@kare.ac.in"
+      }
+    },
+    "banking_atm_facilities": {
+      "on_campus_banks": [
+        {
+          "bank_name": "State Bank of India",
+          "location": "Main Campus, Near Admin Block",
+          "services": [
+            "Account opening for students",
+            "Education loans",
+            "Fund transfers",
+            "Fee payment collection",
+            "Forex services for international students"
+          ],
+          "timing": "10:00 AM - 4:00 PM (Mon-Fri), 10:00 AM - 1:00 PM (Sat)",
+          "manager": "Mr. Kumar Swamy",
+          "contact": "+91-4563-289701"
+        },
+        {
+          "bank_name": "HDFC Bank",
+          "location": "Near Hostel Block",
+          "services": [
+            "Student accounts",
+            "Personal loans",
+            "Credit cards",
+            "Online banking",
+            "Mobile banking"
+          ],
+          "timing": "10:00 AM - 4:00 PM (Mon-Fri), 10:00 AM - 1:00 PM (Sat)",
+          "contact": "+91-4563-289702"
+        }
+      ],
+      "atm_facilities": [
+        {
+          "bank": "State Bank of India",
+          "location": "Admin Block",
+          "availability": "24x7",
+          "services": ["Cash withdrawal", "Balance inquiry", "Mini statement", "PIN change"]
+        },
+        {
+          "bank": "HDFC Bank",
+          "location": "Hostel Complex",
+          "availability": "24x7",
+          "services": ["Cash withdrawal", "Balance inquiry", "Mini statement", "Fund transfer"]
+        },
+        {
+          "bank": "ICICI Bank",
+          "location": "Library Building",
+          "availability": "24x7",
+          "services": ["Cash withdrawal", "Balance inquiry", "Deposits"]
+        },
+        {
+          "bank": "Axis Bank",
+          "location": "Food Court",
+          "availability": "24x7",
+          "services": ["Cash withdrawal", "Balance inquiry", "Mini statement"]
+        }
+      ],
+      "online_payment_facilities": {
+        "fee_payment": [
+          "Credit/Debit cards",
+          "Net banking",
+          "UPI payments",
+          "Digital wallets",
+          "NEFT/RTGS"
+        ],
+        "portal": "KARE Student Portal - Online Payment Section",
+        "convenience_fee": "1.5% for credit card payments"
+      }
+    },
+    "food_dining_facilities": {
+      "main_cafeteria": {
+        "name": "KARE Central Cafeteria",
+        "location": "Ground Floor, Student Center",
+        "seating_capacity": 500,
+        "timing": "7:00 AM - 10:00 PM",
+        "cuisine_types": ["South Indian", "North Indian", "Chinese", "Continental", "Snacks", "Beverages"],
+        "payment_methods": ["Cash", "Digital payments", "Student ID card"],
+        "avg_meal_cost": "₹80-150 per meal"
+      },
+      "food_courts": [
+        {
+          "name": "Spice Garden Food Court",
+          "location": "Near Engineering Block",
+          "outlets": 8,
+          "cuisines": ["South Indian", "North Indian", "Chinese", "Pizza", "Burgers", "Juice Bar"],
+          "timing": "8:00 AM - 9:00 PM",
+          "seating": 200
+        },
+        {
+          "name": "Quick Bites",
+          "location": "Hostel Complex",
+          "outlets": 5,
+          "specialties": ["Sandwiches", "Rolls", "Chat items", "Ice cream", "Tea/Coffee"],
+          "timing": "6:00 AM - 11:00 PM",
+          "seating": 100
+        }
+      ],
+      "specialty_restaurants": [
+        {
+          "name": "South Spice Restaurant",
+          "cuisine": "Authentic South Indian",
+          "timing": "11:00 AM - 9:00 PM",
+          "avg_cost": "₹120-200 per meal"
+        },
+        {
+          "name": "Punjabi Dhaba",
+          "cuisine": "North Indian",
+          "timing": "12:00 PM - 10:00 PM",
+          "avg_cost": "₹100-180 per meal"
+        }
+      ],
+      "vendor_stalls": {
+        "street_food": ["Pani puri", "Bhel puri", "Vada pav", "Dosa", "Idli"],
+        "juice_centers": 3,
+        "tea_coffee_stalls": 6,
+        "fruit_vendors": 4,
+        "timing": "9:00 AM - 8:00 PM"
+      }
+    },
+    "shopping_convenience": {
+      "campus_stores": [
+        {
+          "name": "KARE General Store",
+          "location": "Near Main Gate",
+          "products": ["Stationery", "Books", "Photocopying", "Mobile accessories", "Snacks", "Personal care"],
+          "timing": "8:00 AM - 9:00 PM"
+        },
+        {
+          "name": "Book Store",
+          "location": "Library Building",
+          "products": ["Textbooks", "Reference books", "Stationery", "Engineering instruments"],
+          "timing": "9:00 AM - 6:00 PM"
+        },
+        {
+          "name": "Medical Store",
+          "location": "Health Center",
+          "products": ["Medicines", "First aid supplies", "Health supplements"],
+          "timing": "8:00 AM - 8:00 PM"
+        }
+      ],
+      "nearby_shopping": {
+        "distance_from_campus": "2 km to Krishnankoil town",
+        "facilities": ["Grocery stores", "Clothing shops", "Electronics stores", "Restaurants", "Banks"],
+        "transportation": "Auto rickshaw, college shuttle service"
+      }
+    }
+  }
+}
