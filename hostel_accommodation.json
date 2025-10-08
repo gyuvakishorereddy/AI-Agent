@@ -1,0 +1,466 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Hostel tariffs and capacities require confirmation against 2025 accommodation circular & occupancy logs.",
+    "pending_verification": [
+      "monthly_rent amounts vs finance ledger",
+      "wifi speed upgrade proposals",
+      "mess_plan pricing post vendor renegotiation",
+      "security_services staffing count"
+    ]
+  },
+  "hostel_accommodation": {
+    "hostel_overview": {
+      "total_hostels": 14,
+      "boys_hostels": 8,
+      "girls_hostels": 6,
+      "total_capacity": 8500,
+      "current_occupancy": 8200,
+      "hostel_allocation": "First-come, first-served basis",
+      "hostel_committee": {
+        "chief_warden": "Dr. Suresh Kumar",
+        "assistant_wardens": 14,
+        "security_staff": 45
+      }
+    },
+    "boys_hostels": [
+      {
+        "hostel_name": "Kalpana Chawla Boys Hostel",
+        "hostel_code": "BH-01",
+        "floors": 4,
+        "total_rooms": 200,
+        "capacity": 600,
+        "room_types": {
+          "single_occupancy": {
+            "count": 50,
+            "monthly_rent": "₹8,500",
+            "amenities": ["Bed", "Study Table", "Chair", "Wardrobe", "Bookshelf", "Fan", "Tube Light"]
+          },
+          "double_occupancy": {
+            "count": 100,
+            "monthly_rent": "₹6,500",
+            "amenities": ["2 Beds", "2 Study Tables", "2 Chairs", "2 Wardrobes", "Shared Bookshelf", "Fan", "Tube Light"]
+          },
+          "triple_occupancy": {
+            "count": 50,
+            "monthly_rent": "₹5,500",
+            "amenities": ["3 Beds", "3 Study Tables", "3 Chairs", "3 Wardrobes", "Shared Space", "Fan", "Tube Light"]
+          }
+        },
+        "common_facilities": ["Reading Hall", "TV Room", "Gymnasium", "Indoor Games Room", "Laundry", "Water Coolers"],
+        "warden": "Prof. Rajesh Kumar",
+        "contact": "+91-4563-289201"
+      },
+      {
+        "hostel_name": "Dr. APJ Abdul Kalam Boys Hostel",
+        "hostel_code": "BH-02",
+        "floors": 5,
+        "total_rooms": 250,
+        "capacity": 750,
+        "room_types": {
+          "single_occupancy": {
+            "count": 50,
+            "monthly_rent": "₹8,500",
+            "amenities": ["Bed", "Study Table", "Chair", "Wardrobe", "Bookshelf", "Fan", "Tube Light", "Balcony"]
+          },
+          "double_occupancy": {
+            "count": 150,
+            "monthly_rent": "₹6,500",
+            "amenities": ["2 Beds", "2 Study Tables", "2 Chairs", "2 Wardrobes", "Shared Bookshelf", "Fan", "Tube Light"]
+          },
+          "triple_occupancy": {
+            "count": 50,
+            "monthly_rent": "₹5,500",
+            "amenities": ["3 Beds", "3 Study Tables", "3 Chairs", "3 Wardrobes", "Shared Space", "Fan", "Tube Light"]
+          }
+        },
+        "common_facilities": ["Study Hall", "Recreation Room", "Mess Hall", "Water Purifiers", "Generator Backup"],
+        "warden": "Dr. Arjun Patel",
+        "contact": "+91-4563-289202"
+      },
+      {
+        "hostel_name": "Chandrashekhar Azad Boys Hostel",
+        "hostel_code": "BH-03",
+        "floors": 4,
+        "total_rooms": 180,
+        "capacity": 540,
+        "room_types": {
+          "double_occupancy": {
+            "count": 120,
+            "monthly_rent": "₹6,000",
+            "amenities": ["2 Beds", "2 Study Tables", "2 Chairs", "2 Wardrobes", "Fan", "Tube Light"]
+          },
+          "triple_occupancy": {
+            "count": 60,
+            "monthly_rent": "₹5,000",
+            "amenities": ["3 Beds", "3 Study Tables", "3 Chairs", "3 Wardrobes", "Fan", "Tube Light"]
+          }
+        },
+        "common_facilities": ["Library", "Computer Room", "Sports Room", "Mess", "Medical Room"],
+        "warden": "Prof. Vikram Singh",
+        "contact": "+91-4563-289203"
+      }
+    ],
+    "girls_hostels": [
+      {
+        "hostel_name": "Sarojini Naidu Girls Hostel",
+        "hostel_code": "GH-01",
+        "floors": 4,
+        "total_rooms": 220,
+        "capacity": 660,
+        "room_types": {
+          "single_occupancy": {
+            "count": 60,
+            "monthly_rent": "₹8,500",
+            "amenities": ["Bed", "Study Table", "Chair", "Wardrobe", "Dressing Table", "Fan", "Tube Light", "Mirror"]
+          },
+          "double_occupancy": {
+            "count": 120,
+            "monthly_rent": "₹6,500",
+            "amenities": ["2 Beds", "2 Study Tables", "2 Chairs", "2 Wardrobes", "Dressing Table", "Fan", "Tube Light"]
+          },
+          "triple_occupancy": {
+            "count": 40,
+            "monthly_rent": "₹5,500",
+            "amenities": ["3 Beds", "3 Study Tables", "3 Chairs", "3 Wardrobes", "Fan", "Tube Light"]
+          }
+        },
+        "common_facilities": ["Reading Room", "TV Lounge", "Beauty Parlor", "Tailoring Room", "Dance Room", "Prayer Room"],
+        "warden": "Dr. Priya Malhotra",
+        "contact": "+91-4563-289301"
+      },
+      {
+        "hostel_name": "Indira Gandhi Girls Hostel",
+        "hostel_code": "GH-02",
+        "floors": 5,
+        "total_rooms": 280,
+        "capacity": 840,
+        "room_types": {
+          "single_occupancy": {
+            "count": 80,
+            "monthly_rent": "₹8,500",
+            "amenities": ["Bed", "Study Table", "Chair", "Wardrobe", "Dressing Table", "Fan", "Tube Light", "Balcony"]
+          },
+          "double_occupancy": {
+            "count": 150,
+            "monthly_rent": "₹6,500",
+            "amenities": ["2 Beds", "2 Study Tables", "2 Chairs", "2 Wardrobes", "Dressing Table", "Fan", "Tube Light"]
+          },
+          "triple_occupancy": {
+            "count": 50,
+            "monthly_rent": "₹5,500",
+            "amenities": ["3 Beds", "3 Study Tables", "3 Chairs", "3 Wardrobes", "Fan", "Tube Light"]
+          }
+        },
+        "common_facilities": ["Study Hall", "Yoga Room", "Music Room", "Handicrafts Room", "Medical Room"],
+        "warden": "Dr. Sneha Agarwal",
+        "contact": "+91-4563-289302"
+      }
+    ],
+    "mess_facilities": {
+      "mess_overview": {
+        "total_mess_halls": 6,
+        "boys_mess": 4,
+        "girls_mess": 2,
+        "seating_capacity": 3000,
+        "meal_timings": {
+          "breakfast": "7:00 AM - 9:00 AM",
+          "lunch": "12:00 PM - 2:00 PM",
+          "evening_snacks": "4:30 PM - 6:00 PM",
+          "dinner": "7:00 PM - 9:30 PM"
+        }
+      },
+      "meal_plans": [
+        {
+          "plan_name": "Standard Mess Plan",
+          "monthly_charge": "₹4,500",
+          "meals_included": ["Breakfast", "Lunch", "Dinner"],
+          "features": [
+            "3 meals per day",
+            "Vegetarian and non-vegetarian options",
+            "Regional cuisine variety",
+            "Special festival meals"
+          ]
+        },
+        {
+          "plan_name": "Premium Mess Plan",
+          "monthly_charge": "₹5,500",
+          "meals_included": ["Breakfast", "Lunch", "Evening Snacks", "Dinner"],
+          "features": [
+            "4 meals per day",
+            "Extended menu options",
+            "Continental dishes",
+            "Fresh fruit servings",
+            "Special weekend meals"
+          ]
+        },
+        {
+          "plan_name": "Basic Mess Plan",
+          "monthly_charge": "₹3,500",
+          "meals_included": ["Lunch", "Dinner"],
+          "features": [
+            "2 meals per day",
+            "Basic vegetarian meals",
+            "Limited menu options"
+          ]
+        }
+      ],
+      "menu_details": {
+        "weekly_menu": {
+          "monday": {
+            "breakfast": "Idli, Sambar, Coconut Chutney, Tea/Coffee",
+            "lunch": "Rice, Dal, Sambar, Rasam, Vegetable Curry, Curd, Pickle",
+            "dinner": "Chapati, Rice, Dal, Mixed Vegetable, Curd"
+          },
+          "tuesday": {
+            "breakfast": "Dosa, Sambar, Chutney, Tea/Coffee",
+            "lunch": "Rice, Rajma, Aloo Gobi, Curd, Papad",
+            "dinner": "Chapati, Rice, Dal, Paneer Curry, Curd"
+          },
+          "wednesday": {
+            "breakfast": "Upma, Coconut Chutney, Tea/Coffee",
+            "lunch": "Rice, Sambar, Poriyal, Rasam, Curd, Pickle",
+            "dinner": "Rice, Chapati, Chicken Curry (Non-veg), Dal, Curd"
+          },
+          "thursday": {
+            "breakfast": "Poha, Tea/Coffee",
+            "lunch": "Rice, Chole, Bhindi, Curd, Papad",
+            "dinner": "Chapati, Rice, Dal, Cabbage Curry, Curd"
+          },
+          "friday": {
+            "breakfast": "Paratha, Curd, Pickle, Tea/Coffee",
+            "lunch": "Rice, Fish Curry (Non-veg), Potato Curry, Dal, Curd",
+            "dinner": "Rice, Chapati, Dal, Mixed Vegetable, Curd"
+          },
+          "saturday": {
+            "breakfast": "Pongal, Sambar, Chutney, Tea/Coffee",
+            "lunch": "Biryani, Raita, Boiled Egg, Pickle",
+            "dinner": "Chapati, Rice, Dal, Cauliflower Curry, Curd"
+          },
+          "sunday": {
+            "breakfast": "Masala Dosa, Sambar, Chutney, Tea/Coffee",
+            "lunch": "Special Meals (Pulao, Paneer, Sweet)",
+            "dinner": "Rice, Chapati, Dal, Egg Curry (Non-veg), Curd"
+          }
+        },
+        "special_dietary_options": {
+          "jain_food": "Available on request",
+          "south_indian_special": "Available in all mess halls",
+          "north_indian_special": "Available in 2 mess halls",
+          "diabetic_friendly": "Sugar-free options available",
+          "diet_food": "Low-oil preparations available"
+        }
+      },
+      "mess_committee": {
+        "chief_mess_manager": "Mr. Ravi Chandran",
+        "assistant_managers": 6,
+        "cooks": 25,
+        "serving_staff": 35,
+        "cleaning_staff": 20
+      }
+    },
+    "hostel_rules_regulations": {
+      "entry_exit_timings": {
+        "boys_hostels": {
+          "entry_time": "No restriction",
+          "late_entry": "After 11:00 PM requires permission",
+          "curfew": "12:00 AM (Midnight)"
+        },
+        "girls_hostels": {
+          "entry_time": "Before 8:00 PM",
+          "late_entry": "8:00 PM - 9:00 PM with permission",
+          "curfew": "9:00 PM"
+        }
+      },
+      "visitor_policy": {
+        "visiting_hours": {
+          "weekdays": "4:00 PM - 7:00 PM",
+          "weekends": "10:00 AM - 7:00 PM"
+        },
+        "guest_requirements": [
+          "Valid photo ID required",
+          "Entry register mandatory",
+          "Host student must accompany",
+          "Maximum 2 visitors per student"
+        ],
+        "overnight_guests": "Not allowed except with special permission from Chief Warden"
+      },
+      "disciplinary_rules": {
+        "prohibited_items": [
+          "Alcohol and tobacco products",
+          "Illegal substances",
+          "Weapons or sharp objects",
+          "Electrical cooking appliances",
+          "Pets"
+        ],
+        "noise_regulations": "Silence hours: 10:00 PM - 6:00 AM",
+        "ragging_policy": "Zero tolerance - Immediate expulsion",
+        "room_inspection": "Monthly room inspections by warden"
+      },
+      "facilities_usage": {
+        "common_room_timings": "6:00 AM - 11:00 PM",
+        "laundry_timings": "6:00 AM - 8:00 PM",
+        "wifi_access": "24x7 with usage limits",
+        "study_hall_timings": "24x7"
+      }
+    },
+    "hostel_fees_deposits": {
+      "fee_structure": {
+        "security_deposit": {
+          "boys": "₹15,000 (Refundable)",
+          "girls": "₹15,000 (Refundable)"
+        },
+        "admission_fee": "₹2,000 (One-time, Non-refundable)",
+        "maintenance_charges": "₹1,500 per semester",
+        "electricity_charges": "₹500 per month (average)",
+        "water_charges": "₹200 per month",
+        "generator_charges": "₹300 per month"
+      },
+      "payment_schedule": {
+        "semester_wise": "Rent + Mess fees to be paid before semester begins",
+        "monthly_option": "Available with 5% additional charge",
+        "late_payment_fine": "₹100 per day after due date"
+      },
+      "refund_policy": {
+        "room_rent": "No refund after semester begins",
+        "mess_charges": "Pro-rata refund if leaving mid-semester",
+        "security_deposit": "Full refund within 30 days of checkout (after deductions)",
+        "deductions": "Damage charges, pending dues, cleaning charges"
+      }
+    },
+    "recreational_facilities": {
+      "indoor_facilities": [
+        {
+          "facility": "TV Lounge",
+          "availability": "All hostels",
+          "timing": "6:00 PM - 11:00 PM",
+          "capacity": "30-40 per lounge"
+        },
+        {
+          "facility": "Indoor Games Room",
+          "games": ["Table Tennis", "Carrom", "Chess", "Badminton"],
+          "timing": "6:00 AM - 11:00 PM",
+          "booking": "Token system"
+        },
+        {
+          "facility": "Gymnasium",
+          "equipment": ["Treadmill", "Exercise Bikes", "Weight Training"],
+          "timing": "5:00 AM - 10:00 PM",
+          "trainer": "Available 6:00 PM - 8:00 PM"
+        },
+        {
+          "facility": "Music Room",
+          "instruments": ["Keyboard", "Guitar", "Tabla", "Harmonium"],
+          "timing": "4:00 PM - 8:00 PM",
+          "booking": "Advance booking required"
+        }
+      ],
+      "outdoor_facilities": [
+        {
+          "facility": "Basketball Court",
+          "count": 2,
+          "timing": "6:00 AM - 9:00 PM",
+          "lighting": "Available till 9:00 PM"
+        },
+        {
+          "facility": "Volleyball Court",
+          "count": 2,
+          "timing": "6:00 AM - 8:00 PM"
+        },
+        {
+          "facility": "Cricket Practice Nets",
+          "count": 4,
+          "timing": "6:00 AM - 7:00 PM"
+        },
+        {
+          "facility": "Jogging Track",
+          "length": "500 meters",
+          "timing": "24x7",
+          "lighting": "Available"
+        }
+      ]
+    },
+    "hostel_services": {
+      "laundry_service": {
+        "type": "Self-service and Professional",
+        "self_service": {
+          "washing_machines": 25,
+          "cost": "₹10 per load",
+          "timing": "6:00 AM - 10:00 PM"
+        },
+        "professional_service": {
+          "cost": "₹150 per month",
+          "pickup_delivery": "Twice a week",
+          "items": "All clothing items except delicates"
+        }
+      },
+      "medical_facilities": {
+        "hostel_dispensary": {
+          "availability": "In each hostel block",
+          "timing": "8:00 AM - 8:00 PM",
+          "staff": "Qualified nurse",
+          "emergency": "24x7 on-call doctor"
+        },
+        "first_aid": {
+          "location": "Warden office, Common room",
+          "supplies": "Basic medicines, bandages, antiseptics"
+        }
+      },
+      "security_services": {
+        "security_guards": "24x7 in all hostels",
+        "cctv_coverage": "All common areas and entry/exit points",
+        "access_control": "ID card based entry system",
+        "emergency_contact": "+91-4563-289911"
+      },
+      "internet_wifi": {
+        "coverage": "100% hostel coverage",
+        "speed": "50 Mbps per hostel",
+        "data_limit": "15 GB per student per month",
+        "additional_data": "₹2 per GB",
+        "study_hours_unlimited": "11:00 PM - 6:00 AM"
+      },
+      "maintenance_services": {
+        "electrical": "24x7 emergency service",
+        "plumbing": "8:00 AM - 6:00 PM (Emergency 24x7)",
+        "housekeeping": "Daily common area cleaning",
+        "room_cleaning": "Weekly (Optional paid service ₹500/month)"
+      }
+    },
+    "hostel_allocation_process": {
+      "application_process": {
+        "online_application": "Through KARE student portal",
+        "application_fee": "₹500 (Non-refundable)",
+        "required_documents": [
+          "Admission confirmation letter",
+          "Identity proof (Aadhar Card)",
+          "Address proof",
+          "Medical certificate",
+          "Parent consent letter",
+          "Passport size photographs (4)"
+        ]
+      },
+      "allocation_criteria": {
+        "priority_order": [
+          "Distance from home (>100 km gets priority)",
+          "Academic merit",
+          "Sports/Cultural achievements",
+          "Economic background (EWS category)",
+          "Application date"
+        ],
+        "room_preference": "Based on availability and payment capacity"
+      },
+      "check_in_process": {
+        "check_in_dates": "As per academic calendar",
+        "required_at_checkin": [
+          "Fee payment receipt",
+          "Medical certificate",
+          "Identity proof",
+          "Hostel allocation letter"
+        ],
+        "room_inspection": "Mandatory with warden",
+        "inventory_check": "All furniture and fittings documented"
+      }
+    }
+  }
+}
