@@ -1,0 +1,597 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Placeholder academic dataset awaiting substitution with authenticated 2025 sources (NIRF, official syllabus PDFs, ERP).",
+    "pending_verification": [
+      "undergraduate_programs.intake (cross-check AICTE 2025 EoA)",
+      "cutoff_scores_2024 -> replace with 2025 after counseling",
+      "scholarships_financial_aid amounts (validate continuity)",
+      "academic_calendar even semester dates 2025-26"
+    ]
+  },
+  "academic_information": {
+    "departments_schools": {
+      "schools": [
+        {
+          "name": "School of Computing",
+          "dean": "Dr. Rajesh Kumar",
+          "departments": [
+            "Computer Science and Engineering",
+            "Information Technology",
+            "Artificial Intelligence and Data Science",
+            "Cybersecurity",
+            "Software Engineering"
+          ]
+        },
+        {
+          "name": "School of Engineering",
+          "dean": "Dr. Priya Sharma",
+          "departments": [
+            "Mechanical Engineering",
+            "Civil Engineering",
+            "Electrical and Electronics Engineering",
+            "Electronics and Communication Engineering",
+            "Aerospace Engineering",
+            "Automobile Engineering"
+          ]
+        },
+        {
+          "name": "School of Science and Humanities",
+          "dean": "Dr. Meera Krishnan",
+          "departments": [
+            "Mathematics",
+            "Physics",
+            "Chemistry",
+            "English",
+            "Tamil Literature"
+          ]
+        },
+        {
+          "name": "School of Management",
+          "dean": "Dr. Suresh Raman",
+          "departments": [
+            "Business Administration",
+            "International Business",
+            "Marketing",
+            "Finance",
+            "Human Resources"
+          ]
+        },
+        {
+          "name": "School of Biosciences and Technology",
+          "dean": "Dr. Kavitha Nair",
+          "departments": [
+            "Biotechnology",
+            "Biomedical Engineering",
+            "Food Technology",
+            "Environmental Engineering"
+          ]
+        }
+      ]
+    },
+    "undergraduate_programs": {
+      "engineering": [
+        {
+          "program": "Bachelor of Technology (B.Tech)",
+          "specializations": [
+            {
+              "name": "Computer Science and Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with Physics, Chemistry, Mathematics (PCM) with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,50,000",
+              "intake": 240
+            },
+            {
+              "name": "Information Technology",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,25,000",
+              "intake": 120
+            },
+            {
+              "name": "Artificial Intelligence and Data Science",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,75,000",
+              "intake": 120
+            },
+            {
+              "name": "Electronics and Communication Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,35,000",
+              "intake": 180
+            },
+            {
+              "name": "Mechanical Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,40,000",
+              "intake": 120
+            },
+            {
+              "name": "Civil Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,20,000",
+              "intake": 120
+            },
+            {
+              "name": "Electrical and Electronics Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,30,000",
+              "intake": 120
+            },
+            {
+              "name": "Aerospace Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCM with minimum 80% marks",
+              "entrance_exam": "JEE Main, TNEA, KARE Entrance Test",
+              "annual_fee": "₹2,60,000",
+              "intake": 60
+            },
+            {
+              "name": "Biomedical Engineering",
+              "duration": "4 years",
+              "total_credits": 160,
+              "eligibility": "10+2 with PCB/PCM with minimum 75% marks",
+              "entrance_exam": "JEE Main, TNEA, NEET, KARE Entrance Test",
+              "annual_fee": "₹2,55,000",
+              "intake": 60
+            }
+          ]
+        }
+      ],
+      "management": [
+        {
+          "program": "Bachelor of Business Administration (BBA)",
+          "duration": "3 years",
+          "total_credits": 120,
+          "specializations": [
+            "General Management",
+            "Digital Marketing",
+            "International Business",
+            "Finance",
+            "Human Resources"
+          ],
+          "eligibility": "10+2 in any stream with minimum 60% marks",
+          "entrance_exam": "KARE Management Test, CAT, MAT",
+          "annual_fee": "₹1,50,000",
+          "intake": 120
+        }
+      ],
+      "sciences": [
+        {
+          "program": "Bachelor of Science (B.Sc)",
+          "specializations": [
+            {
+              "name": "Physics",
+              "duration": "3 years",
+              "eligibility": "10+2 with PCM with minimum 60% marks",
+              "annual_fee": "₹80,000",
+              "intake": 60
+            },
+            {
+              "name": "Chemistry",
+              "duration": "3 years",
+              "eligibility": "10+2 with PCM/PCB with minimum 60% marks",
+              "annual_fee": "₹85,000",
+              "intake": 60
+            },
+            {
+              "name": "Mathematics",
+              "duration": "3 years",
+              "eligibility": "10+2 with PCM with minimum 60% marks",
+              "annual_fee": "₹75,000",
+              "intake": 40
+            },
+            {
+              "name": "Biotechnology",
+              "duration": "3 years",
+              "eligibility": "10+2 with PCB with minimum 65% marks",
+              "annual_fee": "₹1,20,000",
+              "intake": 60
+            }
+          ]
+        }
+      ]
+    },
+    "postgraduate_programs": {
+      "masters_engineering": [
+        {
+          "program": "Master of Technology (M.Tech)",
+          "specializations": [
+            {
+              "name": "Computer Science and Engineering",
+              "duration": "2 years",
+              "eligibility": "B.Tech/B.E in CSE/IT with minimum 60% marks",
+              "entrance_exam": "GATE, KARE PG Entrance Test",
+              "annual_fee": "₹1,80,000",
+              "intake": 30
+            },
+            {
+              "name": "VLSI Design",
+              "duration": "2 years",
+              "eligibility": "B.Tech/B.E in ECE/EEE with minimum 60% marks",
+              "entrance_exam": "GATE, KARE PG Entrance Test",
+              "annual_fee": "₹1,90,000",
+              "intake": 24
+            },
+            {
+              "name": "Thermal Engineering",
+              "duration": "2 years",
+              "eligibility": "B.Tech/B.E in Mechanical Engineering with minimum 60% marks",
+              "entrance_exam": "GATE, KARE PG Entrance Test",
+              "annual_fee": "₹1,75,000",
+              "intake": 18
+            },
+            {
+              "name": "Structural Engineering",
+              "duration": "2 years",
+              "eligibility": "B.Tech/B.E in Civil Engineering with minimum 60% marks",
+              "entrance_exam": "GATE, KARE PG Entrance Test",
+              "annual_fee": "₹1,70,000",
+              "intake": 18
+            }
+          ]
+        }
+      ],
+      "masters_management": [
+        {
+          "program": "Master of Business Administration (MBA)",
+          "duration": "2 years",
+          "specializations": [
+            "General Management",
+            "Finance",
+            "Marketing",
+            "Human Resources",
+            "Operations Management",
+            "International Business",
+            "Digital Marketing",
+            "Data Analytics"
+          ],
+          "eligibility": "Bachelor's degree in any discipline with minimum 50% marks",
+          "entrance_exam": "CAT, MAT, XAT, CMAT, KARE MBA Entrance Test",
+          "annual_fee": "₹2,25,000",
+          "intake": 120
+        }
+      ],
+      "masters_sciences": [
+        {
+          "program": "Master of Science (M.Sc)",
+          "specializations": [
+            {
+              "name": "Physics",
+              "duration": "2 years",
+              "eligibility": "B.Sc Physics with minimum 55% marks",
+              "annual_fee": "₹90,000",
+              "intake": 30
+            },
+            {
+              "name": "Chemistry",
+              "duration": "2 years",
+              "eligibility": "B.Sc Chemistry with minimum 55% marks",
+              "annual_fee": "₹95,000",
+              "intake": 30
+            },
+            {
+              "name": "Mathematics",
+              "duration": "2 years",
+              "eligibility": "B.Sc Mathematics with minimum 55% marks",
+              "annual_fee": "₹80,000",
+              "intake": 24
+            },
+            {
+              "name": "Biotechnology",
+              "duration": "2 years",
+              "eligibility": "B.Sc Biotechnology/Life Sciences with minimum 55% marks",
+              "annual_fee": "₹1,40,000",
+              "intake": 30
+            }
+          ]
+        }
+      ]
+    },
+    "phd_programs": {
+      "departments_offering_phd": [
+        "Computer Science and Engineering",
+        "Electronics and Communication Engineering",
+        "Mechanical Engineering",
+        "Civil Engineering",
+        "Electrical and Electronics Engineering",
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "Biotechnology",
+        "Management Studies"
+      ],
+      "eligibility": "Master's degree with minimum 55% marks (50% for SC/ST)",
+      "entrance_exam": "KARE Research Entrance Test (KRET) + Interview",
+      "duration": "3-6 years",
+      "annual_fee": "₹50,000",
+      "fellowship": "₹31,000 per month for qualified candidates",
+      "total_intake": 200
+    },
+    "diploma_certificate_courses": {
+      "diploma_programs": [
+        {
+          "name": "Diploma in Computer Applications (DCA)",
+          "duration": "1 year",
+          "eligibility": "10+2 in any stream",
+          "fee": "₹35,000",
+          "intake": 40
+        },
+        {
+          "name": "Diploma in Digital Marketing",
+          "duration": "6 months",
+          "eligibility": "Graduation in any discipline",
+          "fee": "₹25,000",
+          "intake": 30
+        },
+        {
+          "name": "Diploma in Data Science",
+          "duration": "8 months",
+          "eligibility": "B.Tech/B.E/B.Sc in any discipline",
+          "fee": "₹45,000",
+          "intake": 25
+        }
+      ],
+      "certificate_courses": [
+        {
+          "name": "Python Programming",
+          "duration": "3 months",
+          "fee": "₹15,000",
+          "intake": 50
+        },
+        {
+          "name": "Machine Learning Fundamentals",
+          "duration": "4 months",
+          "fee": "₹20,000",
+          "intake": 40
+        },
+        {
+          "name": "Web Development",
+          "duration": "3 months",
+          "fee": "₹18,000",
+          "intake": 45
+        },
+        {
+          "name": "Digital Photography",
+          "duration": "2 months",
+          "fee": "₹12,000",
+          "intake": 30
+        }
+      ]
+    },
+    "curriculum_details": {
+      "credit_system": {
+        "type": "Choice Based Credit System (CBCS)",
+        "credits_per_semester": "20-24 credits",
+        "theory_credits": "3-4 credits per course",
+        "practical_credits": "1-2 credits per course",
+        "project_credits": "6-8 credits"
+      },
+      "grading_system": {
+        "scale": "10-point scale",
+        "grades": {
+          "O": "Outstanding (9.0-10.0)",
+          "A+": "Excellent (8.5-8.9)",
+          "A": "Very Good (8.0-8.4)",
+          "B+": "Good (7.5-7.9)",
+          "B": "Above Average (7.0-7.4)",
+          "C": "Average (6.0-6.9)",
+          "P": "Pass (5.5-5.9)",
+          "F": "Fail (Below 5.5)"
+        },
+        "minimum_cgpa_to_pass": "5.5"
+      },
+      "course_structure": {
+        "foundation_courses": "20%",
+        "core_courses": "50%",
+        "elective_courses": "20%",
+        "project_internship": "10%"
+      }
+    },
+    "academic_calendar": {
+      "academic_year": "2024-25",
+      "semesters": [
+        {
+          "semester": "Odd Semester (Semester I/III/V/VII)",
+          "start_date": "2024-07-15",
+          "end_date": "2024-11-30",
+          "registration": "2024-07-01 to 2024-07-10",
+          "classes_begin": "2024-07-15",
+          "mid_term_exams": "2024-09-15 to 2024-09-25",
+          "end_term_exams": "2024-11-15 to 2024-11-30",
+          "result_declaration": "2024-12-15"
+        },
+        {
+          "semester": "Even Semester (Semester II/IV/VI/VIII)",
+          "start_date": "2025-01-06",
+          "end_date": "2025-05-15",
+          "registration": "2024-12-20 to 2025-01-05",
+          "classes_begin": "2025-01-06",
+          "mid_term_exams": "2025-03-01 to 2025-03-10",
+          "end_term_exams": "2025-04-30 to 2025-05-15",
+          "result_declaration": "2025-05-30"
+        }
+      ],
+      "holidays": [
+        {
+          "occasion": "Independence Day",
+          "date": "2024-08-15"
+        },
+        {
+          "occasion": "Gandhi Jayanti",
+          "date": "2024-10-02"
+        },
+        {
+          "occasion": "Diwali",
+          "dates": "2024-10-31 to 2024-11-03"
+        },
+        {
+          "occasion": "Christmas",
+          "date": "2024-12-25"
+        },
+        {
+          "occasion": "New Year",
+          "date": "2025-01-01"
+        },
+        {
+          "occasion": "Republic Day",
+          "date": "2025-01-26"
+        },
+        {
+          "occasion": "Holi",
+          "dates": "2025-03-13 to 2025-03-14"
+        }
+      ]
+    },
+    "admission_requirements": {
+      "undergraduate": {
+        "general_requirements": [
+          "Completed 10+2 from recognized board",
+          "Valid entrance exam score",
+          "Medical fitness certificate",
+          "Character certificate",
+          "Transfer certificate from previous institution"
+        ],
+        "entrance_exams_accepted": [
+          "JEE Main",
+          "TNEA (Tamil Nadu Engineering Admission)",
+          "KARE Entrance Test",
+          "JEE Advanced (for scholarship)",
+          "State Board Merit"
+        ],
+        "cutoff_scores_2024": {
+          "JEE_Main": {
+            "Computer Science": "85 percentile",
+            "Information Technology": "82 percentile",
+            "Electronics and Communication": "78 percentile",
+            "Mechanical Engineering": "75 percentile",
+            "Civil Engineering": "70 percentile"
+          },
+          "TNEA": {
+            "Computer Science": "195/200",
+            "Information Technology": "190/200",
+            "Electronics and Communication": "185/200",
+            "Mechanical Engineering": "180/200",
+            "Civil Engineering": "175/200"
+          }
+        }
+      },
+      "postgraduate": {
+        "mtech_requirements": [
+          "Valid GATE score OR KARE PG Entrance Test",
+          "B.Tech/B.E with minimum 60% marks",
+          "Work experience preferred but not mandatory"
+        ],
+        "mba_requirements": [
+          "Bachelor's degree with minimum 50% marks",
+          "Valid CAT/MAT/XAT/CMAT score OR KARE MBA Test",
+          "Group Discussion and Personal Interview",
+          "Work experience preferred"
+        ]
+      },
+      "documents_required": [
+        "Application form with photograph",
+        "10th mark sheet and certificate",
+        "12th mark sheet and certificate",
+        "Entrance exam score card",
+        "Category certificate (if applicable)",
+        "Income certificate (for fee concession)",
+        "Medical certificate",
+        "Character certificate",
+        "Migration certificate",
+        "Gap certificate (if applicable)"
+      ]
+    },
+    "scholarships_financial_aid": {
+      "merit_scholarships": [
+        {
+          "name": "Chancellor's Merit Scholarship",
+          "eligibility": "JEE Main rank within 5000",
+          "benefit": "100% tuition fee waiver",
+          "duration": "4 years (subject to maintaining 8.5+ CGPA)"
+        },
+        {
+          "name": "Academic Excellence Scholarship",
+          "eligibility": "JEE Main rank 5001-10000 OR 95%+ in 12th",
+          "benefit": "50% tuition fee waiver",
+          "duration": "4 years (subject to maintaining 8.0+ CGPA)"
+        },
+        {
+          "name": "Merit-cum-Means Scholarship",
+          "eligibility": "Family income < ₹3 lakhs + 85%+ in 12th",
+          "benefit": "75% tuition fee waiver",
+          "duration": "4 years (subject to maintaining 7.5+ CGPA)"
+        }
+      ],
+      "need_based_scholarships": [
+        {
+          "name": "Financial Assistance Scholarship",
+          "eligibility": "Family income < ₹2 lakhs per annum",
+          "benefit": "₹50,000 per year",
+          "application_deadline": "July 31, 2024"
+        },
+        {
+          "name": "Single Parent Support",
+          "eligibility": "Students from single parent families",
+          "benefit": "₹30,000 per year",
+          "application_deadline": "August 15, 2024"
+        }
+      ],
+      "category_scholarships": [
+        {
+          "name": "SC/ST Scholarship",
+          "eligibility": "SC/ST category students",
+          "benefit": "As per government norms",
+          "additional_support": "Free hostel accommodation"
+        },
+        {
+          "name": "OBC Scholarship",
+          "eligibility": "OBC category + family income < ₹8 lakhs",
+          "benefit": "30% fee concession",
+          "application_process": "Through college scholarship committee"
+        }
+      ],
+      "external_scholarships": [
+        {
+          "name": "INSPIRE Scholarship",
+          "agency": "Department of Science and Technology, GoI",
+          "eligibility": "Top 1% in 12th board exams in science stream",
+          "benefit": "₹80,000 per year"
+        },
+        {
+          "name": "NTSE Scholarship",
+          "agency": "NCERT",
+          "eligibility": "NTSE qualified students",
+          "benefit": "₹2,000 per month"
+        },
+        {
+          "name": "Minority Scholarship",
+          "agency": "Minority Affairs Ministry",
+          "eligibility": "Minority community students",
+          "benefit": "₹20,000 per year"
+        }
+      ]
+    }
+  }
+}
