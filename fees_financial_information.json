@@ -1,0 +1,621 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Fee figures are placeholders; replace with officially published 2025-26 fee circular PDF references.",
+    "pending_verification": [
+      "tuition_fee all programs vs official notice",
+      "education_loans interest_rate (update quarterly)",
+      "scholarship counts & corpus",
+      "refund_policies processing_time (confirm SLA)"
+    ]
+  },
+  "fees_financial_information": {
+    "fee_structure_2025_26": {
+      "undergraduate_programs": {
+        "engineering_btech": {
+          "computer_science_engineering": {
+            "tuition_fee": "₹2,50,000",
+            "lab_fee": "₹25,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹3,11,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            },
+            "semester_wise_payment": {
+              "odd_semester": "₹1,72,500",
+              "even_semester": "₹1,55,500"
+            }
+          },
+          "information_technology": {
+            "tuition_fee": "₹2,25,000",
+            "lab_fee": "₹22,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹2,83,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "ai_data_science": {
+            "tuition_fee": "₹2,75,000",
+            "lab_fee": "₹30,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹3,41,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "electronics_communication": {
+            "tuition_fee": "₹2,35,000",
+            "lab_fee": "₹28,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹2,99,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "mechanical_engineering": {
+            "tuition_fee": "₹2,40,000",
+            "lab_fee": "₹25,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹3,01,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "civil_engineering": {
+            "tuition_fee": "₹2,20,000",
+            "lab_fee": "₹20,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹2,76,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "electrical_electronics": {
+            "tuition_fee": "₹2,30,000",
+            "lab_fee": "₹24,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹2,90,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "aerospace_engineering": {
+            "tuition_fee": "₹2,60,000",
+            "lab_fee": "₹32,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹3,28,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          },
+          "biomedical_engineering": {
+            "tuition_fee": "₹2,55,000",
+            "lab_fee": "₹35,000",
+            "library_fee": "₹8,000",
+            "sports_fee": "₹5,000",
+            "student_activity_fee": "₹3,000",
+            "examination_fee": "₹5,000",
+            "development_fee": "₹15,000",
+            "total_annual_fee": "₹3,26,000",
+            "one_time_fees": {
+              "admission_fee": "₹25,000",
+              "caution_deposit": "₹10,000"
+            }
+          }
+        },
+        "management_bba": {
+          "tuition_fee": "₹1,50,000",
+          "library_fee": "₹5,000",
+          "sports_fee": "₹3,000",
+          "student_activity_fee": "₹2,000",
+          "examination_fee": "₹4,000",
+          "development_fee": "₹10,000",
+          "total_annual_fee": "₹1,74,000",
+          "one_time_fees": {
+            "admission_fee": "₹15,000",
+            "caution_deposit": "₹8,000"
+          }
+        },
+        "science_bsc": {
+          "physics": {
+            "tuition_fee": "₹80,000",
+            "lab_fee": "₹12,000",
+            "library_fee": "₹4,000",
+            "sports_fee": "₹2,000",
+            "examination_fee": "₹3,000",
+            "total_annual_fee": "₹1,01,000"
+          },
+          "chemistry": {
+            "tuition_fee": "₹85,000",
+            "lab_fee": "₹15,000",
+            "library_fee": "₹4,000",
+            "sports_fee": "₹2,000",
+            "examination_fee": "₹3,000",
+            "total_annual_fee": "₹1,09,000"
+          },
+          "mathematics": {
+            "tuition_fee": "₹75,000",
+            "lab_fee": "₹8,000",
+            "library_fee": "₹4,000",
+            "sports_fee": "₹2,000",
+            "examination_fee": "₹3,000",
+            "total_annual_fee": "₹92,000"
+          },
+          "biotechnology": {
+            "tuition_fee": "₹1,20,000",
+            "lab_fee": "₹25,000",
+            "library_fee": "₹5,000",
+            "sports_fee": "₹3,000",
+            "examination_fee": "₹4,000",
+            "total_annual_fee": "₹1,57,000"
+          }
+        }
+      },
+      "postgraduate_programs": {
+        "mtech": {
+          "computer_science": {
+            "tuition_fee": "₹1,80,000",
+            "lab_fee": "₹20,000",
+            "library_fee": "₹8,000",
+            "thesis_fee": "₹10,000",
+            "examination_fee": "₹5,000",
+            "total_annual_fee": "₹2,23,000"
+          },
+          "vlsi_design": {
+            "tuition_fee": "₹1,90,000",
+            "lab_fee": "₹25,000",
+            "library_fee": "₹8,000",
+            "thesis_fee": "₹10,000",
+            "examination_fee": "₹5,000",
+            "total_annual_fee": "₹2,38,000"
+          },
+          "thermal_engineering": {
+            "tuition_fee": "₹1,75,000",
+            "lab_fee": "₹18,000",
+            "library_fee": "₹8,000",
+            "thesis_fee": "₹10,000",
+            "examination_fee": "₹5,000",
+            "total_annual_fee": "₹2,16,000"
+          },
+          "structural_engineering": {
+            "tuition_fee": "₹1,70,000",
+            "lab_fee": "₹15,000",
+            "library_fee": "₹8,000",
+            "thesis_fee": "₹10,000",
+            "examination_fee": "₹5,000",
+            "total_annual_fee": "₹2,08,000"
+          }
+        },
+        "mba": {
+          "tuition_fee": "₹2,25,000",
+          "library_fee": "₹10,000",
+          "case_study_fee": "₹8,000",
+          "industry_exposure_fee": "₹12,000",
+          "examination_fee": "₹6,000",
+          "development_fee": "₹15,000",
+          "total_annual_fee": "₹2,76,000",
+          "specialization_additional_fee": {
+            "finance": "₹10,000",
+            "marketing": "₹8,000",
+            "hr": "₹5,000",
+            "operations": "₹7,000",
+            "international_business": "₹15,000",
+            "digital_marketing": "₹12,000"
+          }
+        },
+        "msc": {
+          "physics": {
+            "tuition_fee": "₹90,000",
+            "lab_fee": "₹15,000",
+            "library_fee": "₹5,000",
+            "thesis_fee": "₹8,000",
+            "examination_fee": "₹4,000",
+            "total_annual_fee": "₹1,22,000"
+          },
+          "chemistry": {
+            "tuition_fee": "₹95,000",
+            "lab_fee": "₹18,000",
+            "library_fee": "₹5,000",
+            "thesis_fee": "₹8,000",
+            "examination_fee": "₹4,000",
+            "total_annual_fee": "₹1,30,000"
+          },
+          "mathematics": {
+            "tuition_fee": "₹80,000",
+            "library_fee": "₹5,000",
+            "thesis_fee": "₹8,000",
+            "examination_fee": "₹4,000",
+            "total_annual_fee": "₹97,000"
+          },
+          "biotechnology": {
+            "tuition_fee": "₹1,40,000",
+            "lab_fee": "₹25,000",
+            "library_fee": "₹6,000",
+            "thesis_fee": "₹10,000",
+            "examination_fee": "₹5,000",
+            "total_annual_fee": "₹1,86,000"
+          }
+        }
+      },
+      "phd_programs": {
+        "all_departments": {
+          "tuition_fee": "₹50,000",
+          "registration_fee": "₹5,000",
+          "library_fee": "₹3,000",
+          "thesis_fee": "₹15,000",
+          "comprehensive_exam_fee": "₹8,000",
+          "total_annual_fee": "₹81,000",
+          "fellowship": "₹31,000 per month (for qualified candidates)",
+          "duration_fee": "Same fee structure for entire duration (3-6 years)"
+        }
+      }
+    },
+    "additional_charges": {
+      "hostel_accommodation": {
+        "boys_hostels": {
+          "single_occupancy": "₹8,500 per month",
+          "double_occupancy": "₹6,500 per month",
+          "triple_occupancy": "₹5,500 per month",
+          "security_deposit": "₹15,000 (refundable)",
+          "maintenance_charges": "₹1,500 per semester"
+        },
+        "girls_hostels": {
+          "single_occupancy": "₹8,500 per month",
+          "double_occupancy": "₹6,500 per month",
+          "triple_occupancy": "₹5,500 per month",
+          "security_deposit": "₹15,000 (refundable)",
+          "maintenance_charges": "₹1,500 per semester"
+        }
+      },
+      "mess_charges": {
+        "standard_plan": "₹4,500 per month",
+        "premium_plan": "₹5,500 per month",
+        "basic_plan": "₹3,500 per month",
+        "advance_payment_discount": "5% discount for semester advance payment"
+      },
+      "transportation": {
+        "bus_fee_calculation": "₹2.5 per km per month",
+        "minimum_charge": "₹1,500 per month",
+        "maximum_charge": "₹4,500 per month",
+        "routes": {
+          "virudhunagar_sivakasi": "₹2,500 per month",
+          "madurai_thirumangalam": "₹4,200 per month",
+          "rajapalayam_srivilliputhur": "₹3,500 per month",
+          "tirunelveli_sankarankovil": "₹4,500 per month"
+        }
+      },
+      "miscellaneous_charges": {
+        "id_card": "₹200",
+        "duplicate_id_card": "₹500",
+        "transcript_per_copy": "₹200",
+        "degree_certificate": "₹1,000",
+        "migration_certificate": "₹500",
+        "conduct_certificate": "₹200",
+        "bonafide_certificate": "₹100",
+        "duplicate_marksheet": "₹300"
+      },
+      "late_payment_penalties": {
+        "fee_payment_delay": "₹100 per day after due date",
+        "hostel_fee_delay": "₹50 per day after due date",
+        "library_book_fine": "₹5 per day per book",
+        "equipment_damage": "As per actual cost + 20% processing fee"
+      }
+    },
+    "payment_methods": {
+      "online_payment": {
+        "payment_gateway": "Razorpay, PayU, CCAvenue",
+        "accepted_cards": [
+          "All major credit cards (Visa, MasterCard, American Express)",
+          "All major debit cards",
+          "Net banking from 70+ banks",
+          "UPI payments (GPay, PhonePe, Paytm)",
+          "Digital wallets (Paytm, Mobikwik, Freecharge)"
+        ],
+        "convenience_fee": {
+          "credit_cards": "1.5% + GST",
+          "debit_cards": "0.9% + GST",
+          "net_banking": "₹20 + GST",
+          "upi": "No charges",
+          "wallets": "1% + GST"
+        }
+      },
+      "offline_payment": {
+        "demand_draft": {
+          "payable_at": "Any nationalized bank",
+          "in_favour_of": "Kalasalingam Academy of Research and Education",
+          "payable_at_location": "Krishnankoil"
+        },
+        "cash_payment": "Accepted at college accounts office (up to ₹2 lakhs per transaction)",
+        "cheque_payment": "Local cheques accepted with 7-day clearance period",
+        "neft_rtgs": {
+          "bank_name": "State Bank of India",
+          "account_number": "12345678901",
+          "ifsc_code": "SBIN0001234",
+          "account_name": "Kalasalingam Academy of Research and Education"
+        }
+      },
+      "installment_options": {
+        "semester_wise": "No additional charges",
+        "quarterly": "2% additional charges",
+        "monthly": "5% additional charges",
+        "education_loan": "Direct payment by bank with proper documentation"
+      }
+    },
+    "refund_policies": {
+      "tuition_fee_refund": {
+        "before_semester_start": "90% refund (10% processing charges)",
+        "within_first_week": "80% refund",
+        "within_first_month": "50% refund",
+        "after_one_month": "No refund",
+        "medical_emergency": "Case-by-case basis with medical certificate"
+      },
+      "hostel_fee_refund": {
+        "before_check_in": "Full refund minus ₹1,000 processing charges",
+        "within_first_month": "Pro-rata refund minus one month rent",
+        "after_first_month": "Pro-rata refund minus two months rent",
+        "security_deposit": "Full refund within 30 days of checkout (after deductions)"
+      },
+      "mess_fee_refund": {
+        "advance_payment": "Pro-rata refund with 15 days notice",
+        "monthly_plan": "No refund for current month",
+        "medical_leave": "Pro-rata refund with medical certificate"
+      },
+      "exam_fee_refund": "No refund once examination forms are submitted",
+      "other_fee_refunds": {
+        "development_fee": "Non-refundable",
+        "admission_fee": "Non-refundable",
+        "caution_deposit": "Fully refundable at course completion"
+      },
+      "refund_process": {
+        "application_timeline": "Within 30 days of withdrawal",
+        "processing_time": "45-60 working days",
+        "refund_mode": "Original payment mode or bank transfer",
+        "required_documents": [
+          "Withdrawal application",
+          "Fee payment receipts",
+          "No dues certificate",
+          "Bank account details"
+        ]
+      }
+    },
+    "financial_assistance": {
+      "education_loans": {
+        "tie_up_banks": [
+          {
+            "bank": "State Bank of India",
+            "loan_amount": "Up to ₹30 lakhs",
+            "interest_rate": "8.5% - 9.5% per annum",
+            "processing_fee": "₹10,000",
+            "moratorium_period": "Course duration + 1 year"
+          },
+          {
+            "bank": "HDFC Bank",
+            "loan_amount": "Up to ₹40 lakhs",
+            "interest_rate": "9.0% - 10.0% per annum",
+            "processing_fee": "₹15,000",
+            "special_features": "No collateral up to ₹7.5 lakhs"
+          },
+          {
+            "bank": "ICICI Bank",
+            "loan_amount": "Up to ₹50 lakhs",
+            "interest_rate": "8.75% - 9.75% per annum",
+            "processing_fee": "₹12,000",
+            "special_features": "Quick approval process"
+          },
+          {
+            "bank": "Axis Bank",
+            "loan_amount": "Up to ₹35 lakhs",
+            "interest_rate": "9.25% - 10.25% per annum",
+            "processing_fee": "₹8,000",
+            "special_features": "Flexible repayment options"
+          }
+        ],
+        "loan_process": {
+          "documents_required": [
+            "Admission letter",
+            "Fee structure from college",
+            "Academic records",
+            "Income proof of parents",
+            "Bank statements",
+            "Property documents (if applicable)"
+          ],
+          "processing_time": "15-30 days",
+          "disbursement": "Direct to college account"
+        }
+      },
+      "government_scholarships": {
+        "central_government": [
+          {
+            "scheme": "Post Matric Scholarship (SC/ST)",
+            "amount": "₹20,000 - ₹2,00,000 per year",
+            "eligibility": "SC/ST category students",
+            "application_process": "Online through National Scholarship Portal"
+          },
+          {
+            "scheme": "Post Matric Scholarship (OBC)",
+            "amount": "₹15,000 - ₹1,50,000 per year",
+            "eligibility": "OBC category, family income < ₹8 lakhs",
+            "application_process": "Online through National Scholarship Portal"
+          },
+          {
+            "scheme": "Merit-cum-Means Scholarship (Minorities)",
+            "amount": "₹20,000 per year",
+            "eligibility": "Minority community, family income < ₹2.5 lakhs",
+            "application_process": "Through college minority cell"
+          }
+        ],
+        "state_government": [
+          {
+            "scheme": "Tamil Nadu State Scholarship",
+            "amount": "₹10,000 - ₹75,000 per year",
+            "eligibility": "Tamil Nadu domicile, various categories",
+            "application_process": "Online through TN e-District portal"
+          },
+          {
+            "scheme": "Dr. APJ Abdul Kalam Scholarship",
+            "amount": "₹25,000 per year",
+            "eligibility": "First generation graduates",
+            "application_process": "Through college scholarship cell"
+          }
+        ]
+      },
+      "college_scholarships": {
+        "merit_based": [
+          {
+            "name": "Chancellor's Excellence Scholarship",
+            "amount": "100% tuition fee waiver",
+            "eligibility": "JEE Main rank < 5000 or 95%+ in 12th",
+            "count": "50 scholarships per year"
+          },
+          {
+            "name": "Academic Merit Scholarship",
+            "amount": "50% tuition fee waiver",
+            "eligibility": "JEE Main rank 5001-10000 or 90%+ in 12th",
+            "count": "100 scholarships per year"
+          },
+          {
+            "name": "Sports Excellence Scholarship",
+            "amount": "25-75% fee waiver",
+            "eligibility": "State/National level sports achievements",
+            "count": "25 scholarships per year"
+          }
+        ],
+        "need_based": [
+          {
+            "name": "Financial Support Scholarship",
+            "amount": "₹25,000 - ₹1,00,000 per year",
+            "eligibility": "Family income < ₹3 lakhs per annum",
+            "count": "200 scholarships per year"
+          },
+          {
+            "name": "Emergency Financial Aid",
+            "amount": "Up to ₹50,000 (one-time)",
+            "eligibility": "Financial crisis due to unforeseen circumstances",
+            "count": "As per requirement"
+          }
+        ]
+      },
+      "work_study_programs": {
+        "on_campus_jobs": [
+          {
+            "position": "Teaching Assistant",
+            "stipend": "₹8,000 per month",
+            "hours": "15 hours per week",
+            "eligibility": "Post-graduate students with good academic record"
+          },
+          {
+            "position": "Research Assistant",
+            "stipend": "₹10,000 per month",
+            "hours": "20 hours per week",
+            "eligibility": "Final year students with research interests"
+          },
+          {
+            "position": "Lab Assistant",
+            "stipend": "₹6,000 per month",
+            "hours": "12 hours per week",
+            "eligibility": "Technical knowledge in respective domains"
+          },
+          {
+            "position": "Library Assistant",
+            "stipend": "₹5,000 per month",
+            "hours": "10 hours per week",
+            "eligibility": "Good communication skills, basic computer knowledge"
+          }
+        ],
+        "internship_stipends": {
+          "research_internships": "₹8,000 - ₹15,000 per month",
+          "industry_internships": "₹12,000 - ₹50,000 per month",
+          "startup_internships": "₹5,000 - ₹25,000 per month"
+        }
+      }
+    },
+    "fee_payment_schedule": {
+      "academic_year_2025_26": {
+        "semester_1": {
+          "registration_date": "July 1 - July 15, 2025",
+          "fee_payment_due": "July 20, 2025",
+          "late_fee_starts": "July 21, 2025",
+          "last_date_with_fine": "August 5, 2025"
+        },
+        "semester_2": {
+          "registration_date": "December 15 - December 30, 2025",
+          "fee_payment_due": "January 5, 2026",
+          "late_fee_starts": "January 6, 2026",
+          "last_date_with_fine": "January 20, 2026"
+        }
+      },
+      "installment_dates": {
+        "quarterly_payment": [
+          "25% at admission",
+          "25% by September 30",
+          "25% by December 31",
+          "25% by March 31"
+        ],
+        "monthly_payment": "5th of every month",
+        "hostel_fee": "Advanced payment for semester preferred"
+      }
+    },
+    "fee_concessions": {
+      "sibling_discount": {
+        "two_siblings": "10% discount for second sibling",
+        "three_or_more": "15% discount for third sibling onwards",
+        "conditions": "Both siblings must be currently enrolled"
+      },
+      "alumni_discount": {
+        "alumni_children": "15% discount on tuition fee",
+        "conditions": "Parent must be KARE alumnus with degree completion"
+      },
+      "early_payment_discount": {
+        "full_year_advance": "5% discount on total fee",
+        "semester_advance": "2% discount on semester fee",
+        "conditions": "Payment before due date"
+      },
+      "loyalty_discount": {
+        "continuing_students": "₹10,000 discount from second year onwards",
+        "conditions": "Maintaining good academic record (CGPA > 7.0)"
+      }
+    }
+  }
+}
