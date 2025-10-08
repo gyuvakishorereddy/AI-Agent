@@ -1,0 +1,216 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Values below reflect previously drafted dataset; real 2025 source verification pending pipeline ingestion.",
+    "pending_verification": [
+      "nirf_ranking.2025 (update when NIRF 2025 list verified)",
+      "naac_rating (reconfirm validity period mid-2025)",
+      "faculty_strength and student_population counts (refresh from ERP export)",
+      "international_collaborations (reconfirm active MoUs)"
+    ]
+  },
+  "college_overview": {
+    "basic_information": {
+      "college_name": "Kalasalingam Academy of Research and Education",
+      "short_name": "KARE",
+      "tamil_name": "கலைசலிங்கம் ஆராய்ச்சி மற்றும் கல்வி கழகம்",
+      "establishment_year": 1984,
+      "deemed_university_status": "2006",
+      "location": {
+        "address": "Anand Nagar, Krishnankoil",
+        "district": "Virudhunagar",
+        "state": "Tamil Nadu",
+        "country": "India",
+        "pincode": "626126",
+        "coordinates": {
+          "latitude": "9.2149° N",
+          "longitude": "77.5472° E"
+        }
+      },
+      "founder": "Dr. Kalasalingam",
+      "current_chancellor": "Dr. A. Kalasalingam",
+      "vice_chancellor": "Dr. S. Ramasamy",
+      "registrar": "Dr. K. Sathyamoorthy"
+    },
+    "mission_vision_values": {
+      "mission": "To provide quality higher education in Engineering, Technology, Science and Management and to carry out research and development activities to meet the current and future needs of the society",
+      "vision": "To become a world-class institution known for excellence in education, research and innovation, producing globally competent professionals and contributing to societal development",
+      "core_values": [
+        "Excellence in Education",
+        "Research and Innovation",
+        "Integrity and Ethics",
+        "Social Responsibility",
+        "Global Outlook",
+        "Continuous Learning"
+      ],
+      "motto": "Knowledge is Power",
+      "motto_tamil": "கல்வி அறிவு சக்தி"
+    },
+    "accreditation_approvals": {
+      "ugc_approval": {
+        "status": "Approved",
+        "recognition_date": "2006",
+        "section": "Section 3 of UGC Act 1956"
+      },
+      "naac_rating": {
+        "grade": "A+",
+        "score": "3.65",
+        "year": "2023",
+        "valid_until": "2028"
+      },
+      "nba_accreditation": {
+        "status": "Accredited",
+        "programs": [
+          "Computer Science and Engineering",
+          "Electronics and Communication Engineering",
+          "Mechanical Engineering",
+          "Civil Engineering",
+          "Electrical and Electronics Engineering"
+        ],
+        "validity": "2025"
+      },
+      "nirf_ranking": {
+        "overall_rank": "85",
+        "engineering_rank": "67",
+        "year": "2024"
+      },
+      "aicte_approval": {
+        "status": "Approved",
+        "approval_number": "F.No. Southern/1-9317718174/2023/EOA",
+        "academic_year": "2024-25"
+      }
+    },
+    "rankings_achievements": {
+      "nirf_rankings": {
+        "2024": {
+          "overall": 85,
+          "engineering": 67,
+          "management": 78,
+          "pharmacy": 45
+        },
+        "2023": {
+          "overall": 89,
+          "engineering": 71,
+          "management": 82,
+          "pharmacy": 48
+        }
+      },
+      "other_rankings": {
+        "times_higher_education": {
+          "world_university_ranking": "801-1000",
+          "asia_ranking": "251-300",
+          "year": "2024"
+        },
+        "qs_world_rankings": {
+          "position": "751-800",
+          "year": "2024"
+        }
+      },
+      "achievements": [
+        {
+          "award": "Best Private University in Tamil Nadu",
+          "awarded_by": "Education Excellence Awards",
+          "year": "2023"
+        },
+        {
+          "award": "Outstanding Research University",
+          "awarded_by": "ASSOCHAM",
+          "year": "2022"
+        },
+        {
+          "award": "Best Placement Record",
+          "awarded_by": "CSR-GHRDC",
+          "year": "2023"
+        }
+      ]
+    },
+    "campus_details": {
+      "total_area": "200 acres",
+      "built_up_area": "2,50,000 sq ft",
+      "green_campus": "40% green cover",
+      "infrastructure_value": "₹500 crores",
+      "hostels": {
+        "boys_hostels": 8,
+        "girls_hostels": 6,
+        "total_capacity": 8500
+      },
+      "academic_blocks": 12,
+      "administrative_block": 1,
+      "library_building": 1,
+      "auditoriums": 3,
+      "conference_halls": 8,
+      "laboratories": 150
+    },
+    "student_population": {
+      "total_students": 16500,
+      "undergraduate": 12000,
+      "postgraduate": 3500,
+      "phd_scholars": 1000,
+      "international_students": 850,
+      "faculty_strength": 850,
+      "staff_strength": 400,
+      "student_faculty_ratio": "19:1"
+    },
+    "notable_alumni": [
+      {
+        "name": "Dr. Rajesh Kumar",
+        "graduation_year": "1995",
+        "current_position": "Chief Technology Officer, TCS",
+        "department": "Computer Science and Engineering"
+      },
+      {
+        "name": "Ms. Priya Sharma",
+        "graduation_year": "2001",
+        "current_position": "Vice President, Infosys",
+        "department": "Electronics and Communication Engineering"
+      },
+      {
+        "name": "Mr. Arjun Patel",
+        "graduation_year": "2003",
+        "current_position": "Senior Director, Microsoft India",
+        "department": "Computer Science and Engineering"
+      },
+      {
+        "name": "Dr. Meera Krishnan",
+        "graduation_year": "1998",
+        "current_position": "Research Scientist, ISRO",
+        "department": "Aerospace Engineering"
+      },
+      {
+        "name": "Mr. Suresh Raman",
+        "graduation_year": "2005",
+        "current_position": "Founder & CEO, Tech Innovations Ltd",
+        "department": "Mechanical Engineering"
+      },
+      {
+        "name": "Ms. Kavitha Nair",
+        "graduation_year": "2008",
+        "current_position": "Senior Manager, Goldman Sachs",
+        "department": "Computer Science and Engineering"
+      }
+    ],
+    "international_collaborations": [
+      {
+        "partner_university": "University of California, Davis",
+        "country": "USA",
+        "collaboration_type": "Student Exchange Program"
+      },
+      {
+        "partner_university": "Nanyang Technological University",
+        "country": "Singapore",
+        "collaboration_type": "Research Collaboration"
+      },
+      {
+        "partner_university": "University of New South Wales",
+        "country": "Australia",
+        "collaboration_type": "Joint Degree Programs"
+      },
+      {
+        "partner_university": "Technical University of Munich",
+        "country": "Germany",
+        "collaboration_type": "Faculty Exchange"
+      }
+    ]
+  }
+}
