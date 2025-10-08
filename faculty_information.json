@@ -1,0 +1,461 @@
+{
+  "metadata": {
+    "last_updated": "2025-09-27",
+    "version": "2025.3",
+    "notes": "Faculty entries are illustrative; replace with verified LinkedIn/official directory exports (ensure consent & compliance).",
+    "pending_verification": [
+      "All dean and HOD names vs official website 2025",
+      "Publication counts & h_index via Scopus/Google Scholar",
+      "Contact emails format standardization",
+      "Remove placeholder awards lacking citations"
+    ]
+  },
+  "faculty_information": {
+    "school_of_computing": {
+      "dean": {
+        "name": "Dr. Rajesh Kumar",
+        "designation": "Dean & Professor",
+        "department": "Computer Science and Engineering",
+        "qualification": "Ph.D. in Computer Science (IIT Madras), M.Tech (IIT Delhi), B.E (Anna University)",
+        "experience": "22 years",
+        "specialization": "Machine Learning, Data Mining, Cloud Computing",
+        "research_interests": ["Artificial Intelligence", "Big Data Analytics", "Internet of Things"],
+        "publications": 85,
+        "h_index": 28,
+        "email": "rajesh.kumar@kare.ac.in",
+        "phone": "+91-4563-289001",
+        "office": "Room 301, School of Computing Building",
+        "office_hours": "Monday-Friday: 10:00 AM - 12:00 PM",
+        "awards": [
+          "Best Researcher Award - IEEE India Council (2023)",
+          "Excellence in Teaching Award - KARE (2021)",
+          "Young Scientist Award - DST (2018)"
+        ]
+      },
+      "computer_science_engineering": {
+        "hod": {
+          "name": "Dr. Priya Malhotra",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Bombay), M.Tech (IIT Kanpur), B.Tech (NIT Trichy)",
+          "experience": "18 years",
+          "specialization": "Software Engineering, Database Systems, Web Technologies",
+          "research_interests": ["Software Quality Assurance", "Database Optimization", "Web Security"],
+          "publications": 62,
+          "email": "priya.malhotra@kare.ac.in",
+          "phone": "+91-4563-289002",
+          "office": "Room 205, CSE Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Arjun Patel",
+            "designation": "Professor",
+            "qualification": "Ph.D. (IISc Bangalore), M.Tech (IIT Kharagpur), B.E (BITS Pilani)",
+            "experience": "20 years",
+            "specialization": "Algorithms, Theoretical Computer Science",
+            "research_interests": ["Graph Theory", "Complexity Theory", "Cryptography"],
+            "publications": 78,
+            "email": "arjun.patel@kare.ac.in",
+            "office": "Room 207, CSE Block"
+          },
+          {
+            "name": "Dr. Sneha Agarwal",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IIT Chennai), M.Tech (IIIT Hyderabad), B.Tech (VIT)",
+            "experience": "12 years",
+            "specialization": "Computer Networks, Network Security",
+            "research_interests": ["Wireless Networks", "IoT Security", "5G Networks"],
+            "publications": 45,
+            "email": "sneha.agarwal@kare.ac.in",
+            "office": "Room 209, CSE Block"
+          },
+          {
+            "name": "Dr. Vikram Singh",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IIT Delhi), M.Tech (NIT Warangal), B.Tech (Manipal)",
+            "experience": "14 years",
+            "specialization": "Image Processing, Computer Vision",
+            "research_interests": ["Medical Image Analysis", "Deep Learning", "Pattern Recognition"],
+            "publications": 53,
+            "email": "vikram.singh@kare.ac.in",
+            "office": "Room 211, CSE Block"
+          },
+          {
+            "name": "Dr. Meera Krishnan",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (Anna University), M.Tech (SRM University), B.Tech (PSG Tech)",
+            "experience": "8 years",
+            "specialization": "Machine Learning, Natural Language Processing",
+            "research_interests": ["Text Mining", "Sentiment Analysis", "Chatbots"],
+            "publications": 32,
+            "email": "meera.krishnan@kare.ac.in",
+            "office": "Room 213, CSE Block"
+          },
+          {
+            "name": "Dr. Rahul Sharma",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (IIT Guwahati), M.Tech (NIT Calicut), B.Tech (Amrita)",
+            "experience": "7 years",
+            "specialization": "Distributed Systems, Cloud Computing",
+            "research_interests": ["Microservices", "Container Orchestration", "Edge Computing"],
+            "publications": 28,
+            "email": "rahul.sharma@kare.ac.in",
+            "office": "Room 215, CSE Block"
+          }
+        ]
+      },
+      "information_technology": {
+        "hod": {
+          "name": "Dr. Kavitha Nair",
+          "designation": "Associate Professor & Head",
+          "qualification": "Ph.D. (IIT Madras), M.Tech (NIT Surathkal), B.Tech (CUSAT)",
+          "experience": "15 years",
+          "specialization": "Information Systems, E-commerce, Digital Transformation",
+          "research_interests": ["Business Intelligence", "ERP Systems", "Digital Marketing"],
+          "publications": 48,
+          "email": "kavitha.nair@kare.ac.in",
+          "phone": "+91-4563-289003",
+          "office": "Room 105, IT Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Suresh Babu",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (VIT), M.Tech (Anna University), B.Tech (Karunya)",
+            "experience": "13 years",
+            "specialization": "Web Development, Mobile Applications",
+            "research_interests": ["Progressive Web Apps", "React Native", "Node.js"],
+            "publications": 35,
+            "email": "suresh.babu@kare.ac.in",
+            "office": "Room 107, IT Block"
+          },
+          {
+            "name": "Dr. Anjali Gupta",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (BITS Pilani), M.Tech (IIIT Delhi), B.Tech (DTU)",
+            "experience": "9 years",
+            "specialization": "Data Analytics, Business Intelligence",
+            "research_interests": ["Predictive Analytics", "Data Visualization", "Statistical Learning"],
+            "publications": 31,
+            "email": "anjali.gupta@kare.ac.in",
+            "office": "Room 109, IT Block"
+          }
+        ]
+      },
+      "ai_data_science": {
+        "hod": {
+          "name": "Dr. Deepak Kumar",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Delhi), M.Tech (IIT Roorkee), B.Tech (PEC Chandigarh)",
+          "experience": "19 years",
+          "specialization": "Artificial Intelligence, Deep Learning, Robotics",
+          "research_interests": ["Neural Networks", "Computer Vision", "Autonomous Systems"],
+          "publications": 72,
+          "email": "deepak.kumar@kare.ac.in",
+          "phone": "+91-4563-289004",
+          "office": "Room 301, AI-DS Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Ritu Sharma",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IISc Bangalore), M.Tech (IIT Bombay), B.Tech (NSIT Delhi)",
+            "experience": "11 years",
+            "specialization": "Natural Language Processing, Speech Recognition",
+            "research_interests": ["Language Models", "Voice Assistants", "Conversational AI"],
+            "publications": 41,
+            "email": "ritu.sharma@kare.ac.in",
+            "office": "Room 303, AI-DS Block"
+          },
+          {
+            "name": "Dr. Anil Verma",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (IIT Kharagpur), M.Tech (NIT Durgapur), B.Tech (Jadavpur)",
+            "experience": "6 years",
+            "specialization": "Data Mining, Statistical Learning",
+            "research_interests": ["Recommendation Systems", "Time Series Analysis", "Ensemble Methods"],
+            "publications": 24,
+            "email": "anil.verma@kare.ac.in",
+            "office": "Room 305, AI-DS Block"
+          }
+        ]
+      }
+    },
+    "school_of_engineering": {
+      "dean": {
+        "name": "Dr. Priya Sharma",
+        "designation": "Dean & Professor",
+        "department": "Mechanical Engineering",
+        "qualification": "Ph.D. in Thermal Engineering (IIT Madras), M.Tech (IIT Delhi), B.E (Anna University)",
+        "experience": "24 years",
+        "specialization": "Heat Transfer, Thermal Systems, Energy Management",
+        "research_interests": ["Renewable Energy", "Heat Exchangers", "Thermal Optimization"],
+        "publications": 94,
+        "email": "priya.sharma@kare.ac.in",
+        "phone": "+91-4563-289005",
+        "office": "Room 401, Engineering Block"
+      },
+      "mechanical_engineering": {
+        "hod": {
+          "name": "Dr. Suresh Raman",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Bombay), M.Tech (IIT Kanpur), B.Tech (NIT Trichy)",
+          "experience": "21 years",
+          "specialization": "Manufacturing, Production Engineering, Quality Control",
+          "research_interests": ["Additive Manufacturing", "Lean Manufacturing", "Six Sigma"],
+          "publications": 67,
+          "email": "suresh.raman@kare.ac.in",
+          "phone": "+91-4563-289006",
+          "office": "Room 201, Mechanical Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Ganesh Iyer",
+            "designation": "Professor",
+            "qualification": "Ph.D. (IISc Bangalore), M.Tech (IIT Chennai), B.E (PSG Tech)",
+            "experience": "18 years",
+            "specialization": "Fluid Mechanics, CFD, Turbomachinery",
+            "research_interests": ["Wind Energy", "Turbine Design", "Flow Analysis"],
+            "publications": 58,
+            "email": "ganesh.iyer@kare.ac.in",
+            "office": "Room 203, Mechanical Block"
+          },
+          {
+            "name": "Dr. Lakshmi Devi",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (Anna University), M.Tech (VIT), B.Tech (Thiagarajar)",
+            "experience": "13 years",
+            "specialization": "Materials Science, Metallurgy",
+            "research_interests": ["Composite Materials", "Nanomaterials", "Surface Engineering"],
+            "publications": 42,
+            "email": "lakshmi.devi@kare.ac.in",
+            "office": "Room 205, Mechanical Block"
+          }
+        ]
+      },
+      "electronics_communication": {
+        "hod": {
+          "name": "Dr. Rajesh Khanna",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Delhi), M.Tech (IIIT Hyderabad), B.Tech (BITS Pilani)",
+          "experience": "17 years",
+          "specialization": "Digital Signal Processing, VLSI Design, Communication Systems",
+          "research_interests": ["5G Communications", "MIMO Systems", "Software Defined Radio"],
+          "publications": 71,
+          "email": "rajesh.khanna@kare.ac.in",
+          "phone": "+91-4563-289007",
+          "office": "Room 301, ECE Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Sita Devi",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IIT Madras), M.Tech (NIT Warangal), B.Tech (JNTU)",
+            "experience": "14 years",
+            "specialization": "Microwave Engineering, Antenna Design",
+            "research_interests": ["Patch Antennas", "RF Circuits", "Satellite Communication"],
+            "publications": 48,
+            "email": "sita.devi@kare.ac.in",
+            "office": "Room 303, ECE Block"
+          },
+          {
+            "name": "Dr. Karthik Raj",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (VIT), M.Tech (SRM), B.Tech (Amrita)",
+            "experience": "8 years",
+            "specialization": "Embedded Systems, IoT, Robotics",
+            "research_interests": ["Sensor Networks", "Edge Computing", "Smart Systems"],
+            "publications": 29,
+            "email": "karthik.raj@kare.ac.in",
+            "office": "Room 305, ECE Block"
+          }
+        ]
+      },
+      "civil_engineering": {
+        "hod": {
+          "name": "Dr. Madhavi Latha",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Kharagpur), M.Tech (NIT Surathkal), B.Tech (VNIT Nagpur)",
+          "experience": "20 years",
+          "specialization": "Structural Engineering, Earthquake Engineering, Concrete Technology",
+          "research_interests": ["Seismic Design", "High Performance Concrete", "Bridge Engineering"],
+          "publications": 63,
+          "email": "madhavi.latha@kare.ac.in",
+          "phone": "+91-4563-289008",
+          "office": "Room 401, Civil Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Venkat Rao",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (Anna University), M.Tech (IIT Chennai), B.E (CEG)",
+            "experience": "15 years",
+            "specialization": "Geotechnical Engineering, Soil Mechanics",
+            "research_interests": ["Foundation Design", "Soil Stabilization", "Ground Improvement"],
+            "publications": 44,
+            "email": "venkat.rao@kare.ac.in",
+            "office": "Room 403, Civil Block"
+          },
+          {
+            "name": "Dr. Preethi Nair",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (NIT Calicut), M.Tech (Kerala University), B.Tech (TKM)",
+            "experience": "9 years",
+            "specialization": "Environmental Engineering, Water Resources",
+            "research_interests": ["Water Treatment", "Waste Management", "Environmental Impact"],
+            "publications": 34,
+            "email": "preethi.nair@kare.ac.in",
+            "office": "Room 405, Civil Block"
+          }
+        ]
+      },
+      "electrical_electronics": {
+        "hod": {
+          "name": "Dr. Ramesh Kumar",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Roorkee), M.Tech (NIT Kurukshetra), B.Tech (Thapar)",
+          "experience": "19 years",
+          "specialization": "Power Systems, Renewable Energy, Smart Grid",
+          "research_interests": ["Solar Energy", "Grid Integration", "Power Quality"],
+          "publications": 69,
+          "email": "ramesh.kumar@kare.ac.in",
+          "phone": "+91-4563-289009",
+          "office": "Room 501, EEE Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Sunita Sharma",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IIT Delhi), M.Tech (DTU), B.Tech (GGSIPU)",
+            "experience": "12 years",
+            "specialization": "Control Systems, Automation, Robotics",
+            "research_interests": ["Industrial Automation", "PLC Programming", "Process Control"],
+            "publications": 38,
+            "email": "sunita.sharma@kare.ac.in",
+            "office": "Room 503, EEE Block"
+          }
+        ]
+      }
+    },
+    "school_of_management": {
+      "dean": {
+        "name": "Dr. Suresh Raman",
+        "designation": "Dean & Professor",
+        "department": "Business Administration",
+        "qualification": "Ph.D. in Management (IIM Bangalore), MBA (IIM Calcutta), B.Com (Delhi University)",
+        "experience": "25 years",
+        "specialization": "Strategic Management, International Business, Entrepreneurship",
+        "research_interests": ["Digital Transformation", "Startup Ecosystem", "Global Strategy"],
+        "publications": 82,
+        "email": "suresh.raman.mgmt@kare.ac.in",
+        "phone": "+91-4563-289010",
+        "office": "Room 601, Management Block"
+      },
+      "business_administration": {
+        "hod": {
+          "name": "Dr. Ravi Prakash",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIM Ahmedabad), MBA (XLRI), B.E (Osmania University)",
+          "experience": "22 years",
+          "specialization": "Operations Management, Supply Chain, Quality Management",
+          "research_interests": ["Lean Operations", "Supply Chain Optimization", "Industry 4.0"],
+          "publications": 74,
+          "email": "ravi.prakash@kare.ac.in",
+          "phone": "+91-4563-289011",
+          "office": "Room 201, Management Block"
+        },
+        "faculty": [
+          {
+            "name": "Dr. Nisha Agarwal",
+            "designation": "Professor",
+            "qualification": "Ph.D. (FMS Delhi), MBA (IIM Lucknow), B.A (DU)",
+            "experience": "18 years",
+            "specialization": "Marketing Management, Consumer Behavior, Digital Marketing",
+            "research_interests": ["Social Media Marketing", "Brand Management", "Customer Analytics"],
+            "publications": 56,
+            "email": "nisha.agarwal@kare.ac.in",
+            "office": "Room 203, Management Block"
+          },
+          {
+            "name": "Dr. Amit Singh",
+            "designation": "Associate Professor",
+            "qualification": "Ph.D. (IIM Indore), MBA (NMIMS), B.Com (Pune University)",
+            "experience": "14 years",
+            "specialization": "Finance, Investment Analysis, Risk Management",
+            "research_interests": ["Financial Markets", "Corporate Finance", "Fintech"],
+            "publications": 43,
+            "email": "amit.singh@kare.ac.in",
+            "office": "Room 205, Management Block"
+          },
+          {
+            "name": "Dr. Pooja Mehta",
+            "designation": "Assistant Professor",
+            "qualification": "Ph.D. (Symbiosis), MBA (SCMHRD), B.A (Mumbai University)",
+            "experience": "10 years",
+            "specialization": "Human Resource Management, Organizational Behavior",
+            "research_interests": ["Employee Engagement", "Talent Management", "Workplace Diversity"],
+            "publications": 32,
+            "email": "pooja.mehta@kare.ac.in",
+            "office": "Room 207, Management Block"
+          }
+        ]
+      }
+    },
+    "school_of_science": {
+      "dean": {
+        "name": "Dr. Meera Krishnan",
+        "designation": "Dean & Professor",
+        "department": "Physics",
+        "qualification": "Ph.D. in Physics (IISc Bangalore), M.Sc (IIT Madras), B.Sc (Presidency College)",
+        "experience": "26 years",
+        "specialization": "Condensed Matter Physics, Nanotechnology, Materials Science",
+        "research_interests": ["Quantum Materials", "Nanodevices", "Spintronics"],
+        "publications": 98,
+        "email": "meera.krishnan.physics@kare.ac.in",
+        "phone": "+91-4563-289012",
+        "office": "Room 701, Science Block"
+      },
+      "physics": {
+        "hod": {
+          "name": "Dr. Krishnan Nair",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Bombay), M.Sc (IISc), B.Sc (Calicut University)",
+          "experience": "21 years",
+          "specialization": "Atomic Physics, Laser Physics, Spectroscopy",
+          "research_interests": ["Laser Applications", "Optical Communications", "Photonics"],
+          "publications": 65,
+          "email": "krishnan.nair@kare.ac.in",
+          "phone": "+91-4563-289013",
+          "office": "Room 201, Physics Block"
+        }
+      },
+      "chemistry": {
+        "hod": {
+          "name": "Dr. Shalini Devi",
+          "designation": "Associate Professor & Head",
+          "qualification": "Ph.D. (Anna University), M.Sc (Madras University), B.Sc (MCC)",
+          "experience": "16 years",
+          "specialization": "Organic Chemistry, Green Chemistry, Drug Discovery",
+          "research_interests": ["Pharmaceutical Chemistry", "Natural Products", "Catalysis"],
+          "publications": 52,
+          "email": "shalini.devi@kare.ac.in",
+          "phone": "+91-4563-289014",
+          "office": "Room 301, Chemistry Block"
+        }
+      },
+      "mathematics": {
+        "hod": {
+          "name": "Dr. Raghavan Pillai",
+          "designation": "Professor & Head",
+          "qualification": "Ph.D. (IIT Madras), M.Sc (University of Madras), B.Sc (Loyola College)",
+          "experience": "23 years",
+          "specialization": "Applied Mathematics, Numerical Analysis, Operations Research",
+          "research_interests": ["Optimization Techniques", "Mathematical Modeling", "Statistical Analysis"],
+          "publications": 71,
+          "email": "raghavan.pillai@kare.ac.in",
+          "phone": "+91-4563-289015",
+          "office": "Room 401, Mathematics Block"
+        }
+      }
+    }
+  }
+}
