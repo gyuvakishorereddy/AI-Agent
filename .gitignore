@@ -22,7 +22,7 @@ node_modules/
 jspm_packages/
 venv/
 .venv/
-env/
+env.example/
 ENV/
 
 # Optional npm cache directory
@@ -41,10 +41,11 @@ ENV/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
-.env.test
-.env.local
-.env.production
+# .env files are tracked in this repository
+.env.example
+.env.example.test
+.env.example.local
+.env.example.production
 
 # IDE files
 .vscode/
