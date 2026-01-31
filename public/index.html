@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARE AI Assistant - Advanced Chatbot System</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>">
+    <!-- Leaflet OpenStreetMap -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <!-- Leaflet Routing Machine -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.css" />
+    <script src="https://unpkg.com/leaflet-routing-machine@3.2.12/dist/leaflet-routing-machine.js"></script>
+</head>
+<body>
+    <!-- Sidebar Navigation -->
+    <div class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <h2>KARE AI</h2>
+            <button class="close-sidebar" id="closeSidebar">X</button>
+        </div>
+        
+        <div class="sidebar-content">
+            <button class="new-chat-btn" id="newChatBtn">
+                <span>+</span> New Chat
+            </button>
+            
+            <div class="chat-history">
+                <h3>Recent Chats</h3>
+                <div id="chatHistoryList">
+                    <!-- Chat history will be populated here -->
+                </div>
+            </div>
+            
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <div class="user-avatar">U</div>
+                    <div class="user-details">
+                        <div class="user-name">KARE Student</div>
+                        <div class="user-email">student@kare.edu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="menu-btn" id="menuBtn">Menu</button>
+                <div class="header-title">
+                    <h1>KARE AI Assistant</h1>
+                    <p>Kalasalingam Academy of Research and Education</p>
+                </div>
+            </div>
+            
+            <div class="header-right">
+                <button class="header-btn" id="mapBtn" title="Show Map & Directions">
+                    Map
+                </button>
+                <span class="language-indicator" id="languageIndicator" title="Auto-detected language">
+                    EN
+                </span>
+                <button class="header-btn" id="voiceBtn" title="Voice Input">
+                    Mic
+                </button>
+                <button class="header-btn hidden" id="replayBtn" title="Replay Last Response">
+                    Replay
+                </button>
+                <button class="header-btn" id="speakerBtn" title="Voice Output: ON (Click to toggle)">
+                    Speaker
+                </button>
+                <button class="header-btn hidden" id="stopAudioBtn" title="Stop Current Audio">
+                    Stop
+                </button>
+                <button class="header-btn" id="settingsBtn" title="Settings">
+                    Settings
+                </button>
+                <button class="header-btn" id="themeToggle" title="Toggle Theme">
+                    Theme
+                </button>
+            </div>
+        </header>
+
+        <!-- Chat Container -->
+        <main class="chat-container" id="chatContainer">
+            <div class="welcome-screen" id="welcomeScreen">
+                <div class="welcome-content">
+                    <div class="welcome-icon">AI</div>
+                    <h1>Welcome to KARE AI Assistant</h1>
+                    <p class="subtitle">Your intelligent companion for Kalasalingam University information and support</p>
+                    
+                    <div class="capabilities">
+                        <div class="capability-card">
+                            <div class="capability-icon">🎓</div>
+                            <h3>Admissions Info</h3>
+                            <p>Programs, fees, eligibility, and documents</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">🏠</div>
+                            <h3>Hostel Details</h3>
+                            <p>Facilities, fees, mess timings, and allocation</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">�</div>
+                            <h3>Placements</h3>
+                            <p>Top recruiters, packages, and statistics</p>
+                        </div>
+                        <div class="capability-card">
+                            <div class="capability-icon">🏛️</div>
+                            <h3>Campus Info</h3>
+                            <p>Academic blocks, facilities, and contacts</p>
+                        </div>
+                    </div>
+
+                    <div class="example-prompts">
+                        <h3>Try asking:</h3>
+                        <div class="prompt-grid">
+                            <button class="prompt-card" data-prompt="What is the fee structure?">
+                                <span class="prompt-icon">💰</span>
+                                <span>Fee Structure</span>
+                            </button>
+                            <button class="prompt-card" data-prompt="How to apply for admissions?">
+                                <span class="prompt-icon">�</span>
+                                <span>Admission Process</span>
+                            </button>
+                            <button class="prompt-card" data-prompt="Tell me about placements">
+                                <span class="prompt-icon">�</span>
+                                <span>Placements & Recruiters</span>
+                            </button>
+                            <button class="prompt-card" data-prompt="What facilities are available?">
+                                <span class="prompt-icon">🏢</span>
+                                <span>Campus Facilities</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="messages-container" id="messagesContainer">
+                <!-- Messages will be populated here -->
+            </div>
+        </main>
+
+        <!-- Input Area -->
+        <div class="input-area">
+            <div class="quick-actions-container">
+                <div class="quick-actions" id="quickActions">
+                    <button class="quick-action" data-action="admissions">Admissions</button>
+                    <button class="quick-action" data-action="fees">Fee Structure</button>
+                    <button class="quick-action" data-action="placements">Placements</button>
+                    <button class="quick-action" data-action="facilities">Facilities</button>
+                    <button class="quick-action" data-action="programs">Programs</button>
+                    <button class="quick-action" data-action="contact">Contact</button>
+                </div>
+            </div>
+            
+            <div class="input-wrapper">
+                <button class="attach-btn" id="attachBtn" title="Attach file">
+                    Attach
+                </button>
+                <textarea 
+                    id="userInput" 
+                    placeholder="Ask me anything... (Shift + Enter for new line)"
+                    rows="1"
+                ></textarea>
+                <button class="send-btn" id="sendBtn" title="Send message">
+                    <span class="send-icon">Send</span>
+                </button>
+            </div>
+            
+            <div class="input-footer">
+                <span class="model-info">KARE AI v2.0 - Powered by Advanced Knowledge Base</span>
+                <span class="word-count" id="wordCount">0 / 2000</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Settings</h2>
+                <button class="close-modal" id="closeSettings">X</button>
+            </div>
+            <div class="modal-body">
+                <div class="setting-group">
+                    <h3>Appearance</h3>
+                    <div class="setting-item">
+                        <label for="themeSelect">Theme</label>
+                        <select id="themeSelect" title="Select theme">
+                            <option value="light">Light</option>
+                            <option value="dark">Dark</option>
+                            <option value="auto">Auto</option>
+                        </select>
+                    </div>
+                    <div class="setting-item">
+                        <label for="fontSizeSelect">Font Size</label>
+                        <select id="fontSizeSelect" title="Select font size">
+                            <option value="small">Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <h3>Chat Behavior</h3>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="autoScroll" checked>
+                            Auto-scroll to latest message
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="soundEffects">
+                            Enable sound effects
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="voiceOutput" checked>
+                            Enable voice output (Text-to-Speech)
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" id="showTimestamps" checked>
+                            Show message timestamps
+                        </label>
+                    </div>
+                </div>
+                
+                <div class="setting-group">
+                    <h3>Data</h3>
+                    <div class="setting-item">
+                        <button class="btn-secondary" id="clearHistory">Clear Chat History</button>
+                        <button class="btn-secondary" id="exportChat">Export Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Map Modal -->
+    <div id="mapModal">
+        <div class="map-modal-content">
+            <div class="modal-header">
+                <h2>Directions to Kalasalingam University</h2>
+                <button class="close-modal" id="closeMap">X</button>
+            </div>
+            <div class="map-modal-body">
+                <div class="map-controls">
+                    <div class="transport-modes">
+                        <button class="transport-btn active" data-mode="car" title="Car">Car</button>
+                        <button class="transport-btn" data-mode="bike" title="Bike">Bike</button>
+                        <button class="transport-btn" data-mode="foot" title="Walking">Walk</button>
+                    </div>
+                    <div class="location-inputs">
+                        <input type="text" id="startLocation" placeholder="Enter starting location or use current location" />
+                        <button id="useCurrentLocation" class="btn-primary">Use My Location</button>
+                    </div>
+                    <button id="getDirections" class="btn-primary">Get Directions</button>
+                </div>
+                <div id="map"></div>
+                <div id="routeInfo" class="route-info">
+                    <h3>Route Information</h3>
+                    <div id="routeDetails"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/app.js?v=2"></script>
+
+    <style>
+        .typing-dots {
+            display: flex;
+            gap: 4px;
+            padding: 8px 0;
+        }
+        .typing-dots span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #667eea;
+            animation: typing 1.4s infinite ease-in-out;
+        }
+        .typing-dots span:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dots span:nth-child(2) { animation-delay: -0.16s; }
+        
+        @keyframes typing {
+            0%, 80%, 100% { transform: scale(0); }
+            40% { transform: scale(1); }
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</body>
+</html>
