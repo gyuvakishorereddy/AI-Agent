@@ -4,7 +4,7 @@ uvicorn==0.24.0
 pydantic==2.5.0
 
 # NLP and ML libraries
-sentence-transformers==2.2.2
+sentence-transformers>=2.7.0
 transformers==4.35.0
 torch==2.5.1
 faiss-cpu==1.13.1
@@ -18,8 +18,8 @@ langchain-core==0.1.10
 tiktoken==0.5.2
 
 # Advanced NLP Models
-openai-whisper==20231117
-sentencepiece==0.1.99
+openai-whisper>=20231117
+sentencepiece>=0.1.99
 
 # Language detection and translation
 langdetect==1.0.9
