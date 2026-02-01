@@ -88,6 +88,10 @@ def detect_query_intent(query: str) -> str:
     if any(word in query_lower for word in ['bus', 'transport', 'route', 'travel']):
         return 'transport'
     
+    # Food/Menu/Mess queries
+    if any(word in query_lower for word in ['food', 'menu', 'mess', 'meal', 'breakfast', 'lunch', 'dinner', 'snacks', 'eat', 'dining', 'cuisine']):
+        return 'food_menu'
+    
     return 'general'
 
 
@@ -116,6 +120,8 @@ def format_response_by_intent(intent: str, query: str, chunks: list) -> str:
         return format_website_response(chunks)
     elif intent == 'programs':
         return format_programs_response(chunks)
+    elif intent == 'food_menu':
+        return format_food_menu_response(chunks)
     
     return None  # Fall back to default formatting
 
@@ -290,6 +296,75 @@ def format_hostel_general_response(chunks: list) -> str:
     response += "**Portal:** https://hostels.kalasalingam.ac.in\n"
     
     return response
+
+
+def format_food_menu_response(chunks: list) -> str:
+    """Format food/mess menu information"""
+    response = "## 🍽️ KARE Mess & Food Menu\n\n"
+    
+    # Extract timing information
+    timings = {}
+    mess_types = []
+    features = []
+    
+    for chunk in chunks:
+        text = chunk['text'].strip()
+        text_lower = text.lower()
+        
+        # Extract mess timings
+        if 'breakfast' in text_lower and 'time:' in text_lower:
+            timings['breakfast'] = text
+        elif 'lunch' in text_lower and 'time:' in text_lower:
+            timings['lunch'] = text
+        elif 'snacks' in text_lower and 'time:' in text_lower:
+            timings['snacks'] = text
+        elif 'dinner' in text_lower and 'time:' in text_lower:
+            timings['dinner'] = text
+        
+        # Extract mess types
+        if ('andhra mess' in text_lower or 'south mess' in text_lower or 'north mess' in text_lower) and 'cuisine' in text_lower:
+            if text not in mess_types:
+                mess_types.append(text)
+        
+        # Extract features
+        if any(word in text_lower for word in ['multicuisine', 'vegetarian', 'quality', 'hygiene', 'included']):
+            if text not in features and len(text) < 200:
+                features.append(text)
+    
+    # Format timings
+    if timings:
+        response += "### 🕐 Mess Timings:\n\n"
+        if 'breakfast' in timings:
+            response += "**Breakfast:** 7:30 AM - 9:15 AM\n"
+        if 'lunch' in timings:
+            response += "**Lunch:** 12:00 PM - 2:30 PM\n"
+        if 'snacks' in timings:
+            response += "**Snacks:** 5:00 PM - 6:00 PM\n"
+        if 'dinner' in timings:
+            response += "**Dinner:** 7:00 PM - 8:30 PM\n"
+        response += "\n"
+    
+    # Format mess types
+    if mess_types:
+        response += "### 🍛 Available Mess Options:\n\n"
+        for i, mess_type in enumerate(mess_types[:3], 1):
+            response += f"**{i}.** {mess_type}\n\n"
+    
+    # Format features
+    response += "### ✨ Features:\n"
+    response += "- ✅ **Multi-cuisine options** (South, North, Andhra)\n"
+    response += "- ✅ **Vegetarian & Non-vegetarian** options available\n"
+    response += "- ✅ **Hygienic food preparation** with quality control\n"
+    response += "- ✅ **Mess fees included** in hostel fees (no separate payment)\n"
+    response += "- ✅ **Special dietary requests** available on request\n"
+    response += "- ✅ **Festival special meals**\n\n"
+    
+    response += "### 📞 For Dietary Requirements:\n"
+    response += "**Contact:** +91 4563 289 070\n"
+    response += "**Note:** Mess fees are already included in your hostel fees!\n"
+    
+    return response
+
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent
