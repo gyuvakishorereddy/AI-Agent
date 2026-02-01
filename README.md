@@ -461,3 +461,6 @@ KARE Academy - Internal Use Only
 ---
 
 **Ready to start?** → `python start_server.py` 🚀
+
+
+developed by me
