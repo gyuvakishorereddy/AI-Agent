@@ -20,7 +20,6 @@ class ChatbotBootstrapper:
         self.root_dir = Path.cwd()
         self.data_dir = self.root_dir / "data"
         self.data_md_dir = self.root_dir / "data_md"
-        self.vector_store_dir = self.root_dir / "vector_store_md"
         
     def log(self, message: str, level: str = "INFO"):
         """Colored logging"""
@@ -44,8 +43,8 @@ class ChatbotBootstrapper:
         required = {
             "fastapi": "fastapi",
             "uvicorn": "uvicorn",
-            "sklearn": "scikit-learn",
-            "sentence_transformers": "sentence-transformers",
+            "scikit-learn": "sklearn",
+            "sentence-transformers": "sentence_transformers",
             "pydantic": "pydantic"
         }
         
@@ -107,46 +106,50 @@ class ChatbotBootstrapper:
         """Build or load vector store"""
         self.log("Step 2: Building Vector Store", "INFO")
         
-        if self.vector_store_dir.exists():
+        vector_store_dir = self.root_dir / "faiss_index"
+        
+        if vector_store_dir.exists():
             required_files = [
-                self.vector_store_dir / "vectorizer.pkl",
-                self.vector_store_dir / "tfidf_matrix.pkl",
-                self.vector_store_dir / "chunks.json"
+                vector_store_dir / "faiss_index.bin",
+                vector_store_dir / "metadata.pkl"
             ]
             
             if all(f.exists() for f in required_files):
                 self.log("Vector store already exists", "SUCCESS")
                 
                 # Show stats
-                with open(self.vector_store_dir / "chunks.json", 'r') as f:
-                    chunks = json.load(f)
-                self.log(f"Loaded {len(chunks)} chunks from existing store", "SUCCESS")
+                try:
+                    with open(vector_store_dir / "metadata.pkl", 'rb') as f:
+                        metadata = pickle.load(f)
+                        chunks = metadata.get('chunks', [])
+                        self.log(f"Loaded {len(chunks)} chunks from existing store", "SUCCESS")
+                except:
+                    self.log("Vector store exists (stats unavailable)", "SUCCESS")
                 return True
         
         self.log("Building new vector store...", "INFO")
         
         try:
-            sys.path.insert(0, str(self.root_dir))
-            from markdown_rag_pipeline import MarkdownKnowledgeBase, MarkdownRAGVectorStore
+            sys.path.insert(0, str(self.root_dir / "src"))
+            from vector_store import VectorStoreManager
             
-            # Load markdown files
-            self.log("Loading markdown documents...", "INFO")
-            kb = MarkdownKnowledgeBase(md_dir=str(self.data_md_dir))
-            documents = kb.load_markdown_files()
-            self.log(f"✓ Loaded {len(documents)} documents", "SUCCESS")
-            
-            # Chunk documents
-            self.log("Chunking documents...", "INFO")
-            chunks = kb.chunk_documents(chunk_size=800, overlap=200)
-            self.log(f"✓ Created {len(chunks)} chunks", "SUCCESS")
+            # Initialize vector store manager
+            self.log("Initializing vector store manager...", "INFO")
+            manager = VectorStoreManager(
+                data_dir=str(self.data_md_dir),
+                vector_store_path=str(vector_store_dir)
+            )
             
             # Build vector store
-            self.log("Building TF-IDF vector store...", "INFO")
-            vector_store = MarkdownRAGVectorStore()
-            vector_store.build_vector_store(chunks, output_dir=str(self.vector_store_dir))
+            self.log("Building FAISS vector store (this may take a few minutes)...", "INFO")
+            success = manager.build_vector_store(force_rebuild=True)
             
-            self.log("Vector store built successfully", "SUCCESS")
-            return True
+            if success:
+                self.log(f"Vector store built successfully with {len(manager.chunks)} chunks", "SUCCESS")
+                return True
+            else:
+                self.log("Failed to build vector store", "ERROR")
+                return False
             
         except Exception as e:
             self.log(f"Error building vector store: {str(e)}", "ERROR")
@@ -156,15 +159,15 @@ class ChatbotBootstrapper:
         """Verify all components are ready"""
         self.log("Step 3: Verifying Setup", "INFO")
         
+        vector_store_dir = self.root_dir / "faiss_index"
+        
         checks = {
-            "Data directory": self.data_dir.exists(),
             "Markdown files": self.data_md_dir.exists() and len(list(self.data_md_dir.glob("*.md"))) > 0,
             "Vector store": all([
-                (self.vector_store_dir / "vectorizer.pkl").exists(),
-                (self.vector_store_dir / "tfidf_matrix.pkl").exists(),
-                (self.vector_store_dir / "chunks.json").exists(),
+                (vector_store_dir / "faiss_index.bin").exists(),
+                (vector_store_dir / "metadata.pkl").exists(),
             ]),
-            "App file": (self.root_dir / "app_v2.py").exists(),
+            "App file": (self.root_dir / "src" / "app.py").exists(),
             "Public assets": (self.root_dir / "public").exists(),
         }
         
@@ -186,7 +189,14 @@ class ChatbotBootstrapper:
             self.log("Launching FastAPI server on http://localhost:8000", "INFO")
             self.log("=" * 70, "INFO")
             
-            os.system("python app_v2.py")
+            # Change to src directory and run app
+            app_path = self.root_dir / "src" / "app.py"
+            if not app_path.exists():
+                # Try app_simple.py as fallback
+                app_path = self.root_dir / "src" / "app_simple.py"
+            
+            # Properly quote the path for Windows
+            os.system(f'python "{app_path}"')
             
         except KeyboardInterrupt:
             self.log("Server stopped by user", "WARNING")
