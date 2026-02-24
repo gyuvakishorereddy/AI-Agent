@@ -40,6 +40,9 @@ python-multipart==0.0.6
 aiofiles==23.2.1
 python-dotenv==1.0.0
 
+# MySQL Database
+mysql-connector-python>=8.0.0
+
 # Additional multilingual packages
 # Already included above: openai-whisper, gtts, transformers
 # mBERT and XLM-R are available through transformers package
