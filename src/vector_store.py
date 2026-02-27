@@ -7,6 +7,7 @@ import os
 import json
 import logging
 import pickle
+import re
 from typing import List, Dict, Any, Tuple
 from pathlib import Path
 import numpy as np
@@ -53,10 +54,11 @@ class VectorStoreManager:
             logger.error(f"[ERROR] Failed to load embedding model: {e}")
             return False
     
-    def chunk_markdown_file(self, filepath: str, chunk_size: int = 800) -> List[Dict[str, Any]]:
+    def chunk_markdown_file(self, filepath: str, chunk_size: int = 500) -> List[Dict[str, Any]]:
         """
         Load and chunk a single Markdown file
-        Returns list of chunks with metadata
+        Returns list of chunks with metadata  
+        Uses section-aware chunking to preserve context
         """
         filename = os.path.basename(filepath)
         logger.info(f"📄 Processing: {filename}")
@@ -67,33 +69,91 @@ class VectorStoreManager:
             
             chunks = []
             
-            # Split by double newlines (paragraphs/sections)
-            sections = content.split('\n\n')
+            # Split by sections (## headers) for better context
+            sections = re.split(r'\n(?=##\s)', content)
             
             for idx, section in enumerate(sections):
                 section = section.strip()
                 if not section or len(section) < 20:
                     continue
                 
-                # If section is too large, split it further
-                if len(section) > chunk_size:
-                    sub_chunks = self._split_text(section, chunk_size)
-                    for sub_idx, sub_chunk in enumerate(sub_chunks):
+                # Extract section header for context
+                header = ''
+                header_match = re.match(r'^(#+\s+.+)', section)
+                if header_match:
+                    header = header_match.group(1).lstrip('#').strip()
+                
+                # Further split large sections into sub-sections (### headers)
+                sub_sections = re.split(r'\n(?=###\s)', section)
+                
+                for sub_idx, sub_section in enumerate(sub_sections):
+                    sub_section = sub_section.strip()
+                    if not sub_section or len(sub_section) < 15:
+                        continue
+                    
+                    # Extract sub-header
+                    sub_header = ''
+                    sub_header_match = re.match(r'^(#+\s+.+)', sub_section)
+                    if sub_header_match:
+                        sub_header = sub_header_match.group(1).lstrip('#').strip()
+                    
+                    # Add context prefix from headers
+                    context_prefix = ''
+                    if header:
+                        context_prefix = f"Topic: {header}"
+                        if sub_header and sub_header != header:
+                            context_prefix += f" > {sub_header}"
+                        context_prefix += "\n"
+                    
+                    # If sub-section is small enough, keep as one chunk
+                    if len(sub_section) <= chunk_size:
+                        chunk_text = context_prefix + sub_section
                         chunks.append({
-                            'text': sub_chunk,
+                            'text': chunk_text,
                             'source_file': filename.replace('.md', ''),
                             'section_index': idx,
                             'chunk_index': sub_idx,
+                            'header': header,
+                            'sub_header': sub_header,
                             'metadata': {}
                         })
-                else:
-                    chunks.append({
-                        'text': section,
-                        'source_file': filename.replace('.md', ''),
-                        'section_index': idx,
-                        'chunk_index': 0,
-                        'metadata': {}
-                    })
+                    else:
+                        # Split large sub-sections by paragraphs
+                        paragraphs = sub_section.split('\n\n')
+                        current_chunk = context_prefix
+                        chunk_count = 0
+                        
+                        for para in paragraphs:
+                            para = para.strip()
+                            if not para:
+                                continue
+                            
+                            if len(current_chunk) + len(para) > chunk_size and len(current_chunk) > len(context_prefix) + 10:
+                                chunks.append({
+                                    'text': current_chunk.strip(),
+                                    'source_file': filename.replace('.md', ''),
+                                    'section_index': idx,
+                                    'chunk_index': chunk_count,
+                                    'header': header,
+                                    'sub_header': sub_header,
+                                    'metadata': {}
+                                })
+                                chunk_count += 1
+                                current_chunk = context_prefix + para + '\n'
+                            else:
+                                current_chunk += para + '\n'
+                        
+                        # Don't forget the last chunk
+                        if len(current_chunk.strip()) > len(context_prefix) + 10:
+                            chunks.append({
+                                'text': current_chunk.strip(),
+                                'source_file': filename.replace('.md', ''),
+                                'section_index': idx,
+                                'chunk_index': chunk_count,
+                                'header': header,
+                                'sub_header': sub_header,
+                                'metadata': {}
+                            })
             
             logger.info(f"  ✅ Created {len(chunks)} chunks from {filename}")
             return chunks
@@ -346,7 +406,7 @@ class VectorStoreManager:
     def search(self, query: str, top_k: int = 5) -> List[Dict[str, Any]]:
         """
         Search vector store for relevant chunks
-        Returns list of top_k most similar chunks
+        Uses hybrid approach: FAISS vector search + keyword boosting + source file boosting
         """
         if self.index is None:
             logger.warning("⚠️ Vector store not loaded")
@@ -363,18 +423,112 @@ class VectorStoreManager:
             # Encode query
             query_embedding = self.embedding_model.encode([query])
             
-            # Search FAISS index
-            distances, indices = self.index.search(query_embedding.astype('float32'), top_k)
+            # Search FAISS index - retrieve many more candidates for re-ranking
+            search_k = min(top_k * 8, self.index.ntotal)
+            distances, indices = self.index.search(query_embedding.astype('float32'), search_k)
             
-            # Get corresponding chunks
+            # Extract query keywords for boosting
+            query_lower = query.lower()
+            query_words = set(query_lower.replace('?', ' ').replace('!', ' ').replace(',', ' ').split())
+            # Remove stop words
+            stop_words = {'what', 'is', 'the', 'for', 'a', 'an', 'of', 'in', 'to', 'and',
+                         'how', 'where', 'when', 'which', 'who', 'can', 'do', 'does', 'are',
+                         'was', 'were', 'be', 'been', 'about', 'with', 'from', 'at', 'by',
+                         'this', 'that', 'i', 'me', 'my', 'tell', 'give', 'show', 'please',
+                         'want', 'know', 'need', 'like', 'get', 'will', 'would', 'could',
+                         'should', 'have', 'has', 'had', 'there', 'their', 'they', 'its'}
+            keywords = query_words - stop_words
+            
+            # Special handling: if query asks for website + something, boost websites source heavily
+            asks_for_website = any(w in query_lower for w in ['website', 'url', 'portal', 'link', 'online', 'booking'])
+            
+            # Map query to likely source files for source boosting
+            source_hints = []
+            source_map = {
+                'hostel': ['hostels'], 'room': ['hostels'], 'warden': ['hostels'], 'fresher': ['hostels'],
+                'fee': ['fees', 'hostels', 'scholarships'], 'fees': ['fees', 'hostels'],
+                'cost': ['fees', 'hostels'], 'tuition': ['fees'], 'tariff': ['hostels'],
+                'admission': ['admissions', 'websites'], 'apply': ['admissions', 'websites'], 'eligib': ['admissions'],
+                'entrance': ['admissions'], 'enroll': ['admissions', 'websites'],
+                'placement': ['placements'], 'recruit': ['placements'], 'package': ['placements'],
+                'company': ['placements'], 'salary': ['placements'], 'lpa': ['placements'],
+                'bus': ['transport'], 'transport': ['transport'], 'route': ['transport'],
+                'fare': ['transport'], 'ticket': ['transport'],
+                'mess': ['mess', 'hostels'], 'food': ['mess'], 'canteen': ['mess'],
+                'breakfast': ['mess'], 'lunch': ['mess'], 'dinner': ['mess'],
+                'scholarship': ['scholarships'], 'waiver': ['scholarships'],
+                'loan': ['scholarships'], 'jee': ['scholarships'],
+                'website': ['websites'], 'url': ['websites'], 'portal': ['websites'],
+                'login': ['websites'], 'link': ['websites'], 'online': ['websites'],
+                'booking': ['websites', 'hostels'], 'apply': ['websites', 'admissions'],
+                'contact': ['contact'], 'phone': ['contact'], 'email': ['contact'],
+                'number': ['contact'], 'helpline': ['contact'], 'toll': ['contact'],
+                'address': ['contact'], 'location': ['contact'], 'reach': ['contact'],
+                'department': ['departments'], 'faculty': ['departments'], 'hod': ['departments'],
+                'facility': ['facilities'], 'library': ['facilities'], 'lab': ['facilities'],
+                'sports': ['facilities'], 'gym': ['facilities'], 'medical': ['facilities'],
+                'wifi': ['facilities'], 'swimming': ['facilities'], 'canteen': ['facilities'],
+                'research': ['research'], 'patent': ['research'], 'innovation': ['research'],
+                'incubat': ['research'], 'startup': ['research'], 'journal': ['research'],
+                'program': ['programs'], 'course': ['programs'], 'degree': ['programs'], 'offer': ['programs'],
+                'btech': ['programs', 'fees'], 'mtech': ['programs', 'fees'],
+                'mba': ['programs', 'fees'], 'mca': ['programs', 'fees'],
+                'phd': ['programs', 'research', 'fees'], 'msc': ['programs', 'fees'],
+                'engineering': ['programs', 'departments'], 'management': ['programs'],
+                'club': ['student_life'], 'event': ['student_life'], 'fest': ['student_life'],
+                'ncc': ['student_life'], 'nss': ['student_life'], 'activity': ['student_life'],
+                'block': ['academic_blocks'], 'building': ['academic_blocks'],
+                'classroom': ['academic_blocks'], 'campus': ['academic_blocks'],
+                'naac': ['programs'], 'nba': ['programs'], 'accredit': ['programs'],
+            }
+            for word in keywords:
+                for key, sources in source_map.items():
+                    if key in word:
+                        source_hints.extend(sources)
+            source_hints = list(set(source_hints))
+            
+            # If query asks for website and no specific source hints yet, prioritize websites
+            if asks_for_website and 'websites' not in source_hints:
+                source_hints = ['websites'] + source_hints
+            
+            # Score and rank candidates
             results = []
             for idx, distance in zip(indices[0], distances[0]):
                 if idx < len(self.chunks):
                     chunk = self.chunks[idx].copy()
-                    chunk['similarity_score'] = float(1 / (1 + distance))  # Convert distance to similarity
+                    # Convert L2 distance to cosine similarity
+                    cosine_sim = float(max(0.0, 1.0 - distance / 2.0))
+                    
+                    # Keyword boost: add up to 0.20 for keyword matches
+                    chunk_text_lower = chunk.get('text', '').lower()
+                    keyword_matches = sum(1 for kw in keywords if kw in chunk_text_lower)
+                    keyword_boost = min(0.20, keyword_matches * 0.04)
+                    
+                    # Source file boost: strong boost if chunk comes from expected source
+                    source_file = chunk.get('source_file', '').lower()
+                    source_match = any(s in source_file for s in source_hints)
+                    source_boost = 0.25 if source_match else -0.05  # Penalize non-matching sources
+                    
+                    # Header match bonus: if chunk header contains query keywords
+                    chunk_header = chunk.get('header', '').lower()
+                    chunk_sub_header = chunk.get('sub_header', '').lower()
+                    header_keywords = sum(1 for kw in keywords if kw in chunk_header or kw in chunk_sub_header)
+                    header_boost = min(0.15, header_keywords * 0.05)
+                    
+                    # Combined score
+                    final_score = max(0.0, cosine_sim + keyword_boost + source_boost + header_boost)
+                    
+                    chunk['similarity_score'] = final_score
+                    chunk['cosine_score'] = cosine_sim
+                    chunk['keyword_boost'] = keyword_boost
+                    chunk['source_boost'] = source_boost
+                    chunk['header_boost'] = header_boost
+                    chunk['l2_distance'] = float(distance)
                     results.append(chunk)
             
-            return results
+            # Sort by final score descending and return top_k
+            results.sort(key=lambda x: x['similarity_score'], reverse=True)
+            return results[:top_k]
             
         except Exception as e:
             logger.error(f"❌ Error searching vector store: {e}")
