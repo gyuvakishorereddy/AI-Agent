@@ -45,6 +45,7 @@ ENV/
 .env.test
 .env.local
 .env.production
+.env.example
 
 # IDE files
 .vscode/
