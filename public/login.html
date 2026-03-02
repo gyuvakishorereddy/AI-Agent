@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KARE AI - Sign In</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>K</text></svg>">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #1e3a8a 100%);
+            color: #f1f5f9;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 440px;
+            padding: 2rem;
+        }
+
+        .auth-card {
+            background: rgba(30, 41, 59, 0.85);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            border-radius: 1.25rem;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-logo {
+            width: 64px;
+            height: 64px;
+            margin: 0 auto 1rem;
+            background: linear-gradient(135deg, #3b82f6, #60a5fa);
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: #fff;
+            letter-spacing: -1px;
+        }
+
+        .auth-header h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .auth-header p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        /* Tabs */
+        .auth-tabs {
+            display: flex;
+            margin-bottom: 1.5rem;
+            background: rgba(15, 23, 42, 0.5);
+            border-radius: 0.75rem;
+            padding: 4px;
+        }
+
+        .auth-tab {
+            flex: 1;
+            padding: 0.7rem;
+            border: none;
+            background: transparent;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 0.6rem;
+            transition: all 0.25s ease;
+        }
+
+        .auth-tab.active {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* Forms */
+        .auth-form { display: none; }
+        .auth-form.active { display: block; }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #cbd5e1;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 0.6rem;
+            background: rgba(15, 23, 42, 0.6);
+            color: #f1f5f9;
+            font-size: 0.95rem;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: #64748b;
+        }
+
+        .email-hint {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.85rem;
+            border: none;
+            border-radius: 0.6rem;
+            background: linear-gradient(135deg, #3b82f6, #2563eb);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.25s ease;
+            margin-top: 0.5rem;
+        }
+
+        .submit-btn:hover {
+            background: linear-gradient(135deg, #2563eb, #1d4ed8);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+        }
+
+        .submit-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Messages */
+        .auth-message {
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .auth-message.error {
+            display: block;
+            background: rgba(239, 68, 68, 0.15);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #fca5a5;
+        }
+
+        .auth-message.success {
+            display: block;
+            background: rgba(34, 197, 94, 0.15);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            color: #86efac;
+        }
+
+        .auth-footer {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #64748b;
+            font-size: 0.8rem;
+        }
+
+        .password-requirements {
+            font-size: 0.75rem;
+            color: #64748b;
+            margin-top: 0.25rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .auth-container { padding: 1rem; }
+            .auth-card { padding: 1.5rem 1.25rem; }
+        }
+
+        /* Loading spinner */
+        .spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: spin 0.8s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="auth-logo">K</div>
+                <h1>KARE AI Assistant</h1>
+                <p>Kalasalingam Academy of Research and Education</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" id="signinTab" onclick="switchTab('signin')">Sign In</button>
+                <button class="auth-tab" id="signupTab" onclick="switchTab('signup')">Sign Up</button>
+            </div>
+
+            <!-- Message area -->
+            <div class="auth-message" id="authMessage"></div>
+
+            <!-- Sign In Form -->
+            <form class="auth-form active" id="signinForm" onsubmit="handleSignin(event)">
+                <div class="form-group">
+                    <label for="signinEmail">Email</label>
+                    <input type="email" id="signinEmail" placeholder="yourname@gmail.com" required autocomplete="email">
+                    <div class="email-hint">Only @gmail.com addresses are accepted</div>
+                </div>
+                <div class="form-group">
+                    <label for="signinPassword">Password</label>
+                    <input type="password" id="signinPassword" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                <button type="submit" class="submit-btn" id="signinBtn">Sign In</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form class="auth-form" id="signupForm" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" placeholder="Enter your full name" required autocomplete="name">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" placeholder="yourname@gmail.com" required autocomplete="email">
+                    <div class="email-hint">Only @gmail.com addresses are accepted</div>
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" placeholder="Create a password" required autocomplete="new-password">
+                    <div class="password-requirements">Minimum 6 characters</div>
+                </div>
+                <div class="form-group">
+                    <label for="signupConfirm">Confirm Password</label>
+                    <input type="password" id="signupConfirm" placeholder="Confirm your password" required autocomplete="new-password">
+                </div>
+                <button type="submit" class="submit-btn" id="signupBtn">Create Account</button>
+            </form>
+
+            <div class="auth-footer">
+                &copy; 2026 KARE AI Assistant &mdash; Capstone Project
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Check if user is already logged in
+        (function() {
+            const token = localStorage.getItem('kare_token');
+            if (token) {
+                // Validate token with server
+                fetch('/api/me', {
+                    headers: { 'Authorization': 'Bearer ' + token }
+                })
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success) {
+                        window.location.href = '/chat';
+                    } else {
+                        localStorage.removeItem('kare_token');
+                        localStorage.removeItem('kare_user');
+                    }
+                })
+                .catch(() => {});
+            }
+        })();
+
+        function switchTab(tab) {
+            document.getElementById('signinTab').classList.toggle('active', tab === 'signin');
+            document.getElementById('signupTab').classList.toggle('active', tab === 'signup');
+            document.getElementById('signinForm').classList.toggle('active', tab === 'signin');
+            document.getElementById('signupForm').classList.toggle('active', tab === 'signup');
+            hideMessage();
+        }
+
+        function showMessage(text, type) {
+            const el = document.getElementById('authMessage');
+            el.textContent = text;
+            el.className = 'auth-message ' + type;
+        }
+
+        function hideMessage() {
+            const el = document.getElementById('authMessage');
+            el.className = 'auth-message';
+            el.textContent = '';
+        }
+
+        function validateGmail(email) {
+            return /^[a-zA-Z0-9._%+-]+@gmail\.com$/i.test(email);
+        }
+
+        async function handleSignin(e) {
+            e.preventDefault();
+            hideMessage();
+
+            const email = document.getElementById('signinEmail').value.trim();
+            const password = document.getElementById('signinPassword').value;
+            const btn = document.getElementById('signinBtn');
+
+            if (!validateGmail(email)) {
+                showMessage('Please use a valid @gmail.com email address', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Signing in...';
+
+            try {
+                const res = await fetch('/api/signin', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.success) {
+                    localStorage.setItem('kare_token', data.user.token);
+                    localStorage.setItem('kare_user', JSON.stringify(data.user));
+                    showMessage('Sign in successful! Redirecting...', 'success');
+                    setTimeout(() => { window.location.href = '/chat'; }, 500);
+                } else {
+                    showMessage(data.detail || data.message || 'Sign in failed', 'error');
+                }
+            } catch (err) {
+                showMessage('Connection error. Please try again.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Sign In';
+            }
+        }
+
+        async function handleSignup(e) {
+            e.preventDefault();
+            hideMessage();
+
+            const name = document.getElementById('signupName').value.trim();
+            const email = document.getElementById('signupEmail').value.trim();
+            const password = document.getElementById('signupPassword').value;
+            const confirm = document.getElementById('signupConfirm').value;
+            const btn = document.getElementById('signupBtn');
+
+            if (!name) {
+                showMessage('Please enter your full name', 'error');
+                return;
+            }
+
+            if (!validateGmail(email)) {
+                showMessage('Please use a valid @gmail.com email address', 'error');
+                return;
+            }
+
+            if (password.length < 6) {
+                showMessage('Password must be at least 6 characters', 'error');
+                return;
+            }
+
+            if (password !== confirm) {
+                showMessage('Passwords do not match', 'error');
+                return;
+            }
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner"></span> Creating account...';
+
+            try {
+                const res = await fetch('/api/signup', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ name, email, password })
+                });
+
+                const data = await res.json();
+
+                if (res.ok && data.success) {
+                    localStorage.setItem('kare_token', data.user.token);
+                    localStorage.setItem('kare_user', JSON.stringify(data.user));
+                    showMessage('Account created! Redirecting...', 'success');
+                    setTimeout(() => { window.location.href = '/chat'; }, 500);
+                } else {
+                    showMessage(data.detail || data.message || 'Signup failed', 'error');
+                }
+            } catch (err) {
+                showMessage('Connection error. Please try again.', 'error');
+            } finally {
+                btn.disabled = false;
+                btn.textContent = 'Create Account';
+            }
+        }
+    </script>
+</body>
+</html>
