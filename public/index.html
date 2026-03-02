@@ -34,13 +34,14 @@
             </div>
             
             <div class="sidebar-footer">
-                <div class="user-info">
-                    <div class="user-avatar">U</div>
+                <div class="user-info" id="userInfo">
+                    <div class="user-avatar" id="userAvatar">U</div>
                     <div class="user-details">
-                        <div class="user-name">KARE Student</div>
-                        <div class="user-email">student@kare.edu</div>
+                        <div class="user-name" id="userName">KARE Student</div>
+                        <div class="user-email" id="userEmail">student@kare.edu</div>
                     </div>
                 </div>
+                <button class="logout-btn" id="logoutBtn" title="Sign Out">Sign Out</button>
             </div>
         </div>
     </div>
@@ -276,7 +277,50 @@
     </div>
 
     <!-- Scripts -->
-    <script src="/static/app.js?v=2"></script>
+    <!-- Auth guard: redirect to login if not authenticated -->
+    <script>
+        (function() {
+            const token = localStorage.getItem('kare_token');
+            const user = localStorage.getItem('kare_user');
+            if (!token || !user) {
+                window.location.href = '/login';
+                return;
+            }
+            // Set user info in sidebar
+            try {
+                const u = JSON.parse(user);
+                window.__KARE_USER__ = u;
+                window.__KARE_TOKEN__ = token;
+                document.addEventListener('DOMContentLoaded', function() {
+                    const nameEl = document.getElementById('userName');
+                    const emailEl = document.getElementById('userEmail');
+                    const avatarEl = document.getElementById('userAvatar');
+                    if (nameEl) nameEl.textContent = u.name || 'Student';
+                    if (emailEl) emailEl.textContent = u.email || '';
+                    if (avatarEl) avatarEl.textContent = (u.name || 'U').charAt(0).toUpperCase();
+
+                    // Logout handler
+                    const logoutBtn = document.getElementById('logoutBtn');
+                    if (logoutBtn) {
+                        logoutBtn.addEventListener('click', async function() {
+                            try {
+                                await fetch('/api/logout', {
+                                    method: 'POST',
+                                    headers: { 'Authorization': 'Bearer ' + token }
+                                });
+                            } catch(e) {}
+                            localStorage.removeItem('kare_token');
+                            localStorage.removeItem('kare_user');
+                            window.location.href = '/login';
+                        });
+                    }
+                });
+            } catch(e) {
+                window.location.href = '/login';
+            }
+        })();
+    </script>
+    <script src="/static/app.js?v=12"></script>
 
     <style>
         .typing-dots {
@@ -301,6 +345,24 @@
         
         .hidden {
             display: none !important;
+        }
+
+        .logout-btn {
+            width: 100%;
+            margin-top: 0.75rem;
+            padding: 0.6rem;
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 0.5rem;
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .logout-btn:hover {
+            background: rgba(239, 68, 68, 0.25);
+            border-color: rgba(239, 68, 68, 0.5);
         }
     </style>
 </body>
