@@ -167,168 +167,125 @@ console.log('app.js loading...');
         };
     })();
 
-    // Voice manager: handles speech recognition and text-to-speech
+    // Voice manager: Web Speech API for mic (free, browser-native) + gTTS for playback
     const voiceManager = (function() {
         let recognition = null;
-        let listening = false;
-        let onErrorCb = null;
+        let currentAudio = null;
 
-        function supportsRecognition() {
-            return ('webkitSpeechRecognition' in window) || ('SpeechRecognition' in window);
-        }
-
-        function createRecognition() {
-            const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
-            if (!Rec) return null;
-            const r = new Rec();
-            // Support multiple languages for recognition
-            r.lang = 'en-US';
-            r.interimResults = true;
-            r.continuous = false;
-            r.maxAlternatives = 1;
-            return r;
-        }
-
+        // ── STT: browser Web Speech API (free, no server needed) ─────────────
         function startListening(onFinal, onError) {
-            console.log('voiceManager.startListening called');
-            console.log('Browser supports Speech Recognition:', supportsRecognition());
-            
-            if (listening) {
-                console.log('Already listening, returning');
+            const Rec = window.SpeechRecognition || window.webkitSpeechRecognition;
+            if (!Rec) {
+                if (onError) onError('Speech Recognition not supported in this browser. Try Chrome or Edge.');
                 return;
             }
-            
-            onErrorCb = onError;
-            if (!supportsRecognition()) {
-                console.error('Speech Recognition not supported');
-                console.error('SpeechRecognition:', window.SpeechRecognition);
-                console.error('webkitSpeechRecognition:', window.webkitSpeechRecognition);
-                if (onError) onError('Speech Recognition not supported in this browser');
-                return;
-            }
+            if (recognition) { try { recognition.abort(); } catch(e) {} }
 
-            console.log('Creating recognition instance...');
-            recognition = createRecognition();
-            if (!recognition) {
-                console.error('Failed to create recognition instance');
-                if (onError) onError('Failed to create speech recognition instance');
-                return;
-            }
-
-            console.log('Recognition instance created, starting...');
+            recognition = new Rec();
+            recognition.continuous = false;
+            recognition.interimResults = true;
+            recognition.maxAlternatives = 1;
+            // Accept any language — browser handles it automatically
+            recognition.lang = '';
 
             let finalTranscript = '';
 
             recognition.onresult = (event) => {
                 let interim = '';
                 for (let i = event.resultIndex; i < event.results.length; ++i) {
-                    const res = event.results[i];
-                    if (res.isFinal) {
-                        finalTranscript += res[0].transcript;
+                    if (event.results[i].isFinal) {
+                        finalTranscript += event.results[i][0].transcript;
                     } else {
-                        interim += res[0].transcript;
+                        interim += event.results[i][0].transcript;
                     }
                 }
-
-                // Live interim feedback in input box
                 if (interim) {
                     elements.userInput.value = interim;
                     handleInputChange();
                 }
-
-                // Only call final callback once a final transcript is available
-                if (finalTranscript && typeof onFinal === 'function') {
-                    const text = finalTranscript.trim();
-                    // Clear interim UI
+                if (finalTranscript) {
                     elements.userInput.value = '';
                     handleInputChange();
-                    onFinal(text);
+                    voiceManager.isListening = false;
+                    elements.voiceBtn.textContent = '🎤';
+                    elements.voiceBtn.title = 'Voice Input';
+                    if (onFinal) onFinal(finalTranscript.trim());
                 }
             };
 
             recognition.onerror = (e) => {
-                listening = false;
                 voiceManager.isListening = false;
                 elements.voiceBtn.textContent = '🎤';
-                if (onError) onError(e.error || e.message || String(e));
+                if (onError) onError(e.error || String(e));
             };
 
             recognition.onend = () => {
-                listening = false;
-                voiceManager.isListening = false;
-                elements.voiceBtn.textContent = '🎤';
-            };
-
-            try {
-                console.log('Calling recognition.start()...');
-                recognition.start();
-                console.log('recognition.start() succeeded');
-                listening = true;
-                voiceManager.isListening = true;
-                elements.voiceBtn.textContent = '⏹';
-                elements.voiceBtn.title = 'Stop Listening (Click to stop)';
-                
-                // Auto-stop after 30 seconds to prevent hanging
-                setTimeout(() => {
-                    if (listening) {
-                        console.log('Auto-stopping recognition after 30s');
-                        stopListening();
-                    }
-                }, 30000);
-            } catch (err) {
-                console.error('Error calling recognition.start():', err.message || String(err));
-                listening = false;
                 voiceManager.isListening = false;
                 elements.voiceBtn.textContent = '🎤';
                 elements.voiceBtn.title = 'Voice Input';
-                if (onError) onError('Failed to start voice recognition: ' + (err.message || String(err)));
+            };
+
+            try {
+                recognition.start();
+                voiceManager.isListening = true;
+                elements.voiceBtn.textContent = '⏹';
+                elements.voiceBtn.title = 'Listening… click to stop';
+                setTimeout(() => { if (voiceManager.isListening) stopListening(); }, 30000);
+            } catch (err) {
+                voiceManager.isListening = false;
+                elements.voiceBtn.textContent = '🎤';
+                if (onError) onError('Failed to start: ' + (err.message || String(err)));
             }
         }
 
         function stopListening() {
-            if (recognition) {
-                try { 
-                    recognition.stop(); 
-                    console.log('Recognition stopped');
-                } catch (e) {
-                    console.error('Error stopping recognition:', e);
-                }
-                recognition = null;
-            }
-            listening = false;
+            if (recognition) { try { recognition.stop(); } catch(e) {} recognition = null; }
             voiceManager.isListening = false;
             elements.voiceBtn.textContent = '🎤';
-            elements.voiceBtn.title = 'Voice Input (Click to start)';
+            elements.voiceBtn.title = 'Voice Input';
         }
 
-        function speak(text, lang = 'en') {
-            if (!('speechSynthesis' in window)) return;
+        // ── TTS: POST to /api/tts (gTTS backend, free, supports all 6 languages) ──
+        async function speak(text, lang) {
             try {
-                window.speechSynthesis.cancel();
-                const utter = new SpeechSynthesisUtterance(text);
-                utter.lang = lang || 'en-US';
-                window.speechSynthesis.speak(utter);
+                stopSpeaking();
+                const res = await fetch('/api/tts', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ text: text, language: lang || 'en' })
+                });
+                if (!res.ok) throw new Error(await res.text());
+
+                const blob = await res.blob();
+                const url = URL.createObjectURL(blob);
+                currentAudio = new Audio(url);
                 elements.stopAudioBtn.classList.remove('hidden');
+
+                currentAudio.onended = () => {
+                    URL.revokeObjectURL(url);
+                    elements.stopAudioBtn.classList.add('hidden');
+                    currentAudio = null;
+                };
+                currentAudio.onerror = () => {
+                    elements.stopAudioBtn.classList.add('hidden');
+                    currentAudio = null;
+                };
+                await currentAudio.play();
             } catch (e) {
                 console.error('TTS error:', e);
-            }
-        }
-
-        function stopSpeaking() {
-            if ('speechSynthesis' in window) {
-                window.speechSynthesis.cancel();
                 elements.stopAudioBtn.classList.add('hidden');
             }
         }
 
-        return {
-            isListening: false,
-            startListening,
-            stopListening,
-            speak,
-            stopSpeaking
-        };
+        function stopSpeaking() {
+            if (currentAudio) { currentAudio.pause(); currentAudio = null; }
+            elements.stopAudioBtn.classList.add('hidden');
+        }
+
+        return { isListening: false, startListening, stopListening, speak, stopSpeaking };
     })();
+
+
     
     // Initialize app
     function init() {
@@ -757,10 +714,12 @@ console.log('app.js loading...');
         
         // Call backend API for knowledge base queries
         try {
+            const authToken = localStorage.getItem('kare_token') || '';
             const response = await fetch('/api/query', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': authToken ? 'Bearer ' + authToken : ''
                 },
                 body: JSON.stringify({
                     query: query,
@@ -1195,6 +1154,18 @@ console.log('app.js loading...');
 
     // Helper: get conversational response
     function getConversationalResponse(query) {
+        // Check for KARE-related keywords first - if present, don't treat as conversational
+        const kareKeywords = ['hostel', 'admission', 'fee', 'course', 'placement', 'program', 'department', 
+                             'faculty', 'bus', 'transport', 'mess', 'food', 'scholarship', 'research', 
+                             'campus', 'facility', 'library', 'exam', 'grade', 'kare', 'kalasalingam',
+                             'booking', 'website', 'portal', 'application', 'college', 'university',
+                             'eligibility', 'criteria', 'document', 'submit'];
+        
+        const hasKareKeywords = kareKeywords.some(keyword => query.includes(keyword));
+        if (hasKareKeywords) {
+            return null; // Let the query go to the backend RAG engine
+        }
+
         const greetings = {
             'hi': 'Hello! How can I help you today?',
             'hello': 'Hi there! What can I assist you with?',
@@ -1206,16 +1177,24 @@ console.log('app.js loading...');
             'thanks': 'You\'re welcome!',
             'thank you': 'Happy to help!',
             'bye': 'Goodbye! Feel free to ask anytime.',
-            'goodbye': 'See you later!',
-            'ok': 'Sure, anything else?',
-            'okay': 'Alright!'
+            'goodbye': 'See you later!'
         };
 
+        // Use word boundary matching for greetings to avoid false matches
         for (const [key, response] of Object.entries(greetings)) {
-            if (query.includes(key)) {
+            // Create regex with word boundaries to match complete words only
+            const regex = new RegExp(`\\b${key.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+            if (regex.test(query)) {
                 return { content: response, type: 'greeting' };
             }
         }
+        
+        // Handle standalone "ok" or "okay" as conversational only if no other context
+        const words = query.trim().split(/\s+/);
+        if (words.length === 1 && (words[0] === 'ok' || words[0] === 'okay')) {
+            return { content: 'Sure, anything else?', type: 'greeting' };
+        }
+        
         return null;
     }
 
