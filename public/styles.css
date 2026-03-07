@@ -44,17 +44,17 @@
 
 @font-face {
     font-family: 'Noto Sans Tamil';
-    src: url('../NotoSansTamil.ttf') format('truetype');
+    src: url('fonts/NotoSansTamil.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Noto Sans Telugu';
-    src: url('../NotoSansTelugu.ttf') format('truetype');
+    src: url('fonts/NotoSansTelugu.ttf') format('truetype');
 }
 
 @font-face {
     font-family: 'Noto Sans Malayalam';
-    src: url('../NotoSansMalayalam.ttf') format('truetype');
+    src: url('fonts/NotoSansMalayalam.ttf') format('truetype');
 }
 
 body {
