@@ -266,6 +266,69 @@
 - Medical room in hostel
 - Sports facilities access
 
+## Hostelapplication
+
+### Onlinebookingportal
+- **Name:** KARE Hostel Booking Portal
+- **URL:** https://hostel.kalasalingam.ac.in/
+- **Purpose:** Online hostel booking and room selection
+- **AccessMethod:** Login with registration number and password
+- **Availability:** Available 24/7 for registered students
+
+### Bookingprocedure
+
+#### Step1 Registration
+- Visit hostel booking portal: https://hostel.kalasalingam.ac.in/
+- Register using your college registration/enrollment number
+- Create a password
+- Verify your email address
+
+#### Step2 Login
+- Login with your registration number
+- Enter your password
+- Proceed to room selection
+
+#### Step3 RoomSelection
+- Browse available room types
+- Check room occupancy and pricing
+- Select preferred room type:
+  - 2-bed sharing (Ladies only): ₹95,000
+  - 4-bed sharing: ₹87,000 (NON AC) or ₹140,000 (AC)
+  - 5-bed sharing: ₹80,000 (NON AC) or ₹130,000 (AC)
+
+#### Step4 PaymentDetails
+- Enter payment information
+- Choose online or offline payment method
+- Confirm booking
+
+#### Step5 ConfirmationandSubmission
+- Download application form
+- Print with latest photograph
+- Get it signed by parents
+- Submit at hostel during check-in
+- Submit within 4 days of online booking
+
+### RequiredDocuments
+- Valid college ID or registration number
+- Photograph (recent, 4x6 cm)
+- Parent/Guardian signature on application form
+- Identity proof (Aadhar/Passport)
+- Contact details (phone, email)
+
+### PaymentMethods
+- Online payment (card/UPI)
+- Bank transfer
+- Cheque (for bulk bookings)
+- Draft in favor of "KALASALINGAM ACADEMY OF RESEARCH AND EDUCATION"
+
+### ImportantNotes
+- Booking is on first-come-first-serve basis
+- Room allocation subject to availability
+- Mess fee is included in hostel fee
+- Security deposit is refundable
+- Cancellation allowed with 15 days notice
+- Late booking may result in limited room availability
+
 ## Contact
 - **Phone:** +91 4563 289 070
 - **Email:** hostel@klu.ac.in
