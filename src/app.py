@@ -7,13 +7,22 @@ Includes: MySQL-backed auth (signup/signin) and chat history storage
 
 from fastapi import FastAPI, HTTPException, Header, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import logging
+import io
+import re
 from pathlib import Path
 import uvicorn
 from typing import Optional
+
+# gTTS for text-to-speech (free, no API key)
+try:
+    from gtts import gTTS
+    _GTTS_AVAILABLE = True
+except Exception:
+    _GTTS_AVAILABLE = False
 
 # Import RAG engine
 try:
@@ -349,6 +358,46 @@ async def query(q: Query, request: Request) -> Response:
         import traceback
         traceback.print_exc()
         raise HTTPException(status_code=500, detail=str(e))
+
+
+# =============== Text-to-Speech (gTTS — free, no API key) ===============
+
+class TTSRequest(BaseModel):
+    text: str
+    language: Optional[str] = "en"
+
+
+_GTTS_LANG_MAP = {
+    "en": "en", "hi": "hi", "te": "te",
+    "ta": "ta", "kn": "kn", "ml": "ml",
+}
+
+
+@app.post("/api/tts")
+async def api_tts(req: TTSRequest):
+    """Convert text to speech using gTTS and return MP3."""
+    if not _GTTS_AVAILABLE:
+        raise HTTPException(status_code=503, detail="gTTS not installed")
+
+    lang_code = _GTTS_LANG_MAP.get(req.language or "en", "en")
+
+    # Strip markdown symbols that TTS would read literally
+    clean_text = re.sub(r'[*_`#]', '', req.text)
+    clean_text = clean_text.replace('•', '').replace('\\n', ' ').strip()
+
+    try:
+        buf = io.BytesIO()
+        tts = gTTS(text=clean_text[:3000], lang=lang_code, slow=False)
+        tts.write_to_fp(buf)
+        buf.seek(0)
+        return StreamingResponse(
+            buf,
+            media_type="audio/mpeg",
+            headers={"Content-Disposition": "inline; filename=tts.mp3"},
+        )
+    except Exception as e:
+        logger.error(f"TTS error: {e}")
+        raise HTTPException(status_code=500, detail=f"TTS failed: {e}")
 
 
 if __name__ == "__main__":
