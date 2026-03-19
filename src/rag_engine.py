@@ -17,6 +17,13 @@ sys.path.insert(0, str(Path(__file__).parent))
 from vector_store import VectorStoreManager
 from gemma2_llm import Gemma2LLM
 
+# deep-translator: free Google Translate, no API key required
+try:
+    from deep_translator import GoogleTranslator as _GoogleTranslator
+    _DEEP_TRANSLATOR_AVAILABLE = True
+except Exception:
+    _DEEP_TRANSLATOR_AVAILABLE = False
+
 logger = logging.getLogger(__name__)
 
 # ---------------------------------------------------------------------------
@@ -75,39 +82,128 @@ class RAGResponseGenerator:
         else:
             logger.info("✅ RAG system ready (Vector Store only - template mode)")
 
+        # Log translation engine status
+        if _DEEP_TRANSLATOR_AVAILABLE:
+            logger.info("✅ deep-translator ready (free multilingual, no API key)")
+        else:
+            logger.warning("⚠️ deep-translator not installed; responses will be in English")
+
+    # ------------------------------------------------------------------
+    # Free translation helpers (deep-translator, no API key)
+    # ------------------------------------------------------------------
+    def _translate_text(self, text: str, source: str, target: str) -> str:
+        """Translate text using deep-translator (Google Translate, free).
+        Preserves URLs, emails, and KARE-specific proper nouns."""
+        if not _DEEP_TRANSLATOR_AVAILABLE or source == target:
+            return text
+        if not text or not text.strip():
+            return text
+
+        # Extract and protect URLs / emails before translation
+        import re as _re
+        placeholders = {}
+        protected = text
+
+        # Protect URLs
+        urls = _re.findall(r'https?://\S+', text)
+        for i, url in enumerate(urls):
+            ph = f'URLPH{i}URLPH'
+            placeholders[ph] = url
+            protected = protected.replace(url, ph, 1)
+
+        # Protect emails
+        emails = _re.findall(r'[\w.+-]+@[\w-]+\.[\w.]+', protected)
+        for i, email in enumerate(emails):
+            ph = f'EMAILPH{i}EMAILPH'
+            placeholders[ph] = email
+            protected = protected.replace(email, ph, 1)
+
+        try:
+            # deep-translator has a 5000 char limit per call; split if needed
+            if len(protected) <= 4900:
+                translated = _GoogleTranslator(source=source, target=target).translate(protected)
+            else:
+                # Split on double-newlines to preserve formatting
+                parts = protected.split('\n\n')
+                translated_parts = []
+                for part in parts:
+                    if part.strip():
+                        t = _GoogleTranslator(source=source, target=target).translate(part)
+                        translated_parts.append(t if t else part)
+                    else:
+                        translated_parts.append(part)
+                translated = '\n\n'.join(translated_parts)
+
+            if not translated:
+                return text
+
+            # Restore placeholders
+            for ph, original in placeholders.items():
+                translated = translated.replace(ph, original)
+
+            return translated
+        except Exception as e:
+            logger.warning(f"⚠️ Translation failed ({source}→{target}): {e}")
+            return text
+
     # ------------------------------------------------------------------
     # Language Translation Helper
     # ------------------------------------------------------------------
     def _translate_to_english(self, query: str, language: str) -> str:
-        """
-        Simple translation mapping for common educational queries.
-        This is a fallback; ideally use a real translation API.
-        """
-        # Tamil to English translations
-        tamil_translations = {
-            'சேர்க்கை': 'admission',
-            'விண்ணப்பம்': 'application',
-            'வலைத்தளம்': 'website',
-            'விடுதி': 'hostel',
-            'கட்டணம்': 'fees',
-            'சாquietly': 'about',
-            'என்ன': 'what',
-            'இருக்கிறது': '',
-            'பற்றி': 'about',
+        """Translate non-English query to English for better FAISS matching."""
+        if language == 'en' or not query.strip():
+            return query
+
+        # Keyword-level fallback maps (handles cases where the translator struggles)
+        _KEYWORD_MAPS = {
+            'ta': {
+                'விடுதி': 'hostel', 'கட்டணம்': 'fees', 'வலைத்தளம்': 'website',
+                'சேர்க்கை': 'admission', 'முன்பதிவு': 'booking',
+                'திட்டங்கள்': 'programs', 'துறை': 'department',
+                'வேலைவாய்ப்பு': 'placement', 'போக்குவரத்து': 'transport',
+                'பஸ்': 'bus', 'உணவு': 'food', 'உணவகம்': 'mess',
+                'வசதிகள்': 'facilities', 'நூலகம்': 'library',
+                'ஆய்வு': 'research', 'உதவித்தொகை': 'scholarship',
+                'பற்றி': 'about', 'என்ன': 'what', 'எங்கே': 'where',
+                'எப்படி': 'how', 'இருக்கிறது': '', 'செய்வதற்கான': 'for',
+            },
+            'te': {
+                'హాస్టెల్': 'hostel', 'ఫీజు': 'fees', 'వెబ్‌సైట్': 'website',
+                'ప్రవేశం': 'admission', 'బుకింగ్': 'booking',
+                'కార్యక్రమాలు': 'programs', 'శాఖ': 'department',
+                'ప్లేస్‌మెంట్': 'placement', 'రవాణా': 'transport',
+                'స్కాలర్‌షిప్': 'scholarship',
+            },
+            'hi': {
+                'हॉस्टल': 'hostel', 'फीस': 'fees', 'वेबसाइट': 'website',
+                'प्रवेश': 'admission', 'बुकिंग': 'booking',
+                'कार्यक्रम': 'programs', 'विभाग': 'department',
+                'छात्रवृत्ति': 'scholarship', 'परिवहन': 'transport',
+            },
         }
-        
-        if language == 'ta':
-            # Try replacing Tamil terms with English
-            result = query.lower()
-            for tamil, english in tamil_translations.items():
-                result = result.replace(tamil, english)
-            # If significant translation happened, use it
-            if result != query.lower():
-                return result
-        
-        # For now, return original query
-        # In production, use Google Translate or similar API
-        return query
+
+        # Apply keyword substitution first (reliable)
+        result = query
+        for native, english in _KEYWORD_MAPS.get(language, {}).items():
+            result = result.replace(native, f' {english} ')
+        result = ' '.join(result.split()).strip()
+
+        # If substitution changed the query meaningfully, use it
+        if result != query and any(c.isascii() and c.isalpha() for c in result):
+            logger.info(f"📝 Keyword translation ({language}→en): {result[:80]}")
+            return result
+
+        # Try deep-translator with auto-detect (more reliable than explicit lang code)
+        if _DEEP_TRANSLATOR_AVAILABLE:
+            try:
+                translated = _GoogleTranslator(source='auto', target='en').translate(query)
+                if translated and translated.strip() and translated != query:
+                    logger.info(f"📝 deep-translator ({language}→en): {translated[:80]}")
+                    return translated
+            except Exception as e:
+                logger.debug(f"deep-translator query translation failed: {e}")
+
+        return result if result != query else query
 
     # ------------------------------------------------------------------
     # Main entry point
@@ -173,12 +269,18 @@ class RAGResponseGenerator:
         # Step 3: Format context
         context_text = self._format_context(relevant_chunks)
         
-        # Step 4: Generate response
+        # Step 4: Generate response (always in English via template/LLM)
         if self.llm_available and self.llm:
             response = self._generate_with_llm(query, context_text, language)
         else:
             response = self._generate_template_response(query, relevant_chunks, language)
-        
+
+        # Step 5: Translate full response to target language (free, no API key)
+        if language != 'en' and _DEEP_TRANSLATOR_AVAILABLE:
+            logger.info(f"🌐 Translating response en→{language} ({len(response)} chars)...")
+            response = self._translate_text(response, source='en', target=language)
+            logger.info(f"✅ Translation done → {language} ({len(response)} chars)")
+
         return response
 
     # ------------------------------------------------------------------
@@ -839,7 +941,9 @@ class RAGResponseGenerator:
 
     def _generate_clean_response(self, query: str, chunks: List[Dict], language: str) -> str:
         """Generate a clean, readable response from chunks"""
-        ack = self._get_acknowledgment(language)
+        # Always use English acknowledgment here — Gemini will translate the whole
+        # response in Step 5 if the target language is not English.
+        ack = "Here's what I found:"
         
         # Collect all meaningful bullet points from all chunks
         all_bullets = []
