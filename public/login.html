@@ -355,6 +355,8 @@
                 if (res.ok && data.success) {
                     localStorage.setItem('kare_token', data.user.token);
                     localStorage.setItem('kare_user', JSON.stringify(data.user));
+                    // Clear previous user's chat history from localStorage
+                    localStorage.removeItem('kare_chats');
                     showMessage('Sign in successful! Redirecting...', 'success');
                     setTimeout(() => { window.location.href = '/chat'; }, 500);
                 } else {
@@ -413,6 +415,8 @@
                 if (res.ok && data.success) {
                     localStorage.setItem('kare_token', data.user.token);
                     localStorage.setItem('kare_user', JSON.stringify(data.user));
+                    // Clear previous user's chat history from localStorage
+                    localStorage.removeItem('kare_chats');
                     showMessage('Account created! Redirecting...', 'success');
                     setTimeout(() => { window.location.href = '/chat'; }, 500);
                 } else {
