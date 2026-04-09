@@ -38,7 +38,7 @@
                     <div class="user-avatar" id="userAvatar">U</div>
                     <div class="user-details">
                         <div class="user-name" id="userName">KARE Student</div>
-                        <div class="user-email" id="userEmail">student@kare.edu</div>
+                        <div class="user-email" id="userEmail">student@gmail.com</div>
                     </div>
                 </div>
                 <button class="logout-btn" id="logoutBtn" title="Sign Out">Sign Out</button>
@@ -311,6 +311,8 @@
                             } catch(e) {}
                             localStorage.removeItem('kare_token');
                             localStorage.removeItem('kare_user');
+                            // Clear chat history on logout
+                            localStorage.removeItem('kare_chats');
                             window.location.href = '/login';
                         });
                     }
