@@ -461,3 +461,9 @@ KARE Academy - Internal Use Only
 ---
 
 **Ready to start?** → `python start_server.py` 🚀
+
+License
+This project is licensed under the MIT License - see the LICENSE file for details
+
+Develoed By:
+G.YUVA KISHORE REDDY
